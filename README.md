@@ -19,7 +19,7 @@
   <a href="#jak-czytać-odpowiedzi">Jak czytać odpowiedzi</a> •
   <a href="#czego-nie-umie">Czego nie umie</a> •
   <a href="#prywatność">Prywatność</a> •
-  <a href="#hackathon-quickstart">Hackathon</a> •
+  <a href="#szybki-start-dla-programistów">Szybki start</a> •
   <a href="#kontakt">Kontakt</a> •
   <a href="#english">English</a>
 </p>
@@ -302,9 +302,9 @@ Leniwego Posła; te udostępniamy na licencji
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.pl), z podaniem źródła
 „Leniwy Poseł, leniwyposel.pl”.
 
-## Hackathon quickstart
+## Szybki start dla programistów
 
-Masz weekend i pomysł na civic tech? Trzy minuty do pierwszej odpowiedzi:
+Trzy minuty do pierwszej odpowiedzi:
 
 ```bash
 claude mcp add sejm -- npx -y sejm-mcp                   # Claude Code
@@ -379,7 +379,7 @@ or `SEJM_MCP_SCHOWEK`), at most about 500 MB, least recently used files removed 
 than 10 pages at once also asks first. A single answer is capped at 28,000 characters; a longer
 one is shortened and says how to get the rest.
 
-### Hackathon quickstart
+### Quick start for developers
 
 ```bash
 claude mcp add sejm -- npx -y sejm-mcp
