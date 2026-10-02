@@ -59,7 +59,7 @@
     "mcpb": "node skrypty/pakuj-mcpb.mjs"
   },
   "dependencies": {
-    "@modelcontextprotocol/server": "2.1.0",
+    "@modelcontextprotocol/server": "2.2.0",
     "unpdf": "1.8.1",
     "word-extractor": "1.0.4",
     "zod": "4.6.5"
