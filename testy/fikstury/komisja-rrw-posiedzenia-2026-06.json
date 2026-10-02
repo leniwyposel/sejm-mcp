@@ -1,0 +1,186 @@
+[
+ {
+  "agenda": "<div class=\"agenda-indent-0\">\"Omówienie aktualnej sytuacji oraz planów rządu i Ministerstwa Klimatu i Środowiska wobec pszczelarstwa w Polsce. Przedstawienie informacji i dyskusja w poniższym zakresie:</div>\n<div class=\"agenda-indent-1\">1. Dyskusja nad Krajowym Planem Odbudowy Zasobów Przyrodniczych (KPOZP) w związku z rozporządzeniem UE Nature Restoration Law (NRL) - założenia, aktualny stan prac.</div>\n<div class=\"agenda-indent-1\">2. Dyskusja na temat propozycji Ministerstwa Klimatu i Środowiska, zakładającej ograniczenie pszczoły miodnej na obszary o szczególnych walorach przyrodniczych.</div>\n<div class=\"agenda-indent-1\">3. Wpływ pszczoły miodnej na różnorodność biologiczną, ochronę przyrody itd.</div>\n<div class=\"agenda-indent-1\">4. Przyszłość pasiek zlokalizowanych na terenach miast i terenach zurbanizowanych.</div>\n<div class=\"agenda-indent-1\">5. Komentarz Ministerstwa Klimatu i Środowiska do słów Minister Pauliny Hennig-Kloski, która podkreśla, że rząd nie planuje likwidacji pasiek.</div>\n<div class=\"agenda-indent-1\">6. Dyskusja z członkami zespołu ds. dzikich zapylaczy jaki funkcjonuje w Ministerstwie Klimatu i Środowiska.</div>\n<div class=\"agenda-indent-1\">7. Wypowiedzi środowiska pszczelarskiego - strony branżowej.</div>\n<div class=\"agenda-indent-1\">8. Przedstawienie harmonogramu prac nad projektem Krajowego Planu Odbudowy Zasobów Przyrodniczych (KPOZP) i udziału w tych pracach środowiska pszczelarskiego.\"</div>",
+  "closed": false,
+  "code": "RRW",
+  "date": "2026-05-27",
+  "endDateTime": "2026-05-27T13:20:00",
+  "jointWith": [
+   {
+    "code": "OSZ",
+    "num": 120
+   }
+  ],
+  "notes": "Posiedzenie Komisji zostało zwołane w trybie art. 152 ust. 2 regulaminu Sejmu na wniosek grupy posłów przekazany do Komisji w dniu 30 kwietnia 2026 r.",
+  "num": 165,
+  "remote": false,
+  "room": "sala im. Henryka Wujca (nr 111, bud. U)",
+  "startDateTime": "2026-05-27T11:20:00",
+  "status": "FINISHED",
+  "video": [
+   {
+    "committee": "OSZ, RRW",
+    "description": "„Omówienie aktualnej sytuacji oraz planów rządu i Ministerstwa Klimatu i Środowiska wobec pszczelarstwa w Polsce. Przedstawienie informacji i dyskusja w poniższym zakresie:<br/>1. Dyskusja nad Krajowym Planem Odbudowy Zasobów Przyrodniczych (KPOZP) w związku z rozporządzeniem UE Nature Restoration Law (NRL) – założenia, aktualny stan prac.<br/>2. Dyskusja na temat propozycji Ministerstwa Klimatu i Środowiska, zakładającej ograniczenie pszczoły miodnej na obszary o szczególnych walorach przyrodniczych. <br/>3. Wpływ pszczoły miodnej na różnorodność biologiczną, ochronę przyrody itd.<br/>4. Przyszłość pasiek zlokalizowanych na terenach miast i terenach zurbanizowanych.<br/>5. Komentarz Ministerstwa Klimatu i Środowiska do słów minister Pauliny Hennig-Kloski, która podkreśla, że rząd nie planuje likwidacji pasiek.<br/>6. Dyskusja z członkami zespołu ds. dzikich zapylaczy jaki funkcjonuje w Ministerstwie Klimatu i Środowiska.<br/>7. Wypowiedzi środowiska pszczelarskiego – strony branżowej.<br/>8. Przedstawienie harmonogramu prac nad projektem Krajowego Planu Odbudowy Zasobów Przyrodniczych (KPOZP) i udziału w tych pracach środowiska pszczelarskiego”.",
+    "endDateTime": "2026-05-27T13:19:17",
+    "playerLink": "https://sejm.gov.pl/Sejm10.nsf/transmisje_arch.xsp?unid=5D132CB36EAB599FC1258DFE003973C0",
+    "playerLinkIFrame": "https://sejm.gov.pl/Sejm10.nsf/VideoFrame.xsp/5D132CB36EAB599FC1258DFE003973C0",
+    "room": "sala im. Henryka Wujca (nr 111, bud. U)",
+    "startDateTime": "2026-05-27T11:21:00",
+    "title": "Komisja Ochrony Środowiska, Zasobów Naturalnych i Leśnictwa (OSZ)\nKomisja Rolnictwa i Rozwoju Wsi (RRW)",
+    "transcribe": false,
+    "type": "komisja",
+    "unid": "5D132CB36EAB599FC1258DFE003973C0",
+    "videoLink": "https://sejm.c.blueonline.tv/stream/ENC24/5D132CB36EAB599FC1258DFE003973C0/playlist.m3u8?start=1779873660000&stop=1779880757000"
+   }
+  ]
+ },
+ {
+  "agenda": "<div class=\"agenda-indent-0\">Pierwsze czytanie rządowego projektu ustawy o zmianie ustawy o ubezpieczeniach upraw rolnych i zwierząt gospodarskich (druk nr 2581)</div>\n<div class=\"agenda-indent-1\">- uzasadnia podsekretarz stanu w Ministerstwie Rolnictwa i Rozwoju Wsi Adam Nowak.</div>",
+  "closed": false,
+  "code": "RRW",
+  "date": "2026-05-27",
+  "endDateTime": "2026-05-27T14:50:00",
+  "num": 166,
+  "remote": false,
+  "room": "sala im. Henryka Wujca (nr 111, bud. U)",
+  "startDateTime": "2026-05-27T14:05:00",
+  "status": "FINISHED",
+  "video": [
+   {
+    "committee": "RRW",
+    "description": "Pierwsze czytanie rządowego projektu ustawy o zmianie ustawy o ubezpieczeniach upraw rolnych i zwierząt gospodarskich (druk nr 2581)<br/>– uzasadnia Minister Rolnictwa i Rozwoju Wsi.",
+    "endDateTime": "2026-05-27T14:54:46",
+    "playerLink": "https://sejm.gov.pl/Sejm10.nsf/transmisje_arch.xsp?unid=FEBB2B982B43FC57C1258DFD0031FEA7",
+    "playerLinkIFrame": "https://sejm.gov.pl/Sejm10.nsf/VideoFrame.xsp/FEBB2B982B43FC57C1258DFD0031FEA7",
+    "room": "sala im. Henryka Wujca (nr 111, bud. U)",
+    "startDateTime": "2026-05-27T13:59:22",
+    "title": "Komisja Rolnictwa i Rozwoju Wsi (RRW)",
+    "transcribe": false,
+    "type": "komisja",
+    "unid": "FEBB2B982B43FC57C1258DFD0031FEA7",
+    "videoLink": "https://sejm.c.blueonline.tv/stream/ENC24/FEBB2B982B43FC57C1258DFD0031FEA7/playlist.m3u8?start=1779883162000&stop=1779886486000"
+   }
+  ]
+ },
+ {
+  "agenda": "<div class=\"agenda-indent-0\">Rozpatrzenie poprawki zgłoszonej w czasie drugiego czytania do projektu ustawy o zmianie ustawy o ubezpieczeniach upraw rolnych i zwierząt gospodarskich (druki nr 2581 i 2607).</div>",
+  "closed": false,
+  "code": "RRW",
+  "date": "2026-06-10",
+  "endDateTime": "2026-06-10T13:35:00",
+  "num": 167,
+  "remote": false,
+  "room": "sala im. Henryka Wujca (nr 111, bud. U)",
+  "startDateTime": "2026-06-10T13:30:00",
+  "status": "FINISHED",
+  "video": [
+   {
+    "committee": "RRW",
+    "description": "Rozpatrzenie poprawki zgłoszonej w czasie drugiego czytania do projektu ustawy o zmianie ustawy o ubezpieczeniach upraw rolnych i zwierząt gospodarskich (druki nr 2581 i 2607).",
+    "endDateTime": "2026-06-10T13:37:44",
+    "playerLink": "https://sejm.gov.pl/Sejm10.nsf/transmisje_arch.xsp?unid=525FDA674D2B2D9BC1258E110039C55F",
+    "playerLinkIFrame": "https://sejm.gov.pl/Sejm10.nsf/VideoFrame.xsp/525FDA674D2B2D9BC1258E110039C55F",
+    "room": "sala im. Henryka Wujca (nr 111, bud. U)",
+    "startDateTime": "2026-06-10T13:29:49",
+    "title": "Komisja Rolnictwa i Rozwoju Wsi (RRW)",
+    "transcribe": false,
+    "type": "komisja",
+    "unid": "525FDA674D2B2D9BC1258E110039C55F",
+    "videoLink": "https://sejm.c.blueonline.tv/stream/ENC24/525FDA674D2B2D9BC1258E110039C55F/playlist.m3u8?start=1781090989000&stop=1781091464000"
+   }
+  ]
+ },
+ {
+  "agenda": "<div class=\"agenda-indent-0\">Pierwsze czytanie poselskiego projektu ustawy o zespołach ludowych (druk nr 2603)</div>\n<div class=\"agenda-indent-1\">- uzasadnia poseł Mirosław Maliszewski.</div>",
+  "closed": false,
+  "code": "RRW",
+  "date": "2026-06-10",
+  "endDateTime": "2026-06-10T17:15:00",
+  "jointWith": [
+   {
+    "code": "KSP",
+    "num": 133
+   }
+  ],
+  "num": 168,
+  "remote": false,
+  "room": "sala im. Leszka Moczulskiego (nr 211, bud. U)",
+  "startDateTime": "2026-06-10T15:10:00",
+  "status": "FINISHED",
+  "video": [
+   {
+    "committee": "KSP, RRW",
+    "description": "Pierwsze czytanie poselskiego projektu ustawy o zespołach ludowych (druk nr 2603)<br/>− uzasadnia poseł Mirosław Maliszewski.",
+    "endDateTime": "2026-06-10T17:20:31",
+    "playerLink": "https://sejm.gov.pl/Sejm10.nsf/transmisje_arch.xsp?unid=5DE34C694118D8B7C1258E0A00438329",
+    "playerLinkIFrame": "https://sejm.gov.pl/Sejm10.nsf/VideoFrame.xsp/5DE34C694118D8B7C1258E0A00438329",
+    "room": "sala im. Leszka Moczulskiego (nr 211, bud. U)",
+    "startDateTime": "2026-06-10T15:08:45",
+    "title": "Komisja Kultury, Dziedzictwa Narodowego i Środków Przekazu (KSP)\nKomisja Rolnictwa i Rozwoju Wsi (RRW)",
+    "transcribe": false,
+    "type": "komisja",
+    "unid": "5DE34C694118D8B7C1258E0A00438329",
+    "videoLink": "https://sejm.c.blueonline.tv/stream/ENC23/5DE34C694118D8B7C1258E0A00438329/playlist.m3u8?start=1781096925000&stop=1781104831000"
+   }
+  ]
+ },
+ {
+  "agenda": "<div class=\"agenda-indent-0\">Informacja na temat przyszłych Wieloletnich Ram Finansowych 2028-2034 w kontekście Wspólnej Polityki Rolnej, Strategii na rzecz hodowli zwierząt oraz Strategii odnowy pokoleń w rolnictwie</div>\n<div class=\"agenda-indent-1\">- przedstawia Komisarz Unii Europejskiej ds. rolnictwa i żywności Christophe Hansen.</div>",
+  "closed": false,
+  "code": "RRW",
+  "date": "2026-06-18",
+  "endDateTime": "2026-06-18T18:40:00",
+  "jointWith": [
+   {
+    "code": "SUE",
+    "num": 150
+   }
+  ],
+  "num": 169,
+  "remote": false,
+  "room": "sala im. Olgi Krzyżanowskiej (nr 412, bud. U)",
+  "startDateTime": "2026-06-18T17:10:00",
+  "status": "FINISHED",
+  "video": [
+   {
+    "committee": "RRW, SUE",
+    "description": "Informacja na temat przyszłych Wieloletnich Ram Finansowych 2028−2034 w kontekście Wspólnej Polityki Rolnej, Strategii na rzecz hodowli zwierząt oraz Strategii odnowy pokoleń w rolnictwie<br/>– przedstawia Komisarz Unii Europejskiej ds. rolnictwa i żywności Christophe Hansen.",
+    "endDateTime": "2026-06-18T18:40:03",
+    "room": "sala im. Olgi Krzyżanowskiej (nr 412, bud. U)",
+    "startDateTime": "2026-06-18T17:00:00",
+    "title": "Komisja Rolnictwa i Rozwoju Wsi (RRW)\nKomisja do Spraw Unii Europejskiej (SUE)",
+    "transcribe": false,
+    "type": "komisja",
+    "unid": "EE0006125330DC7CC1258E17002F6D78"
+   }
+  ]
+ },
+ {
+  "agenda": "<div class=\"agenda-indent-0\">I. Rozpatrzenie i zaopiniowanie dla Komisji Finansów Publicznych sprawozdania z wykonania budżetu państwa za okres od 1 stycznia do 31 grudnia 2025 r. (druk nr 2629) wraz z Analizą Najwyższej Izby Kontroli (druk nr 2681) w zakresie:</div>\n<div class=\"agenda-indent-1\">1) części budżetowej 32 - Rolnictwo:</div>\n<div class=\"agenda-indent-2\">a) dochody i wydatki,</div>\n<div class=\"agenda-indent-2\">b) wynagrodzenia w państwowych jednostkach budżetowych,</div>\n<div class=\"agenda-indent-2\">c) dotacje podmiotowe i celowe;</div>\n<div class=\"agenda-indent-1\">2) części budżetowej 33 - Rozwój wsi:</div>\n<div class=\"agenda-indent-2\">a) dochody i wydatki,</div>\n<div class=\"agenda-indent-2\">b) wynagrodzenia w państwowych jednostkach budżetowych,</div>\n<div class=\"agenda-indent-2\">c) dotacje podmiotowe i celowe;</div>\n<div class=\"agenda-indent-1\">3) części budżetowej 35 - Rynki rolne:</div>\n<div class=\"agenda-indent-2\">a) dochody i wydatki,</div>\n<div class=\"agenda-indent-2\">b) wynagrodzenia w państwowych jednostkach budżetowych;</div>\n<div class=\"agenda-indent-1\">4) części budżetowej 83 - Rezerwy celowe, w zakresie pozycji 7, 8, 12, 18, i 50;</div>\n<div class=\"agenda-indent-1\">5) części budżetowej 85 - Budżety wojewodów ogółem, w zakresie działu 010 - Rolnictwo i łowiectwo:</div>\n<div class=\"agenda-indent-2\">a) dochody i wydatki,</div>\n<div class=\"agenda-indent-2\">b) wynagrodzenia w państwowych jednostkach budżetowych,</div>\n<div class=\"agenda-indent-2\">c) dotacje podmiotowe;</div>\n<div class=\"agenda-indent-1\">6) zadań z zakresu administracji rządowej i innych zadań zleconych jednostkom samorządu terytorialnego odrębnymi ustawami w części 85 - budżety wojewodów;</div>\n<div class=\"agenda-indent-1\">7) dotacji przedmiotowych i podmiotowych;</div>\n<div class=\"agenda-indent-1\">8) programów wieloletnich w układzie zadaniowym;</div>\n<div class=\"agenda-indent-1\">9) agencji wykonawczych:</div>\n<div class=\"agenda-indent-2\">a) Agencji Restrukturyzacji i Modernizacji Rolnictwa,</div>\n<div class=\"agenda-indent-2\">b) Krajowego Ośrodka Wsparcia Rolnictwa wraz z Zasobem Własności Rolnej Skarbu Państwa,</div>\n<div class=\"agenda-indent-2\">c) Centralnego Ośrodka Badania Odmian Roślin Uprawnych;</div>\n<div class=\"agenda-indent-1\">10) państwowych osób prawnych:</div>\n<div class=\"agenda-indent-2\">a) Polskiego Klubu Wyścigów Konnych,</div>\n<div class=\"agenda-indent-2\">b) Centrum Doradztwa Rolniczego w Brwinowie,</div>\n<div class=\"agenda-indent-2\">c) Dolnośląskiego Ośrodka Doradztwa Rolniczego,</div>\n<div class=\"agenda-indent-2\">d) Kujawsko-Pomorskiego Ośrodka Doradztwa Rolniczego,</div>\n<div class=\"agenda-indent-2\">e) Lubelskiego Ośrodka Doradztwa Rolniczego,</div>\n<div class=\"agenda-indent-2\">f) Lubuskiego Ośrodka Doradztwa Rolniczego,</div>\n<div class=\"agenda-indent-2\">g) Łódzkiego Ośrodka Doradztwa Rolniczego,</div>\n<div class=\"agenda-indent-2\">h) Małopolskiego Ośrodka Doradztwa Rolniczego,</div>\n<div class=\"agenda-indent-2\">i) Mazowieckiego Ośrodka Doradztwa Rolniczego,</div>\n<div class=\"agenda-indent-2\">j) Opolskiego Ośrodka Doradztwa Rolniczego,</div>\n<div class=\"agenda-indent-2\">k) Podkarpackiego Ośrodka Doradztwa Rolniczego,</div>\n<div class=\"agenda-indent-2\">l) Podlaskiego Ośrodka Doradztwa Rolniczego,</div>\n<div class=\"agenda-indent-2\">m) Pomorskiego Ośrodka Doradztwa Rolniczego,</div>\n<div class=\"agenda-indent-2\">n) Śląskiego Ośrodka Doradztwa Rolniczego,</div>\n<div class=\"agenda-indent-2\">o) Świętokrzyskiego Ośrodka Doradztwa Rolniczego,</div>\n<div class=\"agenda-indent-2\">p) Warmińsko-Mazurskiego Ośrodka Doradztwa Rolniczego,</div>\n<div class=\"agenda-indent-2\">q) Wielkopolskiego Ośrodka Doradztwa Rolniczego,</div>\n<div class=\"agenda-indent-2\">r) Zachodniopomorskiego Ośrodka Doradztwa Rolniczego</div>\n<div class=\"agenda-indent-1\">- referują: Minister Rolnictwa i Rozwoju Wsi Stefan Krajewski, p.o. wicedyrektor Departamentu Zasobów Naturalnych Najwyższej Izby Kontroli Anna Wisz oraz p.o. wicedyrektor Departamentu Zasobów Naturalnych Najwyższej Izby Kontroli Edyta Kosiarz.</div>\n<div class=\"agenda-indent-0\">II. Rozpatrzenie projektu planu pracy Komisji na okres od 1 lipca do 31 grudnia 2026 r.</div>\n<div class=\"agenda-indent-1\">- przedstawia Przewodniczący Komisji.</div>",
+  "closed": false,
+  "code": "RRW",
+  "date": "2026-07-01",
+  "endDateTime": "2026-07-01T17:40:00",
+  "num": 170,
+  "remote": false,
+  "room": "sala im. Wiesława Chrzanowskiego (nr 24, bud. G)",
+  "startDateTime": "2026-07-01T16:05:00",
+  "status": "FINISHED",
+  "video": [
+   {
+    "committee": "RRW",
+    "description": "Rozpatrzenie i zaopiniowanie dla Komisji Finansów Publicznych sprawozdania z wykonania budżetu państwa za okres od 1 stycznia do 31 grudnia 2025 r. (druk nr 2629) wraz z Analizą Najwyższej Izby Kontroli (druk nr 2681) w zakresie:<br/>1) części budżetowej 32 – Rolnictwo:<br/>a) dochody i wydatki,<br/>b) wynagrodzenia w państwowych jednostkach budżetowych,<br/>c) dotacje podmiotowe i celowe;<br/>2) części budżetowej 33 – Rozwój wsi:<br/>a) dochody i wydatki,<br/>b) wynagrodzenia w państwowych jednostkach budżetowych,<br/>c) dotacje podmiotowe i celowe;<br/>3) części budżetowej 35 – Rynki rolne:<br/>a) dochody i wydatki,<br/>b) wynagrodzenia w państwowych jednostkach budżetowych;<br/>4) części budżetowej 83 – Rezerwy celowe, w zakresie pozycji 7, 8, 12, 18 i 50;<br/>5) części budżetowej 85 – Budżety wojewodów ogółem, w zakresie działu 010 – Rolnictwo i łowiectwo:<br/>a) dochody i wydatki,<br/>b) wynagrodzenia w państwowych jednostkach budżetowych,<br/>c) dotacje podmiotowe;<br/>6) zadań z zakresu administracji rządowej i innych zadań zleconych jednostkom samorządu terytorialnego odrębnymi ustawami w części 85 – budżety wojewodów;<br/>7) dotacji przedmiotowych i podmiotowych;<br/>8) programów wieloletnich w układzie zadaniowym;<br/>9) agencji wykonawczych:<br/>a) Agencji Restrukturyzacji i Modernizacji Rolnictwa,<br/>b) Krajowego Ośrodka Wsparcia Rolnictwa wraz z Zasobem Własności Rolnej Skarbu Państwa,<br/>c) Centralnego Ośrodka Badania Odmian Roślin Uprawnych;<br/>10) państwowych osób prawnych:<br/>a) Polskiego Klubu Wyścigów Konnych,<br/>b) Centrum Doradztwa Rolniczego w Brwinowie,<br/>c) Dolnośląskiego Ośrodka Doradztwa Rolniczego,<br/>d) Kujawsko-Pomorskiego Ośrodka Doradztwa Rolniczego,<br/>e) Lubelskiego Ośrodka Doradztwa Rolniczego,<br/>f) Lubuskiego Ośrodka Doradztwa Rolniczego,<br/>g) Łódzkiego Ośrodka Doradztwa Rolniczego,<br/>h) Małopolskiego Ośrodka Doradztwa Rolniczego,<br/>i) Mazowieckiego Ośrodka Doradztwa Rolniczego,<br/>j) Opolskiego Ośrodka Doradztwa Rolniczego,<br/>k) Podkarpackiego Ośrodka Doradztwa Rolniczego,<br/>l) Podlaskiego Ośrodka Doradztwa Rolniczego,<br/>m) Pomorskiego Ośrodka Doradztwa Rolniczego,<br/>n) Śląskiego Ośrodka Doradztwa Rolniczego,<br/>o) Świętokrzyskiego Ośrodka Doradztwa Rolniczego,<br/>p) Warmińsko-Mazurskiego Ośrodka Doradztwa Rolniczego,<br/>q) Wielkopolskiego Ośrodka Doradztwa Rolniczego,<br/>r) Zachodniopomorskiego Ośrodka Doradztwa Rolniczego<br/>– referuje Minister Rolnictwa i Rozwoju Wsi.<br/>Rozpatrzenie projektu planu pracy Komisji na okres od 1 lipca do 31 grudnia 2026 r.<br/>− przedstawia Przewodniczący Komisji.",
+    "endDateTime": "2026-07-01T17:42:02",
+    "playerLink": "https://sejm.gov.pl/Sejm10.nsf/transmisje_arch.xsp?unid=68932172530F8B69C1258E2000375DF6",
+    "playerLinkIFrame": "https://sejm.gov.pl/Sejm10.nsf/VideoFrame.xsp/68932172530F8B69C1258E2000375DF6",
+    "room": "sala im. Wiesława Chrzanowskiego (nr 24, bud. G)",
+    "startDateTime": "2026-07-01T16:04:12",
+    "title": "Komisja Rolnictwa i Rozwoju Wsi (RRW)",
+    "transcribe": false,
+    "type": "komisja",
+    "unid": "68932172530F8B69C1258E2000375DF6",
+    "videoLink": "https://sejm.c.blueonline.tv/stream/ENC14/68932172530F8B69C1258E2000375DF6/playlist.m3u8?start=1782914652000&stop=1782920522000"
+   }
+  ]
+ }
+]

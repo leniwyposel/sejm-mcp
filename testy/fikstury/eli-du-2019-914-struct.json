@@ -1,0 +1,12 @@
+[
+
+            { 
+                "id" : "part_1",
+                "title" : "Treść ustawy",
+                "type": "part",
+                "symbol" : "part_1",
+                "children" : [
+                    {"id": "arti_1","symbol": "arti_1","type": "arti","name": "1","title": "Art. 1.","children": [{"id": "arti_1-pint_1","symbol": "pint_1","type": "pint","name": "1","title": "1)"},{"id": "arti_1-pint_2","symbol": "pint_2","type": "pint","name": "2","title": "2)","children": [{"id": "arti_1-pint_2-lett_a","symbol": "lett_a","type": "lett","name": "a","title": "a)"},{"id": "arti_1-pint_2-lett_b","symbol": "lett_b","type": "lett","name": "b","title": "b)"},{"id": "arti_1-pint_2-lett_c","symbol": "lett_c","type": "lett","name": "c","title": "c)"},{"id": "arti_1-pint_2-lett_d","symbol": "lett_d","type": "lett","name": "d","title": "d)"}]}]},{"id": "arti_2","symbol": "arti_2","type": "arti","name": "2","title": "Art. 2."},{"id": "arti_3","symbol": "arti_3","type": "arti","name": "3","title": "Art. 3."},{"id": "arti_4","symbol": "arti_4","type": "arti","name": "4","title": "Art. 4."}
+                ]
+            }
+        ]

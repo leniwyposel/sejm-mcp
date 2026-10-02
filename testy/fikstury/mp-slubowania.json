@@ -1,0 +1,317 @@
+[
+{
+"id": 1,
+"firstLastName": "Andrzej Adamczyk",
+"club": "PiS",
+"active": true,
+"oathDate": "2023-11-13"
+},
+{
+"id": 2,
+"firstLastName": "Piotr Adamowicz",
+"club": "KO",
+"active": true,
+"oathDate": "2023-11-13"
+},
+{
+"id": 3,
+"firstLastName": "Adam Andruszkiewicz",
+"club": "PiS",
+"active": false,
+"oathDate": "2023-11-13"
+},
+{
+"id": 4,
+"firstLastName": "Waldemar Andzel",
+"club": "PiS",
+"active": true,
+"oathDate": "2023-11-13"
+},
+{
+"id": 5,
+"firstLastName": "Dorota Arciszewska-Mielewczyk",
+"club": "PiS",
+"active": true,
+"oathDate": "2023-11-13"
+},
+{
+"id": 343,
+"firstLastName": "Sławomir Skwarek",
+"club": "PiS",
+"active": true,
+"oathDate": "2023-11-13"
+},
+{
+"id": 461,
+"firstLastName": "Anna Baluch",
+"club": "RozwojPlus",
+"active": true,
+"oathDate": "2023-12-19"
+},
+{
+"id": 462,
+"firstLastName": "Magdalena Łośko",
+"club": "KO",
+"active": true,
+"oathDate": "2024-01-26"
+},
+{
+"id": 463,
+"firstLastName": "Monika Pawłowska",
+"club": "RozwojPlus",
+"active": true,
+"oathDate": "2024-03-06"
+},
+{
+"id": 464,
+"firstLastName": "Alicja Łuczak",
+"club": "KO",
+"active": true,
+"oathDate": "2024-04-26"
+},
+{
+"id": 465,
+"firstLastName": "Dominik Jaśkowiec",
+"club": "KO",
+"active": true,
+"oathDate": "2024-05-08"
+},
+{
+"id": 466,
+"firstLastName": "Paweł Masełko",
+"club": "KO",
+"active": true,
+"oathDate": "2024-05-08"
+},
+{
+"id": 467,
+"firstLastName": "Katarzyna Stachowicz",
+"club": "KO",
+"active": true,
+"oathDate": "2024-05-22"
+},
+{
+"id": 468,
+"firstLastName": "Lidia Czechak",
+"club": "PiS",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 469,
+"firstLastName": "Barbara Grygorcewicz",
+"club": "KO",
+"active": true,
+"oathDate": "2024-06-28"
+},
+{
+"id": 470,
+"firstLastName": "Bożenna Hołownia",
+"club": "Polska2050",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 471,
+"firstLastName": "Urszula Koszutska",
+"club": "KO",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 472,
+"firstLastName": "Piotr Kowal",
+"club": "Lewica",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 473,
+"firstLastName": "Michał Kowalski",
+"club": "PiS",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 474,
+"firstLastName": "Maria Joanna Koźlakiewicz",
+"club": "KO",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 475,
+"firstLastName": "Katarzyna Królak",
+"club": "KO",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 476,
+"firstLastName": "Wioletta Maria Kulpa",
+"club": "PiS",
+"active": true,
+"oathDate": "2024-06-28"
+},
+{
+"id": 477,
+"firstLastName": "Grzegorz Macko",
+"club": "RozwojPlus",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 478,
+"firstLastName": "Jerzy Meysztowicz",
+"club": "KO",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 479,
+"firstLastName": "Krzysztof Mieszkowski",
+"club": "KO",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 480,
+"firstLastName": "Anna Paluch",
+"club": "PiS",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 481,
+"firstLastName": "Krzysztof Piątkowski",
+"club": "KO",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 482,
+"firstLastName": "Mariusz Popielarz",
+"club": "KO",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 483,
+"firstLastName": "Magdalena Roguska",
+"club": "KO",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 484,
+"firstLastName": "Marta Stożek",
+"club": "Razem",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 485,
+"firstLastName": "Krzysztof Szymański",
+"club": "Konfederacja",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 486,
+"firstLastName": "Włodzimierz Tomaszewski",
+"club": "RozwojPlus",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 487,
+"firstLastName": "Maciej Tomczykiewicz",
+"club": "KO",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 488,
+"firstLastName": "Jarosław Krajewski",
+"club": "PiS",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 489,
+"firstLastName": "Bożena Lisowska",
+"club": "KO",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 490,
+"firstLastName": "Michał Połuboczek",
+"club": "Konfederacja",
+"active": true,
+"oathDate": "2024-06-26"
+},
+{
+"id": 491,
+"firstLastName": "Aleksandra Kot",
+"club": "KO",
+"active": true,
+"oathDate": "2024-06-28"
+},
+{
+"id": 492,
+"firstLastName": "Rafał Romanowski",
+"club": "PiS",
+"active": true,
+"oathDate": "2024-07-23"
+},
+{
+"id": 493,
+"firstLastName": "Henryk Smolarz",
+"club": "PSL-TD",
+"active": true,
+"oathDate": "2024-07-23"
+},
+{
+"id": 494,
+"firstLastName": "Robert Jagła",
+"club": "KO",
+"active": true,
+"oathDate": "2024-11-06"
+},
+{
+"id": 495,
+"firstLastName": "Michał Jach",
+"club": "PiS",
+"active": true,
+"oathDate": "2025-09-09"
+},
+{
+"id": 496,
+"firstLastName": "Bogumiła Olbryś",
+"club": "PiS",
+"active": true,
+"oathDate": "2025-09-09"
+},
+{
+"id": 497,
+"firstLastName": "Tomasz Rzymkowski",
+"club": "Demokracja",
+"active": true,
+"oathDate": "2025-09-09"
+},
+{
+"id": 498,
+"firstLastName": "Marek Subocz",
+"club": "PiS",
+"active": true,
+"oathDate": "2025-09-09"
+},
+{
+"id": 499,
+"firstLastName": "Bożena Borowiec",
+"club": "Lewica",
+"active": true,
+"oathDate": "2026-05-15"
+}
+]

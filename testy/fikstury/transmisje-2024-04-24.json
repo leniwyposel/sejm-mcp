@@ -1,0 +1,86 @@
+[
+ {
+  "endDateTime": "2024-04-24T22:08:00",
+  "otherVideoLinks": [
+   "https://sejm.c.blueonline.tv/stream/ENC30/70410851619B0614C1258A7C006A2693/playlist.m3u8?start=1713945600000&stop=1713989280000",
+   "https://sejm.c.blueonline.tv/stream/ENC31/70410851619B0614C1258A7C006A2693/playlist.m3u8?start=1713945600000&stop=1713989280000",
+   "https://sejm.c.blueonline.tv/stream/ENC32/70410851619B0614C1258A7C006A2693/playlist.m3u8?start=1713945600000&stop=1713989280000"
+  ],
+  "playerLink": "https://sejm.gov.pl/Sejm10.nsf/transmisje_arch.xsp?unid=70410851619B0614C1258A7C006A2693",
+  "playerLinkIFrame": "https://sejm.gov.pl/Sejm10.nsf/VideoFrame.xsp/70410851619B0614C1258A7C006A2693",
+  "room": "Sala Posiedzeń",
+  "startDateTime": "2024-04-24T10:00:00",
+  "title": "10. posiedzenie Sejmu X kadencji",
+  "transcribe": false,
+  "type": "posiedzenie",
+  "unid": "70410851619B0614C1258A7C006A2693",
+  "videoLink": "https://sejm.c.blueonline.tv/stream/ENC01/70410851619B0614C1258A7C006A2693/playlist.m3u8?start=1713945600000&stop=1713989280000"
+ },
+ {
+  "endDateTime": "2024-04-24T11:00:00",
+  "playerLink": "https://sejm.gov.pl/Sejm10.nsf/transmisje_arch.xsp?unid=13EB50CB2A838F87C1258B09002C955F",
+  "playerLinkIFrame": "https://sejm.gov.pl/Sejm10.nsf/VideoFrame.xsp/13EB50CB2A838F87C1258B09002C955F",
+  "room": "hall przed Salą Kolumnową, bud. C",
+  "startDateTime": "2024-04-24T10:32:24",
+  "title": "Konferencja prasowa marszałka Sejmu Szymona Hołowni",
+  "transcribe": false,
+  "type": "konferencja",
+  "unid": "13EB50CB2A838F87C1258B09002C955F",
+  "videoLink": "https://sejm.c.blueonline.tv/stream/Event/13EB50CB2A838F87C1258B09002C955F/playlist.m3u8?start=1713947544000&stop=1713949200000"
+ },
+ {
+  "description": "1. Fakty i mity na temat celiakii; Objawy i diagnoza choroby. \r\n2. Dieta bezglutenowa - co może jeść osoba z celiakią? \r\n3. Problemy osób z celiakią w Polsce i propozycje rozwiązań; \r\n4. Dyskusja.\r\n\r\n",
+  "endDateTime": "2024-04-24T12:44:50",
+  "playerLink": "https://sejm.gov.pl/Sejm10.nsf/transmisje_arch.xsp?unid=F61372AE40CFD350C1258AF4002A791C",
+  "playerLinkIFrame": "https://sejm.gov.pl/Sejm10.nsf/VideoFrame.xsp/F61372AE40CFD350C1258AF4002A791C",
+  "room": "sala im. Wojciecha Trąmpczyńskiego (nr 106, bud. C)",
+  "startDateTime": "2024-04-24T10:59:39",
+  "title": "Parlamentarny Zespół ds. Celiakii",
+  "transcribe": false,
+  "type": "inne",
+  "unid": "F61372AE40CFD350C1258AF4002A791C",
+  "videoLink": "https://sejm.c.blueonline.tv/stream/ENC04/F61372AE40CFD350C1258AF4002A791C/playlist.m3u8?start=1713949179000&stop=1713955490000"
+ },
+ {
+  "committee": "FPB, SZA",
+  "description": "Pierwsze czytanie rządowego projektu ustawy o zmianie zakresu obowiązywania Umowy o utworzeniu Europejskiego Banku Odbudowy i Rozwoju, sporządzonej w Paryżu dnia 29 maja 1990r. (druk nr 303)<br/>– uzasadniają Minister Finansów oraz Minister Spraw Zagranicznych.",
+  "endDateTime": "2024-04-24T11:18:10",
+  "playerLink": "https://sejm.gov.pl/Sejm10.nsf/transmisje_arch.xsp?unid=837DE1E76689ECABC1258B02003A4412",
+  "playerLinkIFrame": "https://sejm.gov.pl/Sejm10.nsf/VideoFrame.xsp/837DE1E76689ECABC1258B02003A4412",
+  "room": "sala im. Konstytucji 3-go Maja (nr 118, bud. C)",
+  "startDateTime": "2024-04-24T10:59:50",
+  "title": "Komisja Finansów Publicznych (FPB)\nKomisja Spraw Zagranicznych (SZA)",
+  "transcribe": false,
+  "type": "komisja",
+  "unid": "837DE1E76689ECABC1258B02003A4412",
+  "videoLink": "https://sejm.c.blueonline.tv/stream/ENC05/837DE1E76689ECABC1258B02003A4412/playlist.m3u8?start=1713949190000&stop=1713950290000"
+ },
+ {
+  "committee": "OSZ",
+  "description": "„Omówienie planów koalicji rządzącej: Koalicja Obywatelska, Polskie Stronnictwo Ludowe, Polska 2050, Nowa Lewica nt.:<br/>1. Dyskusja na temat propozycji tworzenia nowych parków narodowych.<br/>2. Dyskusja na temat planów i propozycji koalicji rządzącej dla konkretnych lokalizacji nowych parków narodowych.<br/>3. Przedstawienie propozycji ewentualnych zmian w: ustawie o ochronie przyrody, ustawie o lasach, ustawie o planowaniu i zagospodarowaniu przestrzennym, ustawie o samorządzie gminnym.<br/>4. Wysłuchanie informacji Minister Klimatu i Środowiska na temat zapisów umowy koalicyjnej tj. \"20% najcenniejszych obszarów leśnych zostanie wyłączone z wycinki ” oraz „ wdrożymy program odnowy bagien i torfowisk\"<br/>5. Wysłuchanie informacji Minister Klimatu i Środowiska w sprawie sposobu i terminów realizacji zapisów umowy koalicyjnej, w tym przedstawienie analizy kosztów pozyskania gruntów w tym prywatnych, źródeł finansowania przyjętych założeń oraz bieżących kosztów utrzymania obiektów bagiennych i torfowisk i sposoby ich zarządzania. Dyskusja na temat wskaźników i paramentów przyrodniczych, które będą podstawą do określenia terenów objętych ochroną.<br/>6. Dyskusja na temat estymacji, waloryzacji, oceny i wyceny walorów terenów przyrodniczych oraz planów ich ochrony.<br/>7. Przedstawienie harmonogramu czasowego realizacji zapowiedzi programowych.”",
+  "endDateTime": "2024-04-24T12:40:17",
+  "playerLink": "https://sejm.gov.pl/Sejm10.nsf/transmisje_arch.xsp?unid=A690943643B666E6C1258B020034118B",
+  "playerLinkIFrame": "https://sejm.gov.pl/Sejm10.nsf/VideoFrame.xsp/A690943643B666E6C1258B020034118B",
+  "room": "sala nr 312, bud. U",
+  "startDateTime": "2024-04-24T11:00:07",
+  "title": "Komisja Ochrony Środowiska, Zasobów Naturalnych i Leśnictwa (OSZ)",
+  "transcribe": false,
+  "type": "komisja",
+  "unid": "A690943643B666E6C1258B020034118B",
+  "videoLink": "https://sejm.c.blueonline.tv/stream/ENC22/A690943643B666E6C1258B020034118B/playlist.m3u8?start=1713949207000&stop=1713955217000"
+ },
+ {
+  "committee": "SUE",
+  "description": "Informacja o dokumentach, w stosunku do których Prezydium wnosi o niezgłaszanie uwag: COM(2024) 461 (art. 7 ust. 4 ustawy*); COM(2024) 125, 133, 134, 142, 143, 145, 147 (art. 8 ust. 2 ustawy*); COM(2024) 127, 135, 136, 137, 149, 450 (art. 3 ust. 2 ustawy* z uwzględnieniem art. 151 ust. 1 regulaminu Sejmu). <br/>Rozpatrzenie (w trybie art. 151 ust. 1 regulaminu Sejmu z uwzględnieniem art. 3 ust. 2 ustawy*) informacji Rady Ministrów o posiedzeniu Rady Europejskiej, które odbyło się w dniach 17-18 kwietna 2024 r. <br/>Rozpatrzenie (w trybie art. 10 ust. 2 ustawy*) Wniosku dotyczącego dyrektywy Rady w sprawie wprowadzenia w życie zasady równego traktowania osób bez względu na religię lub światopogląd, niepełnosprawność, wiek lub orientację seksualną (COM(2008) 426 wersja ostateczna) i odnoszącej się do niego informacji rządu <br/>– referują: Ministra do spraw Równości Katarzyna Kotula, poseł sprawozdawca Karolina Pawliczak.<br/>Rozpatrzenie (w trybie art. 11 ust. 1 ustawy*) Informacji o stanowisku, jakie Rada Ministrów ma zamiar zająć podczas rozpatrywania projektów aktów prawnych UE na posiedzeniu Rady ds. Zagranicznych (w formacie ministrów do spraw rozwoju) (7 maja 2024 r.) w związku z zasięgnięciem opinii Komisji w tych sprawach. oraz (w trybie art. 151 ust. 1 regulaminu Sejmu z uwzględnieniem art. 3 ust. 2 ustawy*) informacji Rady Ministrów o posiedzeniu Rady ds. Zagranicznych (w formacie ministrów do spraw rozwoju) (7 maja 2024 r.).<br/>Rozpatrzenie (w trybie art. 10 ust. 2 ustawy*) Wniosku dotyczącego rozporządzenia Parlamentu Europejskiego i Rady w sprawie statusu i finansowania europejskich partii politycznych i europejskich fundacji politycznych (wersja przekształcona) (COM(2021) 734 wersja ostateczna) i odnoszącej się do niego informacji rządu <br/>– referują: sekretarz stanu w MS Krzysztof Śmiszek, poseł sprawozdawca Krzysztof Lipiec.<br/>*Ustawa z dnia 8 października 2010 r. o współpracy Rady Ministrów z Prezydentem Rzeczypospolitej Polskiej oraz Sejmem i Senatem w sprawach związanych z członkostwem Rzeczypospolitej Polskiej w Unii Europejskiej (Dz.U. nr 213, poz. 1395 oraz z 2023 r. poz. 1914)",
+  "endDateTime": "2024-04-24T12:18:55",
+  "playerLink": "https://sejm.gov.pl/Sejm10.nsf/transmisje_arch.xsp?unid=5D4F7A4275F39AEAC1258B0100288C7D",
+  "playerLinkIFrame": "https://sejm.gov.pl/Sejm10.nsf/VideoFrame.xsp/5D4F7A4275F39AEAC1258B0100288C7D",
+  "room": "sala im. Olgi Krzyżanowskiej (nr 412, bud. U)",
+  "startDateTime": "2024-04-24T11:00:18",
+  "title": "Komisja do Spraw Unii Europejskiej (SUE)",
+  "transcribe": false,
+  "type": "komisja",
+  "unid": "5D4F7A4275F39AEAC1258B0100288C7D",
+  "videoLink": "https://sejm.c.blueonline.tv/stream/ENC21/5D4F7A4275F39AEAC1258B0100288C7D/playlist.m3u8?start=1713949218000&stop=1713953935000"
+ }
+]

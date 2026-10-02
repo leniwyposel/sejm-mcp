@@ -1,0 +1,46 @@
+{
+ "address": "WDU20250000063",
+ "announcementDate": "2025-01-09",
+ "changeDate": "2026-01-20T15:02:19",
+ "displayAddress": "Dz.U. 2025 poz. 63",
+ "pos": 63,
+ "promulgation": "2025-01-20",
+ "publisher": "DU",
+ "status": "wygaśnięcie aktu",
+ "textHTML": false,
+ "textPDF": true,
+ "title": "Ustawa budżetowa na rok 2025 z dnia 9 stycznia 2025 r.",
+ "type": "Ustawa",
+ "volume": 0,
+ "year": 2025,
+ "authorizedBody": [],
+ "directives": [],
+ "entryIntoForce": "2025-01-20",
+ "expirationDate": "2025-12-31",
+ "inForce": "NOT_IN_FORCE",
+ "keywords": [
+  "finansowa gospodarka",
+  "budżet",
+  "finanse publiczne",
+  "budżetowe prawo"
+ ],
+ "keywordsNames": [
+  "Skarb Państwa"
+ ],
+ "obligated": [],
+ "previousTitle": [],
+ "prints": [
+  {
+   "link": "https://www.sejm.gov.pl/Sejm10.nsf/PrzebiegProc.xsp?nr=687",
+   "linkPrintAPI": "https://api.sejm.gov.pl/sejm/term10/prints/687",
+   "linkProcessAPI": "https://api.sejm.gov.pl/sejm/term10/processes/687",
+   "number": "687",
+   "term": 10
+  }
+ ],
+ "releasedBy": [
+  "SEJM"
+ ],
+ "validFrom": "2025-01-01",
+ "ELI": "DU/2025/63"
+}

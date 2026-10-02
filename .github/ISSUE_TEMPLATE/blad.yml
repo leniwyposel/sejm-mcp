@@ -1,0 +1,27 @@
+name: Błąd w odpowiedzi
+description: Asystent podał złą liczbę, datę albo werdykt, albo narzędzie nie działa.
+labels: [błąd]
+body:
+  - type: textarea
+    id: pytanie
+    attributes:
+      label: Jakie pytanie zadałeś?
+      placeholder: „Czy Sejm odrzucił weto do ustawy o …?”
+    validations:
+      required: true
+  - type: textarea
+    id: odpowiedz
+    attributes:
+      label: Co odpowiedział asystent?
+    validations:
+      required: true
+  - type: textarea
+    id: poprawnie
+    attributes:
+      label: Jak powinno być i skąd to wiesz?
+      description: Link do strony Sejmu albo do api.sejm.gov.pl bardzo pomaga.
+  - type: input
+    id: program
+    attributes:
+      label: Program i model
+      placeholder: Claude Desktop, Sonnet

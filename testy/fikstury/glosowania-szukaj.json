@@ -1,0 +1,76 @@
+[
+ {
+  "abstain": 4,
+  "date": "2023-12-21T09:38:25",
+  "description": "całość projektu ustawy",
+  "kind": "ELECTRONIC",
+  "links": [
+   {
+    "href": "https://api.sejm.gov.pl/sejm/term10/votings/1/139/pdf",
+    "rel": "pdf"
+   }
+  ],
+  "majorityType": "SIMPLE_MAJORITY",
+  "majorityVotes": 43,
+  "no": 42,
+  "notParticipating": 167,
+  "present": 0,
+  "sitting": 1,
+  "sittingDay": 13,
+  "term": 10,
+  "title": "Pkt. 55 Sprawozdanie Komisji o rządowym projekcie ustawy o zmianie ustawy o szczególnych rozwiązaniach służących realizacji ustawy budżetowej na rok 2023 (druki nr 127 i 130)",
+  "topic": "głosowanie nad całością projektu.",
+  "totalVoted": 293,
+  "votingNumber": 139,
+  "yes": 247
+ },
+ {
+  "abstain": 11,
+  "date": "2023-12-21T09:44:58",
+  "description": "calość projektu ustawy",
+  "kind": "ELECTRONIC",
+  "links": [
+   {
+    "href": "https://api.sejm.gov.pl/sejm/term10/votings/1/140/pdf",
+    "rel": "pdf"
+   }
+  ],
+  "majorityType": "SIMPLE_MAJORITY",
+  "majorityVotes": 23,
+  "no": 22,
+  "notParticipating": 183,
+  "present": 0,
+  "sitting": 1,
+  "sittingDay": 13,
+  "term": 10,
+  "title": "Pkt. 56 Sprawozdanie Komisji o rządowym projekcie ustawy o szczególnych rozwiązaniach służących realizacji ustawy budżetowej na rok 2024 (druki nr 128, 128-A, 128-B, 128-BA, 128-C i 131)",
+  "topic": "głosowanie nad całością projektu.",
+  "totalVoted": 277,
+  "votingNumber": 140,
+  "yes": 244
+ },
+ {
+  "abstain": 14,
+  "date": "2024-01-16T19:06:51",
+  "kind": "ELECTRONIC",
+  "links": [
+   {
+    "href": "https://api.sejm.gov.pl/sejm/term10/votings/2/5/pdf",
+    "rel": "pdf"
+   }
+  ],
+  "majorityType": "SIMPLE_MAJORITY",
+  "majorityVotes": 2,
+  "no": 1,
+  "notParticipating": 34,
+  "present": 0,
+  "sitting": 2,
+  "sittingDay": 1,
+  "term": 10,
+  "title": "Pkt. 2 Sprawozdanie Komisji o rządowym projekcie ustawy o szczególnych rozwiązaniach służących realizacji ustawy budżetowej na rok 2024 (druki nr 142, 143 i 143-A)",
+  "topic": "poprawki nr 1 i 4",
+  "totalVoted": 423,
+  "votingNumber": 5,
+  "yes": 408
+ }
+]

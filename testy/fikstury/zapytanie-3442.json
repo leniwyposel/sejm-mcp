@@ -1,0 +1,80 @@
+{
+ "lastModified": "2026-06-03T22:00:21",
+ "num": 3442,
+ "receiptDate": "2026-04-29",
+ "term": 10,
+ "title": "Zapytanie w sprawie wydatkowania rezerwy prezesa Rady Ministrów (rezerwy ogólnej budżetu państwa) w latach 2024, 2025 i 2026",
+ "answerDelayedDays": 0,
+ "from": [
+  "165"
+ ],
+ "recipientDetails": [
+  {
+   "answerDelayedDays": 0,
+   "name": "minister finansów i gospodarki",
+   "sent": "2026-05-06"
+  },
+  {
+   "answerDelayedDays": 0,
+   "name": "minister spraw wewnętrznych i administracji",
+   "sent": "2026-05-06"
+  },
+  {
+   "answerDelayedDays": 0,
+   "name": "minister funduszy i polityki regionalnej",
+   "sent": "2026-05-06"
+  },
+  {
+   "answerDelayedDays": 0,
+   "name": "minister - członek Rady Ministrów, szef Kancelarii Prezesa Rady Ministrów",
+   "sent": "2026-05-06"
+  }
+ ],
+ "replies": [
+  {
+   "from": "Sekretarz stanu Wiesław Szczepański",
+   "key": "DU9G3H",
+   "lastModified": "2026-05-20T13:56:05",
+   "onlyAttachment": false,
+   "prolongation": false,
+   "receiptDate": "2026-05-20"
+  },
+  {
+   "attachments": [
+    {
+     "URL": "https://api.sejm.gov.pl/sejm/term10/interpellations/attachment/ATTDUJHZQ/z03442-o2.pdf",
+     "lastModified": "2026-05-29T22:00:08",
+     "name": "z03442-o2.pdf"
+    }
+   ],
+   "from": "Minister Katarzyna Pełczyńska-Nałęcz",
+   "key": "DUJHZQ",
+   "lastModified": "2026-05-29T22:00:08",
+   "onlyAttachment": true,
+   "prolongation": false,
+   "receiptDate": "2026-05-27"
+  },
+  {
+   "attachments": [
+    {
+     "URL": "https://api.sejm.gov.pl/sejm/term10/interpellations/attachment/ATTDUPHWB/z03442-o3.pdf",
+     "lastModified": "2026-06-03T22:00:21",
+     "name": "z03442-o3.pdf"
+    }
+   ],
+   "from": "Sekretarz stanu Jakub Stefaniak",
+   "key": "DUPHWB",
+   "lastModified": "2026-06-03T22:00:21",
+   "onlyAttachment": true,
+   "prolongation": false,
+   "receiptDate": "2026-06-02"
+  }
+ ],
+ "sentDate": "2026-05-06",
+ "to": [
+  "minister - członek Rady Ministrów, szef Kancelarii Prezesa Rady Ministrów",
+  "minister finansów i gospodarki",
+  "minister funduszy i polityki regionalnej",
+  "minister spraw wewnętrznych i administracji"
+ ]
+}

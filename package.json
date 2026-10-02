@@ -1,0 +1,79 @@
+{
+  "name": "sejm-mcp",
+  "version": "0.3.0",
+  "description": "Serwer MCP do publicznych API Sejmu RP: posłowie, głosowania, interpelacje, procesy legislacyjne i akty prawne (ELI). Działa lokalnie, rozmawia wyłącznie z api.sejm.gov.pl.",
+  "mcpName": "io.github.leniwyposel/sejm-mcp",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "Leniwy Poseł",
+    "url": "https://github.com/leniwyposel"
+  },
+  "type": "module",
+  "bin": {
+    "sejm-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "NOTICE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "akty-prawne",
+    "api.sejm.gov.pl",
+    "civic-tech",
+    "dziennik-ustaw",
+    "eli",
+    "glosowania",
+    "interpelacje",
+    "legislacja",
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "open-data",
+    "parlament",
+    "poland",
+    "polish-parliament",
+    "polska",
+    "poslowie",
+    "sejm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leniwyposel/sejm-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leniwyposel/sejm-mcp/issues"
+  },
+  "homepage": "https://github.com/leniwyposel/sejm-mcp#readme",
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json && node skrypty/kopiuj-silnik-ocr.mjs && chmod +x dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:na-zywo": "SEJM_MCP_NA_ZYWO=1 vitest run testy/na-zywo.test.ts",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build",
+    "mcpb": "node skrypty/pakuj-mcpb.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.1.0",
+    "unpdf": "1.8.1",
+    "word-extractor": "1.0.4",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@anthropic-ai/mcpb": "2.1.2",
+    "@tesseract.js-data/pol": "1.0.0",
+    "@types/node": "^22",
+    "pdfjs-dist": "6.3.289",
+    "tesseract.js-core": "7.0.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

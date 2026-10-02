@@ -1,0 +1,16 @@
+{
+  "name": "sejm-mcp",
+  "owner": {
+    "name": "Leniwy Poseł"
+  },
+  "metadata": {
+    "description": "Sejm RP i polskie prawo w Claude Code: serwer sejm-mcp (api.sejm.gov.pl, ELI) ze skillem odpowiadania."
+  },
+  "plugins": [
+    {
+      "name": "sejm",
+      "source": "./plugin",
+      "description": "Serwer MCP do API Sejmu RP i ELI z instrukcją odpowiadania."
+    }
+  ]
+}

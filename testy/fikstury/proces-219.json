@@ -1,0 +1,242 @@
+{
+ "UE": "NO",
+ "changeDate": "2024-07-12T14:57:02",
+ "closureDate": "2024-07-12",
+ "description": "projekt dotyczy przywrócenia przepisom regulującym wybór sędziów do KRS treści zgodnej z Konstytucją oraz usunięcia negatywnych konsekwencji wadliwego rozwiązania obowiązującego od 2018 r.; dostosowania przepisów ustawowych do standardów określonych w orzeczeniach Trybunału Sprawiedliwości UE, Europejskiego Trybunału Praw Człowieka oraz w orzeczeniach Sądu Najwyższego i Naczelnego Sądu Administracyjnego dotyczących gwarancji odrębności i niezależności władzy sądowniczej od innych władz państwowych, w tym gwarancji niezależności KRS od organów władzy ustawodawczej oraz władzy wykonawczej w procedurze powoływania sędziów",
+ "documentDate": "2024-02-20",
+ "documentType": "projekt ustawy",
+ "documentTypeEnum": "BILL",
+ "legislativeCommittee": false,
+ "links": [],
+ "number": "219",
+ "passed": true,
+ "principleOfSubsidiarity": false,
+ "processStartDate": "2024-02-20",
+ "rclLink": "https://legislacja.rcl.gov.pl/getIdFromLegislacja?number=RM-0610-7-24",
+ "rclNum": "RM-0610-7-24",
+ "shortenProcedure": false,
+ "stages": [
+  {
+   "date": "2024-02-20",
+   "stageName": "Projekt wpłynął do Sejmu",
+   "printNumber": "219",
+   "stageType": "Start"
+  },
+  {
+   "children": [
+    {
+     "date": "2024-02-22",
+     "stageName": "Skierowanie",
+     "committeeCode": "Sejm",
+     "stageType": "Referral",
+     "type": "NORMAL"
+    }
+   ],
+   "date": "2024-02-22",
+   "stageName": "Skierowano do I czytania na posiedzeniu Sejmu",
+   "stageType": "ReadingReferral"
+  },
+  {
+   "children": [
+    {
+     "date": "2024-03-07",
+     "stageName": "Skierowanie",
+     "committeeCode": "SPC",
+     "stageType": "Referral",
+     "type": "NORMAL"
+    },
+    {
+     "date": "2024-03-07",
+     "stageName": "Głosowanie",
+     "stageType": "Voting",
+     "voting": {
+      "abstain": 0,
+      "date": "2024-03-07T21:16:47",
+      "description": "wniosek o odrzucenie projektu ustawy w pierwszym czytaniu",
+      "kind": "ELECTRONIC",
+      "links": [
+       {
+        "href": "https://api.sejm.gov.pl/sejm/term10/votings/7/12/pdf",
+        "rel": "pdf"
+       }
+      ],
+      "majorityType": "SIMPLE_MAJORITY",
+      "majorityVotes": 243,
+      "no": 242,
+      "notParticipating": 16,
+      "present": 0,
+      "sitting": 7,
+      "sittingDay": 2,
+      "term": 10,
+      "title": "Pkt. 2 Pierwsze czytanie rządowego projektu ustawy o zmianie ustawy o Krajowej Radzie Sądownictwa (druk nr 219)",
+      "topic": "wniosek o odrzucenie projektu w pierwszym czytaniu.",
+      "totalVoted": 443,
+      "votingNumber": 12,
+      "yes": 201
+     }
+    }
+   ],
+   "date": "2024-03-07",
+   "stageName": "I czytanie na posiedzeniu Sejmu",
+   "sittingNum": 7,
+   "stageType": "SejmReading"
+  },
+  {
+   "children": [
+    {
+     "date": "2024-03-26",
+     "stageName": "Wysłuchanie publiczne",
+     "stageType": "PublicHearing"
+    },
+    {
+     "date": "2024-04-09",
+     "stageName": "Sprawozdanie komisji",
+     "minorityMotions": 1,
+     "printNumber": "280",
+     "proposal": "załączony projekt ustawy",
+     "rapporteurID": "365",
+     "rapporteurName": "Michał Szczerba",
+     "reportFile": "https://api.sejm.gov.pl/sejm/term10/prints/280/280.pdf",
+     "stageType": "CommitteeReport",
+     "subCommittee": false
+    }
+   ],
+   "date": "2024-03-26",
+   "stageName": "Praca w komisjach po I czytaniu",
+   "stageType": "CommitteeWork"
+  },
+  {
+   "children": [
+    {
+     "date": "2024-04-11",
+     "stageName": "Skierowanie",
+     "committeeCode": "SPC",
+     "stageType": "Referral",
+     "type": "NORMAL"
+    }
+   ],
+   "date": "2024-04-10",
+   "stageName": "II czytanie na posiedzeniu Sejmu",
+   "comment": "wniosek o odrzucenie, poprawki",
+   "decision": "skierowano ponownie do komisji w celu przedstawienia sprawozdania",
+   "sittingNum": 9,
+   "stageType": "SejmReading"
+  },
+  {
+   "children": [
+    {
+     "date": "2024-04-11",
+     "stageName": "Sprawozdanie komisji",
+     "minorityMotions": 0,
+     "printNumber": "280-A",
+     "proposal": "odrzucić poprawki",
+     "rapporteurID": "365",
+     "rapporteurName": "Michał Szczerba",
+     "reportFile": "https://api.sejm.gov.pl/sejm/term10/prints/280-A/280-A.pdf",
+     "stageType": "CommitteeReport",
+     "subCommittee": false
+    }
+   ],
+   "date": "2024-04-11",
+   "stageName": "Praca w komisjach po II czytaniu",
+   "stageType": "CommitteeWork"
+  },
+  {
+   "children": [
+    {
+     "date": "2024-04-12",
+     "stageName": "Głosowanie",
+     "stageType": "Voting",
+     "voting": {
+      "abstain": 0,
+      "date": "2024-04-12T14:22:26",
+      "description": "całość projektu ustawy",
+      "kind": "ELECTRONIC",
+      "links": [
+       {
+        "href": "https://api.sejm.gov.pl/sejm/term10/votings/9/15/pdf",
+        "rel": "pdf"
+       }
+      ],
+      "majorityType": "SIMPLE_MAJORITY",
+      "majorityVotes": 200,
+      "no": 199,
+      "notParticipating": 14,
+      "present": 0,
+      "sitting": 9,
+      "sittingDay": 3,
+      "term": 10,
+      "title": "Pkt. 1 Sprawozdanie Komisji o rządowym projekcie ustawy o zmianie ustawy o Krajowej Radzie Sądownictwa (druki nr 219, 280 i 280-A)",
+      "topic": "głosowanie nad całością projektu.",
+      "totalVoted": 443,
+      "votingNumber": 15,
+      "yes": 244
+     }
+    }
+   ],
+   "date": "2024-04-12",
+   "stageName": "III czytanie na posiedzeniu Sejmu",
+   "comment": "wniosek o odrzucenie, wniosek mniejszości, poprawki",
+   "decision": "uchwalono",
+   "sittingNum": 9,
+   "stageType": "SejmReading",
+   "textAfter3": "https://api.sejm.gov.pl/sejm/term10/processes/219/attachment/219_u3.pdf"
+  },
+  {
+   "children": [
+    {
+     "date": "2024-05-09",
+     "stageName": "Skierowanie",
+     "committeeCode": "SPC",
+     "stageType": "Referral",
+     "type": "NORMAL"
+    }
+   ],
+   "date": "2024-05-09",
+   "stageName": "Stanowisko Senatu",
+   "position": "wniósł poprawki",
+   "printNumber": "378",
+   "stageType": "SenatePosition"
+  },
+  {
+   "children": [
+    {
+     "date": "2024-07-11",
+     "stageName": "Sprawozdanie komisji",
+     "minorityMotions": 0,
+     "printNumber": "510",
+     "proposal": "przyjąć część poprawek",
+     "rapporteurID": "382",
+     "rapporteurName": "Paweł Śliz",
+     "reportFile": "https://api.sejm.gov.pl/sejm/term10/prints/510/510.pdf",
+     "stageType": "CommitteeReport",
+     "subCommittee": false
+    }
+   ],
+   "date": "2024-07-11",
+   "stageName": "Praca w komisjach nad stanowiskiem Senatu",
+   "stageType": "CommitteeWork"
+  },
+  {
+   "date": "2024-07-12",
+   "stageName": "Rozpatrywanie na forum Sejmu stanowiska Senatu",
+   "decision": "przyjęto część poprawek",
+   "sittingNum": 15,
+   "stageType": "SenatePositionConsideration"
+  },
+  {
+   "date": "2024-07-15",
+   "stageName": "Ustawę przekazano Prezydentowi do podpisu",
+   "stageType": "ToPresident"
+  },
+  {
+   "stageName": "Uchwalono",
+   "stageType": "End"
+  }
+ ],
+ "term": 10,
+ "title": "Rządowy projekt ustawy o zmianie ustawy o Krajowej Radzie Sądownictwa",
+ "titleFinal": "o zmianie ustawy o Krajowej Radzie Sądownictwa",
+ "urgencyStatus": "NORMAL",
+ "webGeneratedDate": "2024-07-12T14:57:17"
+}

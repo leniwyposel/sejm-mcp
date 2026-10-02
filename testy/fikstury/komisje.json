@@ -1,0 +1,1011 @@
+[
+ {
+  "appointmentDate": "2023-11-21",
+  "code": "ASW",
+  "compositionDate": "2023-11-21",
+  "members": [
+   {
+    "club": "PiS",
+    "firstName": "Anna",
+    "id": 329,
+    "joinDate": "2023-12-19",
+    "lastFirstName": "Schmidt Anna",
+    "lastName": "Schmidt"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Paweł",
+    "function": "zastępca przewodniczącego",
+    "id": 136,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Hreniak Paweł",
+    "lastName": "Hreniak"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Edward",
+    "id": 333,
+    "joinDate": "2023-12-19",
+    "lastFirstName": "Siarka Edward",
+    "lastName": "Siarka"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Marek",
+    "id": 498,
+    "joinDate": "2025-09-09",
+    "lastFirstName": "Subocz Marek",
+    "lastName": "Subocz"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Jarosław",
+    "id": 452,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Zieliński Jarosław",
+    "lastName": "Zieliński"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Grzegorz",
+    "id": 436,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Woźniak Grzegorz",
+    "lastName": "Woźniak"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Szymon",
+    "id": 298,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Pogoda Szymon",
+    "lastName": "Pogoda"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Ewa",
+    "id": 210,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Leniart Ewa",
+    "lastName": "Leniart"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Piotr",
+    "id": 149,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Kaleta Piotr",
+    "lastName": "Kaleta"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Mariusz",
+    "id": 109,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Gosek Mariusz",
+    "lastName": "Gosek"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Władysław",
+    "id": 64,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Dajczak Władysław",
+    "lastName": "Dajczak"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Lidia",
+    "id": 468,
+    "joinDate": "2024-06-26",
+    "lastFirstName": "Czechak Lidia",
+    "lastName": "Czechak"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Filip",
+    "id": 147,
+    "joinDate": "2024-04-12",
+    "lastFirstName": "Kaczyński Filip",
+    "lastName": "Kaczyński"
+   },
+   {
+    "club": "Konfederacja",
+    "firstName": "Krzysztof",
+    "id": 397,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Tuduj Krzysztof",
+    "lastName": "Tuduj"
+   },
+   {
+    "club": "KO",
+    "firstName": "Joanna",
+    "id": 82,
+    "joinDate": "2025-09-12",
+    "lastFirstName": "Frydrych Joanna",
+    "lastName": "Frydrych"
+   },
+   {
+    "club": "KO",
+    "firstName": "Konrad",
+    "function": "zastępca przewodniczącego",
+    "id": 83,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Frysztak Konrad",
+    "lastName": "Frysztak"
+   },
+   {
+    "club": "KO",
+    "firstName": "Katarzyna",
+    "id": 291,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Piekarska Katarzyna",
+    "lastName": "Piekarska"
+   },
+   {
+    "club": "KO",
+    "firstName": "Zofia",
+    "id": 60,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Czernow Zofia",
+    "lastName": "Czernow"
+   },
+   {
+    "club": "KO",
+    "firstName": "Maria",
+    "function": "przewodniczący",
+    "id": 140,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Janyska Maria",
+    "lastName": "Janyska"
+   },
+   {
+    "club": "KO",
+    "firstName": "Małgorzata",
+    "function": "zastępca przewodniczącego",
+    "id": 287,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Pępek Małgorzata",
+    "lastName": "Pępek"
+   },
+   {
+    "club": "KO",
+    "firstName": "Artur",
+    "id": 220,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Łącki Artur",
+    "lastName": "Łącki"
+   },
+   {
+    "club": "KO",
+    "firstName": "Łukasz",
+    "id": 379,
+    "joinDate": "2023-12-20",
+    "lastFirstName": "Ściebiorowski Łukasz",
+    "lastName": "Ściebiorowski"
+   },
+   {
+    "club": "KO",
+    "firstName": "Krystian",
+    "id": 223,
+    "joinDate": "2023-12-20",
+    "lastFirstName": "Łuczak Krystian",
+    "lastName": "Łuczak"
+   },
+   {
+    "club": "KO",
+    "firstName": "Piotr",
+    "id": 206,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Lachowicz Piotr",
+    "lastName": "Lachowicz"
+   },
+   {
+    "club": "KO",
+    "firstName": "Mateusz",
+    "id": 21,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Bochenek Mateusz",
+    "lastName": "Bochenek"
+   },
+   {
+    "club": "KO",
+    "firstName": "Dorota",
+    "id": 233,
+    "joinDate": "2025-11-05",
+    "lastFirstName": "Marek Dorota",
+    "lastName": "Marek"
+   },
+   {
+    "club": "KO",
+    "firstName": "Mariusz",
+    "id": 482,
+    "joinDate": "2026-09-18",
+    "lastFirstName": "Popielarz Mariusz",
+    "lastName": "Popielarz"
+   },
+   {
+    "club": "Lewica",
+    "firstName": "Tadeusz",
+    "id": 389,
+    "joinDate": "2023-12-19",
+    "lastFirstName": "Tomaszewski Tadeusz",
+    "lastName": "Tomaszewski"
+   },
+   {
+    "club": "Lewica",
+    "firstName": "Arkadiusz",
+    "id": 339,
+    "joinDate": "2025-01-24",
+    "lastFirstName": "Sikora Arkadiusz",
+    "lastName": "Sikora"
+   },
+   {
+    "club": "Polska2050",
+    "firstName": "Bartosz",
+    "function": "zastępca przewodniczącego",
+    "id": 312,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Romowicz Bartosz",
+    "lastName": "Romowicz"
+   },
+   {
+    "club": "PSL-TD",
+    "firstName": "Magdalena",
+    "id": 354,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Sroka Magdalena",
+    "lastName": "Sroka"
+   },
+   {
+    "club": "PSL-TD",
+    "firstName": "Urszula",
+    "id": 267,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Nowogórska Urszula",
+    "lastName": "Nowogórska"
+   },
+   {
+    "club": "PSL-TD",
+    "firstName": "Zbigniew",
+    "function": "zastępca przewodniczącego",
+    "id": 351,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Sosnowski Zbigniew",
+    "lastName": "Sosnowski"
+   },
+   {
+    "club": "niez.",
+    "firstName": "Tomasz",
+    "id": 455,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Zimoch Tomasz",
+    "lastName": "Zimoch"
+   },
+   {
+    "club": "Konfederacja_KP",
+    "firstName": "Włodzimierz",
+    "id": 340,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Skalik Włodzimierz",
+    "lastName": "Skalik"
+   },
+   {
+    "club": "Centrum",
+    "firstName": "Marcin",
+    "id": 341,
+    "joinDate": "2026-05-27",
+    "lastFirstName": "Skonieczka Marcin",
+    "lastName": "Skonieczka"
+   },
+   {
+    "club": "RozwojPlus",
+    "firstName": "Sylwester",
+    "id": 398,
+    "joinDate": "2025-09-09",
+    "lastFirstName": "Tułajew Sylwester",
+    "lastName": "Tułajew"
+   },
+   {
+    "club": "RozwojPlus",
+    "firstName": "Monika",
+    "id": 463,
+    "joinDate": "2024-04-12",
+    "lastFirstName": "Pawłowska Monika",
+    "lastName": "Pawłowska"
+   },
+   {
+    "club": "RozwojPlus",
+    "firstName": "Anna",
+    "id": 461,
+    "joinDate": "2026-09-18",
+    "lastFirstName": "Baluch Anna",
+    "lastName": "Baluch"
+   }
+  ],
+  "name": "Komisja Administracji i Spraw Wewnętrznych",
+  "nameGenitive": "Komisji Administracji i Spraw Wewnętrznych",
+  "phone": "(22) 694-18-44, 694-14-93, 694-19-38, FAX 694-28-53",
+  "scope": "Do zakresu działania Komisji należą sprawy administracji państwowej oraz bezpieczeństwa, ładu i porządku publicznego.",
+  "subCommittees": [
+   "ASW01N",
+   "ASW01S",
+   "ASW02N",
+   "ASW02S",
+   "ASW03N",
+   "ASW03S",
+   "ASW04S"
+  ],
+  "type": "STANDING"
+ },
+ {
+  "appointmentDate": "2025-03-07",
+  "code": "DER",
+  "compositionDate": "2025-03-20",
+  "members": [
+   {
+    "club": "PiS",
+    "firstName": "Bartłomiej",
+    "function": "zastępca przewodniczącego",
+    "id": 440,
+    "joinDate": "2025-03-20",
+    "lastFirstName": "Wróblewski Bartłomiej",
+    "lastName": "Wróblewski"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Marek",
+    "id": 416,
+    "joinDate": "2025-03-20",
+    "lastFirstName": "Wesoły Marek",
+    "lastName": "Wesoły"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Grzegorz",
+    "id": 93,
+    "joinDate": "2025-03-20",
+    "lastFirstName": "Gaża Grzegorz",
+    "lastName": "Gaża"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Patryk",
+    "id": 418,
+    "joinDate": "2025-03-20",
+    "lastFirstName": "Wicher Patryk",
+    "lastName": "Wicher"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Andrzej",
+    "id": 92,
+    "joinDate": "2025-03-20",
+    "lastFirstName": "Gawron Andrzej",
+    "lastName": "Gawron"
+   },
+   {
+    "club": "Konfederacja",
+    "firstName": "Michał",
+    "function": "zastępca przewodniczącego",
+    "id": 490,
+    "joinDate": "2025-10-09",
+    "lastFirstName": "Połuboczek Michał",
+    "lastName": "Połuboczek"
+   },
+   {
+    "club": "KO",
+    "firstName": "Weronika",
+    "id": 345,
+    "joinDate": "2025-03-20",
+    "lastFirstName": "Smarduch Weronika",
+    "lastName": "Smarduch"
+   },
+   {
+    "club": "KO",
+    "firstName": "Łukasz",
+    "id": 135,
+    "joinDate": "2025-04-24",
+    "lastFirstName": "Horbatowski Łukasz",
+    "lastName": "Horbatowski"
+   },
+   {
+    "club": "KO",
+    "firstName": "Marek",
+    "id": 41,
+    "joinDate": "2025-06-25",
+    "lastFirstName": "Chmielewski Marek",
+    "lastName": "Chmielewski"
+   },
+   {
+    "club": "KO",
+    "firstName": "Aleksandra",
+    "id": 491,
+    "joinDate": "2025-09-12",
+    "lastFirstName": "Kot Aleksandra",
+    "lastName": "Kot"
+   },
+   {
+    "club": "KO",
+    "firstName": "Katarzyna",
+    "id": 161,
+    "joinDate": "2025-04-04",
+    "lastFirstName": "Kierzek-Koperska Katarzyna",
+    "lastName": "Kierzek-Koperska"
+   },
+   {
+    "club": "KO",
+    "firstName": "Waldemar",
+    "function": "zastępca przewodniczącego",
+    "id": 344,
+    "joinDate": "2025-03-20",
+    "lastFirstName": "Sługocki Waldemar",
+    "lastName": "Sługocki"
+   },
+   {
+    "club": "PSL-TD",
+    "firstName": "Jacek",
+    "function": "zastępca przewodniczącego",
+    "id": 390,
+    "joinDate": "2025-03-20",
+    "lastFirstName": "Tomczak Jacek",
+    "lastName": "Tomczak"
+   },
+   {
+    "club": "niez.",
+    "firstName": "Janusz",
+    "id": 180,
+    "joinDate": "2025-03-20",
+    "lastFirstName": "Kowalski Janusz",
+    "lastName": "Kowalski"
+   },
+   {
+    "club": "Centrum",
+    "firstName": "Ryszard",
+    "function": "przewodniczący",
+    "id": 286,
+    "joinDate": "2025-03-20",
+    "lastFirstName": "Petru Ryszard",
+    "lastName": "Petru"
+   }
+  ],
+  "name": "Komisja do Spraw Deregulacji",
+  "nameGenitive": "Komisji do Spraw Deregulacji",
+  "phone": "(22) 694-28-51, 694-28-53",
+  "scope": "Do zakresu działania Komisji należą sprawy związane z ograniczeniem biurokracji oraz przeglądem i analizą przepisów regulujących kwestie społeczne, ekonomiczne i gospodarcze w celu eliminacji przepisów niejasnych, niespójnych, nieskutecznych, zbędnych lub nadmiernie regulujących, w szczególności zmierzające do uproszczenia prowadzenia działalności gospodarczej, w tym jednoosobowej działalności gospodarczej, mikroprzedsiębiorców, małych i średnich przedsiębiorców",
+  "type": "STANDING"
+ },
+ {
+  "appointmentDate": "2023-11-21",
+  "code": "ODK",
+  "compositionDate": "2023-11-21",
+  "members": [
+   {
+    "club": "PiS",
+    "firstName": "Marek",
+    "id": 9,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Ast Marek",
+    "lastName": "Ast"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Paweł",
+    "id": 373,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Szrot Paweł",
+    "lastName": "Szrot"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Piotr",
+    "function": "zastępca przewodniczącego",
+    "id": 189,
+    "joinDate": "2024-04-26",
+    "lastFirstName": "Król Piotr",
+    "lastName": "Król"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Iwona",
+    "function": "zastępca przewodniczącego",
+    "id": 7,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Arent Iwona",
+    "lastName": "Arent"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Michał",
+    "id": 495,
+    "joinDate": "2025-09-09",
+    "lastFirstName": "Jach Michał",
+    "lastName": "Jach"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Joanna",
+    "id": 213,
+    "joinDate": "2025-05-09",
+    "lastFirstName": "Lichocka Joanna",
+    "lastName": "Lichocka"
+   },
+   {
+    "club": "Konfederacja",
+    "firstName": "Karina",
+    "id": 32,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Bosak Karina",
+    "lastName": "Bosak"
+   },
+   {
+    "club": "KO",
+    "firstName": "Krzysztof",
+    "id": 479,
+    "joinDate": "2025-01-24",
+    "lastFirstName": "Mieszkowski Krzysztof",
+    "lastName": "Mieszkowski"
+   },
+   {
+    "club": "KO",
+    "firstName": "Jerzy",
+    "id": 478,
+    "joinDate": "2024-07-12",
+    "lastFirstName": "Meysztowicz Jerzy",
+    "lastName": "Meysztowicz"
+   },
+   {
+    "club": "KO",
+    "firstName": "Aleksandra",
+    "id": 491,
+    "joinDate": "2024-07-12",
+    "lastFirstName": "Kot Aleksandra",
+    "lastName": "Kot"
+   },
+   {
+    "club": "KO",
+    "firstName": "Krzysztof",
+    "id": 481,
+    "joinDate": "2024-07-12",
+    "lastFirstName": "Piątkowski Krzysztof",
+    "lastName": "Piątkowski"
+   },
+   {
+    "club": "KO",
+    "firstName": "Patryk",
+    "function": "zastępca przewodniczącego",
+    "id": 84,
+    "joinDate": "2023-12-20",
+    "lastFirstName": "Gabriel Patryk",
+    "lastName": "Gabriel"
+   },
+   {
+    "club": "KO",
+    "firstName": "Zdzisław",
+    "function": "przewodniczący",
+    "id": 91,
+    "joinDate": "2023-12-20",
+    "lastFirstName": "Gawlik Zdzisław",
+    "lastName": "Gawlik"
+   },
+   {
+    "club": "KO",
+    "firstName": "Marek",
+    "id": 41,
+    "joinDate": "2023-12-20",
+    "lastFirstName": "Chmielewski Marek",
+    "lastName": "Chmielewski"
+   },
+   {
+    "club": "KO",
+    "firstName": "Maciej",
+    "id": 487,
+    "joinDate": "2024-06-26",
+    "lastFirstName": "Tomczykiewicz Maciej",
+    "lastName": "Tomczykiewicz"
+   },
+   {
+    "club": "KO",
+    "firstName": "Bożena",
+    "id": 489,
+    "joinDate": "2025-01-09",
+    "lastFirstName": "Lisowska Bożena",
+    "lastName": "Lisowska"
+   },
+   {
+    "club": "Lewica",
+    "firstName": "Tomasz",
+    "id": 395,
+    "joinDate": "2024-04-10",
+    "lastFirstName": "Trela Tomasz",
+    "lastName": "Trela"
+   },
+   {
+    "club": "PSL-TD",
+    "firstName": "Marek",
+    "id": 326,
+    "joinDate": "2023-12-20",
+    "lastFirstName": "Sawicki Marek",
+    "lastName": "Sawicki"
+   },
+   {
+    "club": "Centrum",
+    "firstName": "Ryszard",
+    "function": "zastępca przewodniczącego",
+    "id": 286,
+    "joinDate": "2024-04-10",
+    "lastFirstName": "Petru Ryszard",
+    "lastName": "Petru"
+   },
+   {
+    "club": "RozwojPlus",
+    "firstName": "Krzysztof",
+    "id": 366,
+    "joinDate": "2024-03-07",
+    "lastFirstName": "Szczucki Krzysztof",
+    "lastName": "Szczucki"
+   },
+   {
+    "club": "RozwojPlus",
+    "firstName": "Krzysztof",
+    "id": 197,
+    "joinDate": "2023-12-19",
+    "lastFirstName": "Kubów Krzysztof",
+    "lastName": "Kubów"
+   }
+  ],
+  "name": "Komisja Odpowiedzialności Konstytucyjnej",
+  "nameGenitive": "Komisji Odpowiedzialności Konstytucyjnej",
+  "phone": "(22) 694-17-54, 694-17-67",
+  "scope": "Do zakresu działania Komisji należy prowadzenie postępowania w sprawie badania zasadności skierowanych do niej wniosków wstępnych o pociągnięcie do odpowiedzialności konstytucyjnej, podejmowanie uchwał w tym przedmiocie oraz przedstawianie Sejmowi sprawozdań z przeprowadzonych prac. ",
+  "type": "STANDING"
+ },
+ {
+  "appointmentDate": "2023-11-21",
+  "code": "ZDR",
+  "compositionDate": "2023-11-21",
+  "members": [
+   {
+    "club": "PiS",
+    "firstName": "Grzegorz",
+    "id": 216,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Lorek Grzegorz",
+    "lastName": "Lorek"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Katarzyna",
+    "function": "zastępca przewodniczącego",
+    "id": 353,
+    "joinDate": "2023-11-29",
+    "lastFirstName": "Sójka Katarzyna",
+    "lastName": "Sójka"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Józefa",
+    "id": 367,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Szczurek-Żelazko Józefa",
+    "lastName": "Szczurek-Żelazko"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Czesław",
+    "id": 130,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Hoc Czesław",
+    "lastName": "Hoc"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Jacek",
+    "id": 24,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Bogucki Jacek",
+    "lastName": "Bogucki"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Patryk",
+    "id": 418,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Wicher Patryk",
+    "lastName": "Wicher"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Ewa",
+    "id": 210,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Leniart Ewa",
+    "lastName": "Leniart"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Agnieszka",
+    "id": 350,
+    "joinDate": "2025-10-17",
+    "lastFirstName": "Soin Agnieszka",
+    "lastName": "Soin"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Jerzy",
+    "id": 299,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Polaczek Jerzy",
+    "lastName": "Polaczek"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Bolesław",
+    "id": 288,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Piecha Bolesław",
+    "lastName": "Piecha"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Tadeusz",
+    "id": 46,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Chrzan Tadeusz",
+    "lastName": "Chrzan"
+   },
+   {
+    "club": "PiS",
+    "firstName": "Anna",
+    "id": 65,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Dąbrowska-Banaszek Anna",
+    "lastName": "Dąbrowska-Banaszek"
+   },
+   {
+    "club": "Konfederacja",
+    "firstName": "Witold",
+    "id": 399,
+    "joinDate": "2025-03-20",
+    "lastFirstName": "Tumanowicz Witold",
+    "lastName": "Tumanowicz"
+   },
+   {
+    "club": "KO",
+    "firstName": "Marta",
+    "function": "przewodniczący",
+    "id": 103,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Golbik Marta",
+    "lastName": "Golbik"
+   },
+   {
+    "club": "KO",
+    "firstName": "Elżbieta",
+    "id": 300,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Polak Elżbieta",
+    "lastName": "Polak"
+   },
+   {
+    "club": "KO",
+    "firstName": "Adrian",
+    "id": 426,
+    "joinDate": "2026-09-18",
+    "lastFirstName": "Witczak Adrian",
+    "lastName": "Witczak"
+   },
+   {
+    "club": "KO",
+    "firstName": "Marek",
+    "function": "zastępca przewodniczącego",
+    "id": 132,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Hok Marek",
+    "lastName": "Hok"
+   },
+   {
+    "club": "KO",
+    "firstName": "Elżbieta",
+    "function": "zastępca przewodniczącego",
+    "id": 94,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Gelert Elżbieta",
+    "lastName": "Gelert"
+   },
+   {
+    "club": "KO",
+    "firstName": "Anna",
+    "id": 347,
+    "joinDate": "2025-05-09",
+    "lastFirstName": "Sobolak Anna",
+    "lastName": "Sobolak"
+   },
+   {
+    "club": "KO",
+    "firstName": "Krystyna",
+    "id": 342,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Skowrońska Krystyna",
+    "lastName": "Skowrońska"
+   },
+   {
+    "club": "KO",
+    "firstName": "Grzegorz",
+    "id": 257,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Napieralski Grzegorz",
+    "lastName": "Napieralski"
+   },
+   {
+    "club": "KO",
+    "firstName": "Iwona",
+    "id": 182,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Kozłowska Iwona",
+    "lastName": "Kozłowska"
+   },
+   {
+    "club": "KO",
+    "firstName": "Włodzisław",
+    "id": 98,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Giziński Włodzisław",
+    "lastName": "Giziński"
+   },
+   {
+    "club": "KO",
+    "firstName": "Alicja",
+    "id": 47,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Chybicka Alicja",
+    "lastName": "Chybicka"
+   },
+   {
+    "club": "KO",
+    "firstName": "Krzysztof",
+    "id": 26,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Bojarski Krzysztof",
+    "lastName": "Bojarski"
+   },
+   {
+    "club": "KO",
+    "firstName": "Urszula",
+    "id": 471,
+    "joinDate": "2024-07-12",
+    "lastFirstName": "Koszutska Urszula",
+    "lastName": "Koszutska"
+   },
+   {
+    "club": "KO",
+    "firstName": "Katarzyna",
+    "id": 467,
+    "joinDate": "2024-06-14",
+    "lastFirstName": "Stachowicz Katarzyna",
+    "lastName": "Stachowicz"
+   },
+   {
+    "club": "Lewica",
+    "firstName": "Joanna",
+    "function": "zastępca przewodniczącego",
+    "id": 417,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Wicha Joanna",
+    "lastName": "Wicha"
+   },
+   {
+    "club": "Lewica",
+    "firstName": "Bożena",
+    "id": 499,
+    "joinDate": "2026-05-27",
+    "lastFirstName": "Borowiec Bożena",
+    "lastName": "Borowiec"
+   },
+   {
+    "club": "Polska2050",
+    "firstName": "Wioleta",
+    "function": "zastępca przewodniczącego",
+    "id": 391,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Tomczak Wioleta",
+    "lastName": "Tomczak"
+   },
+   {
+    "club": "PSL-TD",
+    "firstName": "Jolanta",
+    "id": 454,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Zięba-Gzik Jolanta",
+    "lastName": "Zięba-Gzik"
+   },
+   {
+    "club": "PSL-TD",
+    "firstName": "Radosław",
+    "id": 217,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Lubczyk Radosław",
+    "lastName": "Lubczyk"
+   },
+   {
+    "club": "niez.",
+    "firstName": "Joanna",
+    "id": 252,
+    "joinDate": "2025-07-23",
+    "lastFirstName": "Mucha Joanna",
+    "lastName": "Mucha"
+   },
+   {
+    "club": "Razem",
+    "firstName": "Marcelina",
+    "id": 445,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Zawisza Marcelina",
+    "lastName": "Zawisza"
+   },
+   {
+    "club": "Konfederacja_KP",
+    "firstName": "Roman",
+    "id": 81,
+    "joinDate": "2024-12-05",
+    "lastFirstName": "Fritz Roman",
+    "lastName": "Fritz"
+   },
+   {
+    "club": "Centrum",
+    "firstName": "Norbert",
+    "id": 292,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Pietrykowski Norbert",
+    "lastName": "Pietrykowski"
+   },
+   {
+    "club": "RozwojPlus",
+    "firstName": "Paweł",
+    "id": 318,
+    "joinDate": "2026-02-13",
+    "lastFirstName": "Rychlik Paweł",
+    "lastName": "Rychlik"
+   },
+   {
+    "club": "RozwojPlus",
+    "firstName": "Janusz",
+    "id": 51,
+    "joinDate": "2023-11-29",
+    "lastFirstName": "Cieszyński Janusz",
+    "lastName": "Cieszyński"
+   },
+   {
+    "club": "RozwojPlus",
+    "firstName": "Fryderyk",
+    "id": 155,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Kapinos Fryderyk",
+    "lastName": "Kapinos"
+   },
+   {
+    "club": "RozwojPlus",
+    "firstName": "Anna",
+    "id": 205,
+    "joinDate": "2023-11-21",
+    "lastFirstName": "Kwiecień Anna",
+    "lastName": "Kwiecień"
+   }
+  ],
+  "name": "Komisja Zdrowia",
+  "nameGenitive": "Komisji Zdrowia",
+  "phone": "(22) 694-10-20,  694-21-03, 694-18-27",
+  "scope": "Do zakresu działania Komisji należą sprawy ochrony zdrowia.",
+  "subCommittees": [
+   "ZDR01N",
+   "ZDR01S",
+   "ZDR02N",
+   "ZDR02S",
+   "ZDR03N",
+   "ZDR03S",
+   "ZDR04N",
+   "ZDR04S"
+  ],
+  "type": "STANDING"
+ }
+]

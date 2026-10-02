@@ -1,0 +1,23 @@
+sejm-mcp
+Copyright 2026 Leniwy Poseł (https://github.com/leniwyposel)
+
+This product is developed by the team behind Leniwy Poseł (https://leniwyposel.pl)
+and is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Data returned by this software comes from the public APIs of the Chancellery
+of the Sejm of the Republic of Poland (https://api.sejm.gov.pl). This project is
+not affiliated with or endorsed by the Chancellery of the Sejm.
+
+Third-party components bundled in dist/silnik-ocr (OCR of scanned Sejm prints), each under
+the Apache License, Version 2.0 (license texts and details in dist/silnik-ocr):
+- Tesseract OCR 5 compiled to WebAssembly (tesseract.js-core 7.0.0),
+  copyright the Tesseract OCR authors and the tesseract.js authors.
+- tessdata pol.traineddata 4.0.0 best_int (via @tesseract.js-data/pol 1.0.0),
+  copyright the Tesseract OCR authors (Google LLC and contributors).
+- pdf.js (pdfjs-dist 6.3.289), copyright Mozilla Foundation and contributors.
+Runtime dependencies installed from npm (not copied into dist), with their own licences:
+- unpdf 1.8.1 (MIT), which ships a serverless build of pdf.js 6.1.200 (Apache-2.0, Mozilla
+  Foundation and contributors), used to read PDF text layers. That pdf.js version is affected by
+  GHSA-hq66-cqwq-w95j only with enableScripting, which sejm-mcp never enables (see SECURITY.md).
+- word-extractor 1.0.4 (MIT), used to read DOC and DOCX prints.
+- @modelcontextprotocol/server 2.1.0 and zod 4.6.5 (MIT).

@@ -1,0 +1,114 @@
+{
+ "appointmentDate": "2025-01-09",
+ "engName": "Polish-Albanian Parliamentary Group",
+ "id": 532,
+ "members": [
+  {
+   "club": "Polska2050",
+   "id": "312",
+   "membershipStart": "2025-01-09",
+   "name": "Romowicz Bartosz",
+   "senator": false,
+   "type": "chairman"
+  },
+  {
+   "club": "Polska2050",
+   "id": "112",
+   "membershipStart": "2025-01-09",
+   "name": "Górnikiewicz Piotr",
+   "senator": false,
+   "type": "vice_chairman"
+  },
+  {
+   "club": "PiS",
+   "id": "280",
+   "membershipStart": "2025-01-09",
+   "name": "Pamuła Teresa",
+   "senator": false,
+   "type": "vice_chairman"
+  },
+  {
+   "club": "Konfederacja",
+   "id": "80",
+   "membershipEnd": "2026-05-24",
+   "membershipStart": "2025-01-09",
+   "name": "Foltyn Bronisław",
+   "senator": false,
+   "type": "member"
+  },
+  {
+   "club": "Polska2050-TD",
+   "id": "158",
+   "membershipEnd": "2025-02-09",
+   "membershipStart": "2025-01-09",
+   "name": "Kasprzyk Rafał",
+   "senator": false,
+   "type": "member"
+  },
+  {
+   "club": "RozwojPlus",
+   "id": "184",
+   "membershipStart": "2025-03-05",
+   "name": "Krajewski Wiesław",
+   "senator": false,
+   "type": "member"
+  },
+  {
+   "club": "RozwojPlus",
+   "id": "205",
+   "membershipStart": "2025-01-09",
+   "name": "Kwiecień Anna",
+   "senator": false,
+   "type": "member"
+  },
+  {
+   "club": "Polska2050",
+   "id": "219",
+   "membershipStart": "2025-01-09",
+   "name": "Luboński Adam",
+   "senator": false,
+   "type": "member"
+  },
+  {
+   "club": "Lewica",
+   "id": "273",
+   "membershipStart": "2025-08-30",
+   "name": "Olko Dorota",
+   "senator": false,
+   "type": "member"
+  },
+  {
+   "club": "PiS",
+   "id": "348",
+   "membershipStart": "2025-01-09",
+   "name": "Sobolewski Krzysztof",
+   "senator": false,
+   "type": "member"
+  },
+  {
+   "club": "Polska2050",
+   "id": "382",
+   "membershipStart": "2025-01-09",
+   "name": "Śliz Paweł",
+   "senator": false,
+   "type": "member"
+  },
+  {
+   "club": "KO",
+   "id": "429",
+   "membershipStart": "2025-01-09",
+   "name": "Witek Przemysław",
+   "senator": false,
+   "type": "member"
+  },
+  {
+   "club": "Razem",
+   "id": "445",
+   "membershipStart": "2025-01-09",
+   "name": "Zawisza Marcelina",
+   "senator": false,
+   "type": "member"
+  }
+ ],
+ "name": "Polsko-Albańska Grupa Parlamentarna"
+}

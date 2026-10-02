@@ -1,0 +1,61 @@
+{
+  "UE": "NO",
+  "changeDate": "2025-03-18T11:11:01",
+  "closureDate": "2024-12-19",
+  "comments": "W opinii nr 27 z dnia 19-12-2024 r. Komisja Regulaminowa, Spraw Poselskich i Immunitetowych stwierdziła, że oświadczenie Posła Łukasza Mejzy spełnia warunki formalnej poprawności.",
+  "documentDate": "2024-10-01",
+  "documentType": "wniosek (bez druku)",
+  "legislativeCommittee": false,
+  "links": [],
+  "number": "16825-z",
+  "passed": false,
+  "principleOfSubsidiarity": false,
+  "shortenProcedure": false,
+  "stages": [
+    {
+      "children": [
+        {
+          "date": "2024-10-25",
+          "stageName": "Skierowanie",
+          "committeeCode": "RSP",
+          "stageType": "Referral",
+          "type": "NORMAL"
+        }
+      ],
+      "date": "2024-10-25",
+      "stageName": "Skierowano do I czytania w komisjach",
+      "stageType": "ReadingReferral"
+    },
+    {
+      "children": [
+        {
+          "date": "2024-11-27",
+          "stageName": "Sprawozdanie komisji",
+          "minorityMotions": 0,
+          "printNumber": "862",
+          "proposal": "przyjąć",
+          "rapporteurID": "474",
+          "rapporteurName": "Maria Joanna Koźlakiewicz",
+          "reportFile": "https://api.sejm.gov.pl/sejm/term10/prints/862/862.pdf",
+          "stageType": "CommitteeReport",
+          "subCommittee": false
+        }
+      ],
+      "date": "2024-11-27",
+      "stageName": "Rozpatrywanie w komisjach",
+      "stageType": "CommitteeWork"
+    },
+    {
+      "stageName": "Projekt wpłynął do Sejmu",
+      "printNumber": "16825-z",
+      "stageType": "Start"
+    },
+    {
+      "stageName": "Rozpatrywanie na forum Sejmu"
+    }
+  ],
+  "term": 10,
+  "title": "Wniosek Prokuratora Okręgowego w Zielonej Górze z dnia 1 października 2024 r. o wyrażenie zgody przez Sejm na pociągnięcie do odpowiedzialności karnej posła Łukasza Mejzy",
+  "urgencyStatus": "NORMAL",
+  "webGeneratedDate": "2025-03-18T11:26:15"
+}

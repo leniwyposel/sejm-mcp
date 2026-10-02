@@ -1,0 +1,16 @@
+Silnik OCR w sejm-mcp ({OPIS})
+
+This directory contains third-party components, redistributed unmodified under the
+Apache License, Version 2.0:
+
+- tesseract.js-core 7.0.0 (file tesseract-core-simd-lstm.wasm.js): Tesseract OCR 5 compiled
+  to WebAssembly. Copyright the Tesseract OCR authors and the tesseract.js authors.
+  https://github.com/naptha/tesseract.js-core, https://github.com/tesseract-ocr/tesseract
+  License: LICENSE-tesseract.js-core
+- tessdata pol.traineddata 4.0.0 best_int (file pol.traineddata.gz), via the npm package
+  @tesseract.js-data/pol 1.0.0. Copyright the Tesseract OCR authors (Google LLC and contributors).
+  https://github.com/tesseract-ocr/tessdata
+  License: LICENSE-tessdata
+- pdf.js / pdfjs-dist 6.3.289 (files pdf.mjs, pdf.worker.mjs, jbig2.wasm, openjpeg.wasm).
+  Copyright Mozilla Foundation and contributors. https://github.com/mozilla/pdf.js
+  License: LICENSE-pdfjs-dist

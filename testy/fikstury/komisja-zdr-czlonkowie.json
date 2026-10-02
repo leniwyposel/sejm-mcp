@@ -1,0 +1,824 @@
+[
+ {
+  "firstName": "Jacek",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 24,
+  "joinDate": "2023-11-21",
+  "lastName": "Bogucki"
+ },
+ {
+  "firstName": "Dominika",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "dismissalDate": "2023-11-27",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 45,
+  "joinDate": "2023-11-21",
+  "lastName": "Chorosińska",
+  "leaveDate": "2023-11-27"
+ },
+ {
+  "firstName": "Tadeusz",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 46,
+  "joinDate": "2023-11-21",
+  "lastName": "Chrzan"
+ },
+ {
+  "firstName": "Anna",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 65,
+  "joinDate": "2023-11-21",
+  "lastName": "Dąbrowska-Banaszek"
+ },
+ {
+  "firstName": "Czesław",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 130,
+  "joinDate": "2023-11-21",
+  "lastName": "Hoc"
+ },
+ {
+  "firstName": "Fryderyk",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 155,
+  "joinDate": "2023-11-21",
+  "lastName": "Kapinos"
+ },
+ {
+  "firstName": "Anna",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 205,
+  "joinDate": "2023-11-21",
+  "lastName": "Kwiecień"
+ },
+ {
+  "firstName": "Ewa",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 210,
+  "joinDate": "2023-11-21",
+  "lastName": "Leniart"
+ },
+ {
+  "firstName": "Grzegorz",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 216,
+  "joinDate": "2023-11-21",
+  "lastName": "Lorek"
+ },
+ {
+  "firstName": "Bolesław",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 288,
+  "joinDate": "2023-11-21",
+  "lastName": "Piecha"
+ },
+ {
+  "firstName": "Jerzy",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 299,
+  "joinDate": "2023-11-21",
+  "lastName": "Polaczek"
+ },
+ {
+  "firstName": "Józefa",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 367,
+  "joinDate": "2023-11-21",
+  "lastName": "Szczurek-Żelazko"
+ },
+ {
+  "firstName": "Patryk",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 418,
+  "joinDate": "2023-11-21",
+  "lastName": "Wicher"
+ },
+ {
+  "firstName": "Dominika",
+  "functions": [
+   {
+    "appointmentDate": "2023-12-19",
+    "dismissalDate": "2026-01-23",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 45,
+  "joinDate": "2023-12-19",
+  "lastName": "Chorosińska",
+  "leaveDate": "2026-01-23"
+ },
+ {
+  "firstName": "Agnieszka",
+  "functions": [
+   {
+    "appointmentDate": "2025-10-17",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 350,
+  "joinDate": "2025-10-17",
+  "lastName": "Soin"
+ },
+ {
+  "firstName": "Paweł",
+  "functions": [
+   {
+    "appointmentDate": "2026-02-13",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 318,
+  "joinDate": "2026-02-13",
+  "lastName": "Rychlik"
+ },
+ {
+  "firstName": "Krzysztof",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 26,
+  "joinDate": "2023-11-21",
+  "lastName": "Bojarski"
+ },
+ {
+  "firstName": "Alicja",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 47,
+  "joinDate": "2023-11-21",
+  "lastName": "Chybicka"
+ },
+ {
+  "firstName": "Włodzisław",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 98,
+  "joinDate": "2023-11-21",
+  "lastName": "Giziński"
+ },
+ {
+  "firstName": "Marta",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "dismissalDate": "2024-04-10",
+    "functionType": "member",
+    "name": "członek"
+   },
+   {
+    "appointmentDate": "2024-06-26",
+    "functionType": "chairman",
+    "name": "przewodniczący"
+   },
+   {
+    "appointmentDate": "2024-04-10",
+    "dismissalDate": "2024-06-26",
+    "functionType": "deputy_chairman",
+    "name": "zastępca przewodniczącego"
+   }
+  ],
+  "id": 103,
+  "joinDate": "2023-11-21",
+  "lastName": "Golbik"
+ },
+ {
+  "firstName": "Marek",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "dismissalDate": "2024-06-26",
+    "functionType": "member",
+    "name": "członek"
+   },
+   {
+    "appointmentDate": "2024-06-26",
+    "functionType": "deputy_chairman",
+    "name": "zastępca przewodniczącego"
+   }
+  ],
+  "id": 132,
+  "joinDate": "2023-11-21",
+  "lastName": "Hok"
+ },
+ {
+  "firstName": "Iwona",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "dismissalDate": "2024-07-12",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 157,
+  "joinDate": "2023-11-21",
+  "lastName": "Karolewska",
+  "leaveDate": "2024-07-12"
+ },
+ {
+  "firstName": "Iwona",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 182,
+  "joinDate": "2023-11-21",
+  "lastName": "Kozłowska"
+ },
+ {
+  "firstName": "Grzegorz",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 257,
+  "joinDate": "2023-11-21",
+  "lastName": "Napieralski"
+ },
+ {
+  "firstName": "Elżbieta",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 300,
+  "joinDate": "2023-11-21",
+  "lastName": "Polak"
+ },
+ {
+  "firstName": "Krystyna",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 342,
+  "joinDate": "2023-11-21",
+  "lastName": "Skowrońska"
+ },
+ {
+  "firstName": "Przemysław",
+  "functions": [
+   {
+    "appointmentDate": "2023-12-19",
+    "dismissalDate": "2024-12-05",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 424,
+  "joinDate": "2023-12-19",
+  "lastName": "Wipler",
+  "leaveDate": "2024-12-05"
+ },
+ {
+  "firstName": "Rafał",
+  "functions": [
+   {
+    "appointmentDate": "2024-11-08",
+    "dismissalDate": "2025-04-04",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 171,
+  "joinDate": "2024-11-08",
+  "lastName": "Komarewicz",
+  "leaveDate": "2025-04-04"
+ },
+ {
+  "firstName": "Anna",
+  "functions": [
+   {
+    "appointmentDate": "2023-12-19",
+    "dismissalDate": "2025-10-17",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 95,
+  "joinDate": "2023-12-19",
+  "lastName": "Gembicka",
+  "leaveDate": "2025-10-17"
+ },
+ {
+  "firstName": "Janusz",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-29",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 51,
+  "joinDate": "2023-11-29",
+  "lastName": "Cieszyński"
+ },
+ {
+  "firstName": "Joanna",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-29",
+    "dismissalDate": "2023-12-13",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 252,
+  "joinDate": "2023-11-29",
+  "lastName": "Mucha",
+  "leaveDate": "2023-12-13"
+ },
+ {
+  "firstName": "Katarzyna",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-29",
+    "dismissalDate": "2024-01-25",
+    "functionType": "member",
+    "name": "członek"
+   },
+   {
+    "appointmentDate": "2024-01-25",
+    "functionType": "deputy_chairman",
+    "name": "zastępca przewodniczącego"
+   }
+  ],
+  "id": 353,
+  "joinDate": "2023-11-29",
+  "lastName": "Sójka"
+ },
+ {
+  "firstName": "Joanna",
+  "functions": [
+   {
+    "appointmentDate": "2025-07-23",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 252,
+  "joinDate": "2025-07-23",
+  "lastName": "Mucha"
+ },
+ {
+  "firstName": "Karolina",
+  "functions": [
+   {
+    "appointmentDate": "2025-07-23",
+    "dismissalDate": "2026-09-18",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 284,
+  "joinDate": "2025-07-23",
+  "lastName": "Pawliczak",
+  "leaveDate": "2026-09-18"
+ },
+ {
+  "firstName": "Adrian",
+  "functions": [
+   {
+    "appointmentDate": "2026-09-18",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 426,
+  "joinDate": "2026-09-18",
+  "lastName": "Witczak"
+ },
+ {
+  "firstName": "Roman",
+  "functions": [
+   {
+    "appointmentDate": "2024-12-05",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 81,
+  "joinDate": "2024-12-05",
+  "lastName": "Fritz"
+ },
+ {
+  "firstName": "Witold",
+  "functions": [
+   {
+    "appointmentDate": "2025-03-20",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 399,
+  "joinDate": "2025-03-20",
+  "lastName": "Tumanowicz"
+ },
+ {
+  "firstName": "Katarzyna",
+  "functions": [
+   {
+    "appointmentDate": "2024-06-14",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 467,
+  "joinDate": "2024-06-14",
+  "lastName": "Stachowicz"
+ },
+ {
+  "firstName": "Władysław",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "dismissalDate": "2023-12-13",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 174,
+  "joinDate": "2023-11-21",
+  "lastName": "Kosiniak-Kamysz",
+  "leaveDate": "2023-12-13"
+ },
+ {
+  "firstName": "Adrian",
+  "functions": [
+   {
+    "appointmentDate": "2024-04-12",
+    "dismissalDate": "2025-11-05",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 426,
+  "joinDate": "2024-04-12",
+  "lastName": "Witczak",
+  "leaveDate": "2025-11-05"
+ },
+ {
+  "firstName": "Anna",
+  "functions": [
+   {
+    "appointmentDate": "2025-05-09",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 347,
+  "joinDate": "2025-05-09",
+  "lastName": "Sobolak"
+ },
+ {
+  "firstName": "Krzysztof",
+  "functions": [
+   {
+    "appointmentDate": "2023-12-20",
+    "dismissalDate": "2024-05-13",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 283,
+  "joinDate": "2023-12-20",
+  "lastName": "Paszyk",
+  "leaveDate": "2024-05-13"
+ },
+ {
+  "firstName": "Ewa",
+  "functions": [
+   {
+    "appointmentDate": "2023-12-20",
+    "dismissalDate": "2025-07-23",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 376,
+  "joinDate": "2023-12-20",
+  "lastName": "Szymanowska",
+  "leaveDate": "2025-07-23"
+ },
+ {
+  "firstName": "Urszula",
+  "functions": [
+   {
+    "appointmentDate": "2024-07-12",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 471,
+  "joinDate": "2024-07-12",
+  "lastName": "Koszutska"
+ },
+ {
+  "firstName": "Norbert",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 292,
+  "joinDate": "2023-11-21",
+  "lastName": "Pietrykowski"
+ },
+ {
+  "firstName": "Ewa",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "dismissalDate": "2023-11-29",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 376,
+  "joinDate": "2023-11-21",
+  "lastName": "Szymanowska",
+  "leaveDate": "2023-11-29"
+ },
+ {
+  "firstName": "Wioleta",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "dismissalDate": "2024-01-25",
+    "functionType": "member",
+    "name": "członek"
+   },
+   {
+    "appointmentDate": "2024-01-25",
+    "functionType": "deputy_chairman",
+    "name": "zastępca przewodniczącego"
+   }
+  ],
+  "id": 391,
+  "joinDate": "2023-11-21",
+  "lastName": "Tomczak"
+ },
+ {
+  "firstName": "Radosław",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 217,
+  "joinDate": "2023-11-21",
+  "lastName": "Lubczyk"
+ },
+ {
+  "firstName": "Jolanta",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 454,
+  "joinDate": "2023-11-21",
+  "lastName": "Zięba-Gzik"
+ },
+ {
+  "firstName": "Bożena",
+  "functions": [
+   {
+    "appointmentDate": "2026-05-27",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 499,
+  "joinDate": "2026-05-27",
+  "lastName": "Borowiec"
+ },
+ {
+  "firstName": "Joanna",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "dismissalDate": "2025-03-18",
+    "functionType": "member",
+    "name": "członek"
+   },
+   {
+    "appointmentDate": "2025-03-18",
+    "functionType": "deputy_chairman",
+    "name": "zastępca przewodniczącego"
+   }
+  ],
+  "id": 417,
+  "joinDate": "2023-11-21",
+  "lastName": "Wicha"
+ },
+ {
+  "firstName": "Marcelina",
+  "functions": [
+   {
+    "appointmentDate": "2025-03-18",
+    "functionType": "member",
+    "name": "członek"
+   },
+   {
+    "appointmentDate": "2023-11-21",
+    "dismissalDate": "2025-03-18",
+    "functionType": "deputy_chairman",
+    "name": "zastępca przewodniczącego"
+   }
+  ],
+  "id": 445,
+  "joinDate": "2023-11-21",
+  "lastName": "Zawisza"
+ },
+ {
+  "firstName": "Grzegorz",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "dismissalDate": "2025-10-09",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 296,
+  "joinDate": "2023-11-21",
+  "lastName": "Płaczek",
+  "leaveDate": "2025-10-09"
+ },
+ {
+  "firstName": "Ryszard",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "dismissalDate": "2023-12-19",
+    "functionType": "member",
+    "name": "członek"
+   }
+  ],
+  "id": 422,
+  "joinDate": "2023-11-21",
+  "lastName": "Wilk",
+  "leaveDate": "2023-12-19"
+ },
+ {
+  "firstName": "Bartosz",
+  "function": "przewodniczący",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "dismissalDate": "2024-06-10",
+    "functionType": "chairman",
+    "name": "przewodniczący"
+   }
+  ],
+  "id": 8,
+  "joinDate": "2023-11-21",
+  "lastName": "Arłukowicz",
+  "leaveDate": "2024-06-10",
+  "mandateExpired": "2024-06-10"
+ },
+ {
+  "firstName": "Elżbieta",
+  "function": "zastępca przewodniczącego",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "functionType": "deputy_chairman",
+    "name": "zastępca przewodniczącego"
+   }
+  ],
+  "id": 94,
+  "joinDate": "2023-11-21",
+  "lastName": "Gelert"
+ },
+ {
+  "firstName": "Rajmund",
+  "function": "zastępca przewodniczącego",
+  "functions": [
+   {
+    "appointmentDate": "2023-11-21",
+    "dismissalDate": "2024-03-27",
+    "functionType": "deputy_chairman",
+    "name": "zastępca przewodniczącego"
+   }
+  ],
+  "id": 244,
+  "joinDate": "2023-11-21",
+  "lastName": "Miller",
+  "leaveDate": "2024-03-27",
+  "mandateExpired": "2024-03-27"
+ }
+]

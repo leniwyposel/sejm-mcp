@@ -1,0 +1,256 @@
+{
+ "ELI": "DU/2025/63",
+ "UE": "NO",
+ "address": "WDU20250000063",
+ "changeDate": "2025-01-27T12:14:03",
+ "closureDate": "2025-01-09",
+ "displayAddress": "Dz.U. 2025 poz. 63",
+ "documentDate": "2024-09-30",
+ "documentType": "projekt ustawy",
+ "documentTypeEnum": "BILL",
+ "legislativeCommittee": false,
+ "links": [
+  {
+   "href": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20250000063",
+   "rel": "isap"
+  },
+  {
+   "href": "https://eli.gov.pl/eli/DU/2025/63/ogl",
+   "rel": "eli"
+  },
+  {
+   "href": "https://api.sejm.gov.pl/eli/acts/DU/2025/63",
+   "rel": "eli-api"
+  }
+ ],
+ "number": "687",
+ "passed": true,
+ "principleOfSubsidiarity": false,
+ "processStartDate": "2024-09-30",
+ "shortenProcedure": false,
+ "stages": [
+  {
+   "date": "2024-09-30",
+   "stageName": "Projekt wpłynął do Sejmu",
+   "printNumber": "687",
+   "stageType": "Start"
+  },
+  {
+   "children": [
+    {
+     "date": "2024-10-01",
+     "stageName": "Skierowanie",
+     "committeeCode": "Sejm",
+     "stageType": "Referral",
+     "type": "NORMAL"
+    }
+   ],
+   "date": "2024-10-01",
+   "stageName": "Skierowano do I czytania na posiedzeniu Sejmu",
+   "stageType": "ReadingReferral"
+  },
+  {
+   "children": [
+    {
+     "date": "2024-10-11",
+     "stageName": "Skierowanie",
+     "committeeCode": "FPB",
+     "stageType": "Referral",
+     "type": "NORMAL"
+    },
+    {
+     "date": "2024-10-11",
+     "stageName": "Głosowanie",
+     "stageType": "Voting",
+     "voting": {
+      "abstain": 4,
+      "date": "2024-10-11T11:18:29",
+      "description": "Wniosek o odrzucenie projektu ustawy w pierwszym czytaniu",
+      "kind": "ELECTRONIC",
+      "links": [
+       {
+        "href": "https://api.sejm.gov.pl/sejm/term10/votings/19/18/pdf",
+        "rel": "pdf"
+       }
+      ],
+      "majorityType": "SIMPLE_MAJORITY",
+      "majorityVotes": 242,
+      "no": 241,
+      "notParticipating": 16,
+      "present": 0,
+      "sitting": 19,
+      "sittingDay": 3,
+      "term": 10,
+      "title": "Pkt. 9 Pierwsze czytanie rządowego projektu ustawy budżetowej na rok 2025 (druk nr 687)",
+      "topic": "wniosek o odrzucenie projektu w pierwszym czytaniu.",
+      "totalVoted": 443,
+      "votingNumber": 18,
+      "yes": 198
+     }
+    }
+   ],
+   "date": "2024-10-11",
+   "stageName": "I czytanie na posiedzeniu Sejmu",
+   "sittingNum": 19,
+   "stageType": "SejmReading"
+  },
+  {
+   "children": [
+    {
+     "date": "2024-11-21",
+     "stageName": "Sprawozdanie komisji",
+     "minorityMotions": 110,
+     "printNumber": "857",
+     "proposal": "załączony projekt ustawy",
+     "rapporteurID": "49",
+     "rapporteurName": "Janusz Cichoń",
+     "reportFile": "https://api.sejm.gov.pl/sejm/term10/prints/857/857.pdf",
+     "stageType": "CommitteeReport",
+     "subCommittee": false
+    }
+   ],
+   "date": "2024-11-21",
+   "stageName": "Praca w komisjach po I czytaniu",
+   "stageType": "CommitteeWork"
+  },
+  {
+   "children": [
+    {
+     "date": "2024-12-04",
+     "stageName": "Skierowanie",
+     "committeeCode": "FPB",
+     "stageType": "Referral",
+     "type": "NORMAL"
+    }
+   ],
+   "date": "2024-12-04",
+   "stageName": "II czytanie na posiedzeniu Sejmu",
+   "comment": "wniosek o odrzucenie, poprawki",
+   "decision": "skierowano ponownie do komisji w celu przedstawienia sprawozdania",
+   "sittingNum": 23,
+   "stageType": "SejmReading"
+  },
+  {
+   "children": [
+    {
+     "date": "2024-12-05",
+     "stageName": "Sprawozdanie komisji",
+     "minorityMotions": 0,
+     "printNumber": "857-A",
+     "proposal": "odrzucić poprawki",
+     "rapporteurID": "49",
+     "rapporteurName": "Janusz Cichoń",
+     "reportFile": "https://api.sejm.gov.pl/sejm/term10/prints/857-A/857-A.pdf",
+     "stageType": "CommitteeReport",
+     "subCommittee": false
+    }
+   ],
+   "date": "2024-12-05",
+   "stageName": "Praca w komisjach po II czytaniu",
+   "stageType": "CommitteeWork"
+  },
+  {
+   "children": [
+    {
+     "date": "2024-12-06",
+     "stageName": "Głosowanie",
+     "stageType": "Voting",
+     "voting": {
+      "abstain": 3,
+      "date": "2024-12-06T11:16:17",
+      "description": "całość projektu ustawy",
+      "kind": "ELECTRONIC",
+      "links": [
+       {
+        "href": "https://api.sejm.gov.pl/sejm/term10/votings/24/153/pdf",
+        "rel": "pdf"
+       }
+      ],
+      "majorityType": "SIMPLE_MAJORITY",
+      "majorityVotes": 208,
+      "no": 207,
+      "notParticipating": 18,
+      "present": 0,
+      "sitting": 24,
+      "sittingDay": 1,
+      "term": 10,
+      "title": "Pkt. 1 Sprawozdanie Komisji o rządowym projekcie ustawy budżetowej na rok 2025 (druki nr 687, 857 i 857-A) - trzecie czytanie",
+      "topic": "głosowanie nad całością projektu.",
+      "totalVoted": 442,
+      "votingNumber": 153,
+      "yes": 232
+     }
+    }
+   ],
+   "date": "2024-12-06",
+   "stageName": "III czytanie na posiedzeniu Sejmu",
+   "comment": "wniosek o odrzucenie, wnioski mniejszości, poprawki",
+   "decision": "uchwalono",
+   "sittingNum": 24,
+   "stageType": "SejmReading",
+   "textAfter3": "https://api.sejm.gov.pl/sejm/term10/processes/687/attachment/687_u3.pdf"
+  },
+  {
+   "children": [
+    {
+     "date": "2024-12-19",
+     "stageName": "Skierowanie",
+     "committeeCode": "FPB",
+     "stageType": "Referral",
+     "type": "NORMAL"
+    }
+   ],
+   "date": "2024-12-19",
+   "stageName": "Stanowisko Senatu",
+   "position": "wniósł poprawki",
+   "printNumber": "919",
+   "stageType": "SenatePosition"
+  },
+  {
+   "children": [
+    {
+     "date": "2025-01-08",
+     "stageName": "Sprawozdanie komisji",
+     "minorityMotions": 0,
+     "printNumber": "940",
+     "proposal": "przyjąć poprawki",
+     "rapporteurID": "49",
+     "rapporteurName": "Janusz Cichoń",
+     "reportFile": "https://api.sejm.gov.pl/sejm/term10/prints/940/940.pdf",
+     "stageType": "CommitteeReport",
+     "subCommittee": false
+    }
+   ],
+   "date": "2025-01-08",
+   "stageName": "Praca w komisjach nad stanowiskiem Senatu",
+   "stageType": "CommitteeWork"
+  },
+  {
+   "date": "2025-01-09",
+   "stageName": "Rozpatrywanie na forum Sejmu stanowiska Senatu",
+   "decision": "przyjęto poprawki",
+   "sittingNum": 26,
+   "stageType": "SenatePositionConsideration"
+  },
+  {
+   "date": "2025-01-13",
+   "stageName": "Ustawę przekazano Prezydentowi do podpisu",
+   "stageType": "ToPresident"
+  },
+  {
+   "date": "2025-01-17",
+   "stageName": "Prezydent podpisał ustawę",
+   "omittedInconsistent": false,
+   "stageType": "PresidentSignature"
+  },
+  {
+   "stageName": "Uchwalono",
+   "stageType": "End"
+  }
+ ],
+ "term": 10,
+ "title": "Rządowy projekt ustawy budżetowej na rok 2025",
+ "titleFinal": "budżetowa na rok 2025",
+ "urgencyStatus": "NORMAL",
+ "webGeneratedDate": "2025-01-27T12:14:21"
+}

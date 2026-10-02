@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Problem z bezpieczeństwem
+    url: https://github.com/leniwyposel/sejm-mcp/security/advisories/new
+    about: Zgłoś prywatnie, nie w publicznym zgłoszeniu.
+  - name: Kontakt z zespołem
+    url: https://leniwyposel.pl/kontakt/
+    about: Współpraca i media.

@@ -1,0 +1,15 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    open-pull-requests-limit: 3
+    ignore:
+      # Typy Node idą za wersją z engines (>=22), nie za najnowszym Node.
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]

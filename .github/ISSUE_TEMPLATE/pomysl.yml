@@ -1,0 +1,10 @@
+name: Pomysł
+description: Czego brakuje, o co chciałbyś pytać.
+labels: [pomysł]
+body:
+  - type: textarea
+    id: pomysl
+    attributes:
+      label: O co chciałbyś pytać asystenta?
+    validations:
+      required: true

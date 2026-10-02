@@ -1,0 +1,32 @@
+name: Wydanie
+
+# Tag v* → testy, build i paczka .mcpb dołączona do wydania na GitHubie.
+# Przycisk „Claude Desktop” w README pobiera sejm-mcp.mcpb z najnowszego wydania.
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  mcpb:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - run: npm run mcpb
+      - name: Wydanie z paczką .mcpb
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release create "$GITHUB_REF_NAME" build/sejm-mcp.mcpb --title "$GITHUB_REF_NAME" --generate-notes

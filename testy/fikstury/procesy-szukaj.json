@@ -1,0 +1,91 @@
+[
+ {
+  "ELI": "DU/2024/122",
+  "UE": "NO",
+  "address": "WDU20240000122",
+  "changeDate": "2024-02-06T09:38:07",
+  "closureDate": "2024-01-18",
+  "displayAddress": "Dz.U. 2024 poz. 122",
+  "documentDate": "2023-12-19",
+  "documentType": "projekt ustawy",
+  "documentTypeEnum": "BILL",
+  "links": [
+   {
+    "href": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20240000122",
+    "rel": "isap"
+   },
+   {
+    "href": "https://eli.gov.pl/eli/DU/2024/122/ogl",
+    "rel": "eli"
+   },
+   {
+    "href": "https://api.sejm.gov.pl/eli/acts/DU/2024/122",
+    "rel": "eli-api"
+   }
+  ],
+  "number": "125",
+  "passed": true,
+  "processStartDate": "2023-12-19",
+  "shortenProcedure": false,
+  "term": 10,
+  "title": "Rządowy projekt ustawy budżetowej na rok 2024",
+  "titleFinal": "budżetowa na rok 2024",
+  "urgencyStatus": "NORMAL",
+  "webGeneratedDate": "2024-02-06T09:38:31"
+ },
+ {
+  "ELI": "DU/2023/2778",
+  "UE": "NO",
+  "address": "WDU20230002778",
+  "changeDate": "2023-12-29T09:43:37",
+  "closureDate": "2023-12-21",
+  "description": "projekt dotyczy zapewnienia środków w celu zapewnienia jednolitości wynagrodzeń sędziów i prokuratorów w 2023 r.",
+  "displayAddress": "Dz.U. 2023 poz. 2778",
+  "documentDate": "2023-12-06",
+  "documentType": "projekt ustawy",
+  "documentTypeEnum": "BILL",
+  "links": [
+   {
+    "href": "https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20230002778",
+    "rel": "isap"
+   },
+   {
+    "href": "https://eli.gov.pl/eli/DU/2023/2778/ogl",
+    "rel": "eli"
+   },
+   {
+    "href": "https://api.sejm.gov.pl/eli/acts/DU/2023/2778",
+    "rel": "eli-api"
+   }
+  ],
+  "number": "127",
+  "passed": true,
+  "processStartDate": "2023-12-06",
+  "shortenProcedure": false,
+  "term": 10,
+  "title": "Rządowy projekt ustawy o zmianie ustawy o szczególnych rozwiązaniach służących realizacji ustawy budżetowej na rok 2023",
+  "titleFinal": "o zmianie ustawy o szczególnych rozwiązaniach służących realizacji ustawy budżetowej na rok 2023",
+  "urgencyStatus": "NORMAL",
+  "webGeneratedDate": "2023-12-29T09:43:44"
+ },
+ {
+  "UE": "NO",
+  "changeDate": "2023-12-27T15:12:48",
+  "closureDate": "2023-12-21",
+  "comments": "W dniu 29.12.2023 r. Prezydent wyznaczył Panią Małgorzatę Paprocką, Sekretarza Stanu w Kancelarii Prezydenta RP, do reprezentowania swojego stanowiska do wniosku o ponowne rozpatrzenie ustawy (druk 138).",
+  "description": "projekt dotyczy dostosowania regulacji prawnych zawartych w wybranych ustawach do projektu ustawy budżetowej na rok 2024",
+  "documentDate": "2023-11-13",
+  "documentType": "projekt ustawy",
+  "documentTypeEnum": "BILL",
+  "links": [],
+  "number": "128",
+  "passed": true,
+  "processStartDate": "2023-11-13",
+  "shortenProcedure": false,
+  "term": 10,
+  "title": "Rządowy projekt ustawy o szczególnych rozwiązaniach służących realizacji ustawy budżetowej na rok 2024",
+  "titleFinal": "o szczególnych rozwiązaniach służących realizacji ustawy budżetowej na rok 2024",
+  "urgencyStatus": "NORMAL",
+  "webGeneratedDate": "2023-12-27T15:13:02"
+ }
+]

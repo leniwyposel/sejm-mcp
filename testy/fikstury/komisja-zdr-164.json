@@ -1,0 +1,29 @@
+{
+ "agenda": "<div class=\"agenda-indent-0\">Rozpatrzenie wniosku i poprawek zgłoszonych w czasie drugiego czytania do ustawy o zmianie ustawy o wychowaniu w trzeźwości i przeciwdziałaniu alkoholizmowi oraz ustawy o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych (druki nr 2007, 2010, 2856).</div>",
+ "closed": false,
+ "code": "ZDR",
+ "comments": "Nastąpiła zmiana godziny posiedzenia ",
+ "date": "2026-09-17",
+ "endDateTime": "2026-09-17T20:10:00",
+ "num": 164,
+ "remote": false,
+ "room": "sala im. Olgi Krzyżanowskiej (nr 412, bud. U)",
+ "startDateTime": "2026-09-17T19:10:00",
+ "status": "FINISHED",
+ "video": [
+  {
+   "committee": "ZDR",
+   "description": "Rozpatrzenie wniosku i poprawek zgłoszonych w czasie drugiego czytania do ustawy o zmianie ustawy o wychowaniu w trzeźwości i przeciwdziałaniu alkoholizmowi oraz ustawy o świadczeniach opieki zdrowotnej finansowanych ze środków publicznych (druki nr 2007, 2010, 2856).",
+   "endDateTime": "2026-09-17T20:09:58",
+   "playerLink": "https://sejm.gov.pl/Sejm10.nsf/transmisje_arch.xsp?unid=C124050458522248C1258E720033F58C",
+   "playerLinkIFrame": "https://sejm.gov.pl/Sejm10.nsf/VideoFrame.xsp/C124050458522248C1258E720033F58C",
+   "room": "sala im. Olgi Krzyżanowskiej (nr 412, bud. U)",
+   "startDateTime": "2026-09-17T19:05:44",
+   "title": "Komisja Zdrowia (ZDR)",
+   "transcribe": false,
+   "type": "komisja",
+   "unid": "C124050458522248C1258E720033F58C",
+   "videoLink": "https://sejm.c.blueonline.tv/stream/ENC21/C124050458522248C1258E720033F58C/playlist.m3u8?start=1789664744000&stop=1789668598000"
+  }
+ ]
+}

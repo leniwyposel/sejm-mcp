@@ -1,0 +1,102 @@
+{
+ "UE": "ENFORCEMENT",
+ "changeDate": "2026-09-21T13:19:33",
+ "description": "projekt dotyczy doprecyzowania pojęcia usługi hotelarskiej poprzez przyjęcie, że za usługę hotelarską uznaje się krótkotrwałą usługę trwającą nie dłużej niż 30 dni i że pojęcie to jest tożsame z pojęciem \"najmu krótkoterminowego\", utworzenia Centralnego Wykazu Turystycznego Obiektów Noclegowych",
+ "documentDate": "2026-07-21",
+ "documentType": "projekt ustawy",
+ "documentTypeEnum": "BILL",
+ "legislativeCommittee": false,
+ "links": [],
+ "number": "2865",
+ "otherDocuments": [
+  {
+   "documentDate": "2026-09-02",
+   "number": "2865-A",
+   "registeredDate": "2026-09-02",
+   "title": "Autopoprawka do rządowego projektu ustawy o zmianie ustawy o usługach hotelarskich oraz usługach pilotów wycieczek i przewodników turystycznych oraz niektórych innych ustaw"
+  }
+ ],
+ "passed": false,
+ "principleOfSubsidiarity": false,
+ "processStartDate": "2026-07-21",
+ "rclLink": "https://legislacja.rcl.gov.pl/getIdFromLegislacja?number=RM-0610-87-26",
+ "rclNum": "RM-0610-87-26",
+ "shortenProcedure": false,
+ "stages": [
+  {
+   "date": "2026-07-21",
+   "stageName": "Projekt wpłynął do Sejmu",
+   "otherDocuments": [
+    {
+     "documentDate": "2026-09-02",
+     "number": "2865-A",
+     "registeredDate": "2026-09-02",
+     "title": "Autopoprawka do rządowego projektu ustawy o zmianie ustawy o usługach hotelarskich oraz usługach pilotów wycieczek i przewodników turystycznych oraz niektórych innych ustaw"
+    }
+   ],
+   "printNumber": "2865",
+   "stageType": "Start"
+  },
+  {
+   "children": [
+    {
+     "date": "2026-07-29",
+     "stageName": "Skierowanie",
+     "committeeCode": "Sejm",
+     "stageType": "Referral",
+     "type": "NORMAL"
+    }
+   ],
+   "date": "2026-07-29",
+   "stageName": "Skierowano do I czytania na posiedzeniu Sejmu",
+   "stageType": "ReadingReferral"
+  },
+  {
+   "children": [
+    {
+     "date": "2026-09-02",
+     "stageName": "Skierowanie",
+     "committeeCode": "STR",
+     "reportDate": "2026-10-20",
+     "stageType": "Referral",
+     "type": "NORMAL"
+    },
+    {
+     "date": "2026-09-02",
+     "stageName": "Skierowanie",
+     "committeeCode": "INF",
+     "reportDate": "2026-10-20",
+     "stageType": "Referral",
+     "type": "NORMAL"
+    }
+   ],
+   "date": "2026-09-02",
+   "stageName": "I czytanie na posiedzeniu Sejmu",
+   "sittingNum": 64,
+   "stageType": "SejmReading"
+  },
+  {
+   "children": [
+    {
+     "date": "2026-09-17",
+     "stageName": "Sprawozdanie komisji",
+     "minorityMotions": 0,
+     "printNumber": "3119",
+     "proposal": "załączony projekt ustawy",
+     "rapporteurID": "359",
+     "rapporteurName": "Mirosław Suchoń",
+     "reportFile": "https://api.sejm.gov.pl/sejm/term10/prints/3119/3119.pdf",
+     "stageType": "CommitteeReport",
+     "subCommittee": false
+    }
+   ],
+   "date": "2026-09-17",
+   "stageName": "Praca w komisjach po I czytaniu",
+   "stageType": "CommitteeWork"
+  }
+ ],
+ "term": 10,
+ "title": "Rządowy projekt ustawy o zmianie ustawy o usługach hotelarskich oraz usługach pilotów wycieczek i przewodników turystycznych oraz niektórych innych ustaw",
+ "urgencyStatus": "NORMAL",
+ "webGeneratedDate": "2026-09-21T13:20:03"
+}

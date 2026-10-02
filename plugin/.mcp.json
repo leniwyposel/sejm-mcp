@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "sejm": { "command": "npx", "args": ["-y", "sejm-mcp@0.3.0"] }
+  }
+}

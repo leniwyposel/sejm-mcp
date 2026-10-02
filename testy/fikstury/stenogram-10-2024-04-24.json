@@ -1,0 +1,171 @@
+{
+ "date": "2024-04-24",
+ "proceedingNum": 10,
+ "statements": [
+  {
+   "endDateTime": "2024-04-24T22:08:00",
+   "function": "",
+   "memberID": 0,
+   "name": "Marszałek",
+   "num": 0,
+   "rapporteur": false,
+   "secretary": false,
+   "startDateTime": "2024-04-24T10:03:00",
+   "unspoken": false
+  },
+  {
+   "endDateTime": "2024-04-24T10:11:52",
+   "function": "Sekretarz Poseł",
+   "memberID": 275,
+   "name": "Mirosław Adam Orliński",
+   "num": 1,
+   "rapporteur": false,
+   "secretary": true,
+   "startDateTime": "2024-04-24T10:10:42",
+   "unspoken": false
+  },
+  {
+   "endDateTime": "2024-04-24T10:13:45",
+   "function": "Poseł",
+   "memberID": 321,
+   "name": "Jarosław Sachajko",
+   "num": 2,
+   "rapporteur": false,
+   "secretary": false,
+   "startDateTime": "2024-04-24T10:11:57",
+   "unspoken": false
+  },
+  {
+   "endDateTime": "2024-04-24T10:15:33",
+   "function": "Poseł",
+   "memberID": 412,
+   "name": "Michał Wawer",
+   "num": 3,
+   "rapporteur": false,
+   "secretary": false,
+   "startDateTime": "2024-04-24T10:14:12",
+   "unspoken": false
+  },
+  {
+   "endDateTime": "2024-04-24T10:16:50",
+   "function": "Poseł",
+   "memberID": 37,
+   "name": "Waldemar Buda",
+   "num": 4,
+   "rapporteur": false,
+   "secretary": false,
+   "startDateTime": "2024-04-24T10:15:52",
+   "unspoken": false
+  },
+  {
+   "endDateTime": "2024-04-24T10:18:39",
+   "function": "Minister Infrastruktury",
+   "memberID": 162,
+   "name": "Dariusz Klimczak",
+   "num": 5,
+   "rapporteur": false,
+   "secretary": false,
+   "startDateTime": "2024-04-24T10:18:12",
+   "unspoken": false
+  },
+  {
+   "endDateTime": "2024-04-24T10:19:07",
+   "function": "Poseł",
+   "memberID": 37,
+   "name": "Waldemar Buda",
+   "num": 6,
+   "rapporteur": false,
+   "secretary": false,
+   "startDateTime": "2024-04-24T10:18:48",
+   "unspoken": false
+  },
+  {
+   "endDateTime": "2024-04-24T10:31:31",
+   "function": "Poseł",
+   "memberID": 60,
+   "name": "Zofia Czernow",
+   "num": 7,
+   "rapporteur": true,
+   "secretary": false,
+   "startDateTime": "2024-04-24T10:23:17",
+   "unspoken": false
+  },
+  {
+   "endDateTime": "2024-04-24T10:37:33",
+   "function": "Poseł",
+   "memberID": 360,
+   "name": "Marek Suski",
+   "num": 8,
+   "rapporteur": false,
+   "secretary": false,
+   "startDateTime": "2024-04-24T10:32:17",
+   "unspoken": false
+  },
+  {
+   "endDateTime": "2024-04-24T10:43:03",
+   "function": "Poseł",
+   "memberID": 91,
+   "name": "Zdzisław Gawlik",
+   "num": 9,
+   "rapporteur": false,
+   "secretary": false,
+   "startDateTime": "2024-04-24T10:37:42",
+   "unspoken": false
+  },
+  {
+   "endDateTime": "2024-04-24T10:48:38",
+   "function": "Poseł",
+   "memberID": 112,
+   "name": "Piotr Górnikiewicz",
+   "num": 10,
+   "rapporteur": false,
+   "secretary": false,
+   "startDateTime": "2024-04-24T10:43:15",
+   "unspoken": false
+  },
+  {
+   "endDateTime": "2024-04-24T10:54:35",
+   "function": "Poseł",
+   "memberID": 74,
+   "name": "Adam Dziedzic",
+   "num": 11,
+   "rapporteur": false,
+   "secretary": false,
+   "startDateTime": "2024-04-24T10:48:46",
+   "unspoken": false
+  },
+  {
+   "endDateTime": "2024-04-24T10:58:41",
+   "function": "Poseł",
+   "memberID": 172,
+   "name": "Maciej Konieczny",
+   "num": 12,
+   "rapporteur": false,
+   "secretary": false,
+   "startDateTime": "2024-04-24T10:54:40",
+   "unspoken": false
+  },
+  {
+   "endDateTime": "2024-04-24T11:05:11",
+   "function": "Poseł",
+   "memberID": 340,
+   "name": "Włodzimierz Skalik",
+   "num": 13,
+   "rapporteur": false,
+   "secretary": false,
+   "startDateTime": "2024-04-24T10:58:49",
+   "unspoken": false
+  },
+  {
+   "endDateTime": "2024-04-24T11:07:00",
+   "function": "Poseł",
+   "memberID": 360,
+   "name": "Marek Suski",
+   "num": 14,
+   "rapporteur": false,
+   "secretary": false,
+   "startDateTime": "2024-04-24T11:05:41",
+   "unspoken": false
+  }
+ ]
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.leniwyposel/sejm-mcp",
+  "title": "Sejm RP",
+  "description": "Sejm RP i akty prawne (ELI): posłowie, głosowania, interpelacje, ustawy. Lokalnie, tylko odczyt.",
+  "version": "0.3.0",
+  "websiteUrl": "https://github.com/leniwyposel/sejm-mcp",
+  "repository": {
+    "url": "https://github.com/leniwyposel/sejm-mcp",
+    "source": "github"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "sejm-mcp",
+      "version": "0.3.0",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

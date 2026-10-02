@@ -1,0 +1,40 @@
+[
+ {
+  "UE": "NO",
+  "changeDate": "2024-07-12T14:57:02",
+  "closureDate": "2024-07-12",
+  "description": "projekt dotyczy przywrócenia przepisom regulującym wybór sędziów do KRS treści zgodnej z Konstytucją oraz usunięcia negatywnych konsekwencji wadliwego rozwiązania obowiązującego od 2018 r.; dostosowania przepisów ustawowych do standardów określonych w orzeczeniach Trybunału Sprawiedliwości UE, Europejskiego Trybunału Praw Człowieka oraz w orzeczeniach Sądu Najwyższego i Naczelnego Sądu Administracyjnego dotyczących gwarancji odrębności i niezależności władzy sądowniczej od innych władz państwowych, w tym gwarancji niezależności KRS od organów władzy ustawodawczej oraz władzy wykonawczej w procedurze powoływania sędziów",
+  "documentDate": "2024-02-20",
+  "documentType": "projekt ustawy",
+  "documentTypeEnum": "BILL",
+  "links": [],
+  "number": "219",
+  "passed": true,
+  "processStartDate": "2024-02-20",
+  "shortenProcedure": false,
+  "term": 10,
+  "title": "Rządowy projekt ustawy o zmianie ustawy o Krajowej Radzie Sądownictwa",
+  "titleFinal": "o zmianie ustawy o Krajowej Radzie Sądownictwa",
+  "urgencyStatus": "NORMAL",
+  "webGeneratedDate": "2024-07-12T14:57:17"
+ },
+ {
+  "UE": "NO",
+  "changeDate": "2026-02-25T12:49:52",
+  "closureDate": "2026-01-23",
+  "description": "projekt dotyczy wprowadzenia nowych zasad wyboru sędziów do Krajowej Rady Sądownictwa. Wybór 15 członków-sędziów KRS dokonywany będzie przez sędziów wszystkich szczebli i rodzajów sądów. Projektowana ustawa ma również na celu dostosowanie przepisów ustawowych do standardów określonych w orzeczeniach Trybunału Sprawiedliwości Unii Europejskiej, Europejskiego Trybunału Praw Człowieka oraz w orzeczeniach Sądu Najwyższego i Naczelnego Sądu Administracyjnego, dotyczących gwarancji odrębności i niezależności władzy sądowniczej od innych władz państwowych, w tym gwarancji niezależności Krajowej Rady Sądownictwa od organów władzy ustawodawczej oraz władzy wykonawczej w procedurze powoływania sędziów. Projekt realizuje priorytet polityki Rady Ministrów.",
+  "documentDate": "2025-12-29",
+  "documentType": "projekt ustawy",
+  "documentTypeEnum": "BILL",
+  "links": [],
+  "number": "2108",
+  "passed": true,
+  "processStartDate": "2025-12-29",
+  "shortenProcedure": false,
+  "term": 10,
+  "title": "Rządowy projekt ustawy o zmianie ustawy o Krajowej Radzie Sądownictwa oraz ustawy - Kodeks wyborczy",
+  "titleFinal": "o zmianie ustawy o Krajowej Radzie Sądownictwa oraz ustawy - Kodeks wyborczy",
+  "urgencyStatus": "NORMAL",
+  "webGeneratedDate": "2026-02-25T12:50:18"
+ }
+]
