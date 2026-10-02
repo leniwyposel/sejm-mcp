@@ -71,7 +71,7 @@
     "pdfjs-dist": "6.3.289",
     "tesseract.js-core": "7.0.0",
     "typescript": "^7.0.2",
-    "vitest": "^5.0.1"
+    "vitest": "^5.0.2"
   },
   "publishConfig": {
     "access": "public"
