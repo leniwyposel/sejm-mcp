@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src=".github/assets/baner.jpg" width="800" alt="sejm-mcp od Leniwego Posła: Sejm i prawo w Twoim asystencie AI. W tle kopuła sali posiedzeń Sejmu.">
+  <img src="https://raw.githubusercontent.com/leniwyposel/sejm-mcp/main/.github/assets/baner.jpg" width="800" alt="sejm-mcp od Leniwego Posła: Sejm i prawo w Twoim asystencie AI. W tle kopuła sali posiedzeń Sejmu.">
 </h1>
 
 <p align="center">
@@ -25,7 +25,7 @@
 </p>
 
 <p align="center">
-  <img src=".github/assets/demo.gif" width="800" alt="Animacja: pytanie po polsku, czy Sejm odrzucił weto prezydenta do ustawy o rynku kryptoaktywów. Asystent wywołuje narzędzia sejm-mcp szukaj_glosowan i glosowanie, odpowiada: nie, weto zostało utrzymane, 241 za przy wymaganych 266 (3/5), i podaje źródło api.sejm.gov.pl/sejm/term10/votings/64/15.">
+  <img src="https://raw.githubusercontent.com/leniwyposel/sejm-mcp/main/.github/assets/demo.gif" width="800" alt="Animacja: pytanie po polsku, czy Sejm odrzucił weto prezydenta do ustawy o rynku kryptoaktywów. Asystent wywołuje narzędzia sejm-mcp szukaj_glosowan i glosowanie, odpowiada: nie, weto zostało utrzymane, 241 za przy wymaganych 266 (3/5), i podaje źródło api.sejm.gov.pl/sejm/term10/votings/64/15.">
 </p>
 
 ## Co możesz zapytać
@@ -237,7 +237,7 @@ Asystent ma obowiązek powiedzieć Ci to na początku odpowiedzi, prostymi słow
   plik druku nie wychodzi z Twojego komputera.
 - Bez kont, kluczy, reklam i telemetrii.
 
-Szczegóły techniczne i zgłaszanie problemów: [SECURITY.md](SECURITY.md).
+Szczegóły techniczne i zgłaszanie problemów: [SECURITY.md](https://github.com/leniwyposel/sejm-mcp/blob/main/SECURITY.md).
 
 ## Narzędzia
 
@@ -284,9 +284,9 @@ Asystent sam wybiera narzędzie do pytania. Lista dla ciekawych:
 
 ## Licencja
 
-[Apache 2.0](LICENSE): możesz używać, zmieniać i rozpowszechniać sejm-mcp w dowolnym celu,
+[Apache 2.0](https://github.com/leniwyposel/sejm-mcp/blob/main/LICENSE): możesz używać, zmieniać i rozpowszechniać sejm-mcp w dowolnym celu,
 także komercyjnym, pod warunkiem zachowania informacji o licencji i o autorach (plik
-[NOTICE](NOTICE)). Licencja obejmuje też udzielenie praw patentowych. Tworzy zespół
+[NOTICE](https://github.com/leniwyposel/sejm-mcp/blob/main/NOTICE)). Licencja obejmuje też udzielenie praw patentowych. Tworzy zespół
 [Leniwego Posła](https://leniwyposel.pl).
 
 ### Dane
@@ -323,16 +323,16 @@ Trzy pomysły na start (wklej jako prompt):
    dłużej niż 21 dni od doręczenia? Podaj numery i linki.” (`szukaj_pism`, `pismo`)
 
 Każda odpowiedź niesie adres rekordu w api.sejm.gov.pl, więc Twoja aplikacja może linkować
-do źródła. Pamiętaj o granicach z [CONTRIBUTING.md](CONTRIBUTING.md): fakty z rejestru, bez
+do źródła. Pamiętaj o granicach z [CONTRIBUTING.md](https://github.com/leniwyposel/sejm-mcp/blob/main/CONTRIBUTING.md): fakty z rejestru, bez
 rankingów i ocen posłów.
 
 ## Kontakt
 
 - **Błąd w odpowiedzi albo pomysł:** [zgłoszenie na GitHubie](https://github.com/leniwyposel/sejm-mcp/issues/new/choose).
-- **Poprawka w kodzie:** pull request, najpierw [CONTRIBUTING.md](CONTRIBUTING.md).
+- **Poprawka w kodzie:** pull request, najpierw [CONTRIBUTING.md](https://github.com/leniwyposel/sejm-mcp/blob/main/CONTRIBUTING.md).
 - **Współpraca i media:** [leniwyposel.pl/kontakt](https://leniwyposel.pl/kontakt/).
 
-Zgłoszenia i pull requesty są mile widziane; zasady w [CONTRIBUTING.md](CONTRIBUTING.md).
+Zgłoszenia i pull requesty są mile widziane; zasady w [CONTRIBUTING.md](https://github.com/leniwyposel/sejm-mcp/blob/main/CONTRIBUTING.md).
 
 Zdjęcie w nagłówku: Piotr VaGla Waglowski,
 [domena publiczna](https://commons.wikimedia.org/wiki/File:200701_sejm_chmury_nad_sala_posiedzen.jpg).
@@ -414,7 +414,7 @@ the Chancellery. Please credit it as "Source: Chancellery of the Sejm, api.sejm.
 figures served by the hosted version from Leniwy Poseł are
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), credit "Leniwy Poseł, leniwyposel.pl".
 
-Code: [Apache 2.0](LICENSE); bundled third-party components (Tesseract OCR, tessdata, pdf.js)
-are listed in [NOTICE](NOTICE). Security issues: report privately via
-[SECURITY.md](SECURITY.md). Contributions: [CONTRIBUTING.md](CONTRIBUTING.md) and
-[CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md). Issues and PRs in Polish or English are welcome.
+Code: [Apache 2.0](https://github.com/leniwyposel/sejm-mcp/blob/main/LICENSE); bundled third-party components (Tesseract OCR, tessdata, pdf.js)
+are listed in [NOTICE](https://github.com/leniwyposel/sejm-mcp/blob/main/NOTICE). Security issues: report privately via
+[SECURITY.md](https://github.com/leniwyposel/sejm-mcp/blob/main/SECURITY.md). Contributions: [CONTRIBUTING.md](https://github.com/leniwyposel/sejm-mcp/blob/main/CONTRIBUTING.md) and
+[CODE_OF_CONDUCT.md](https://github.com/leniwyposel/sejm-mcp/blob/main/CODE_OF_CONDUCT.md). Issues and PRs in Polish or English are welcome.
