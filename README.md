@@ -156,6 +156,19 @@ W Claude Code działa też wtyczka z krótką instrukcją, jak odpowiadać na po
 
 </details>
 
+### Docker
+
+Bez Node.js, w kontenerze (obraz budujesz sam z repozytorium):
+
+```bash
+docker build -t sejm-mcp https://github.com/leniwyposel/sejm-mcp.git
+claude mcp add sejm -- docker run -i --rm sejm-mcp
+```
+
+W innych klientach wpisz `"command": "docker", "args": ["run", "-i", "--rm", "sejm-mcp"]`.
+Odczyt maszynowy skanów (OCR) działa też w kontenerze. Pobrane druki leżą wtedy w `/tmp`
+kontenera i znikają po jego zamknięciu.
+
 ### Telefon i przeglądarka
 
 Na razie nie. sejm-mcp działa na komputerze, a aplikacje mobilne i przeglądarkowe wersje

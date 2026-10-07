@@ -4,6 +4,14 @@ Format według [Keep a Changelog](https://keepachangelog.com/pl/1.1.0/), numerac
 [Semantic Versioning](https://semver.org/lang/pl/). Przed wersją 1.0.0 nazwy i kształt narzędzi
 mogą się jeszcze zmieniać; każda taka zmiana będzie tu opisana.
 
+## [Nieopublikowane]
+
+### Dodane
+
+- `Dockerfile` i `.dockerignore`: serwer w kontenerze (`docker run -i --rm sejm-mcp`), dwuetapowe
+  budowanie na `node:22-slim`, użytkownik bez uprawnień roota, silnik OCR w obrazie. Przygotowanie
+  wpisu w katalogu Docker MCP.
+
 ## [0.3.0] - 2026-10-02
 
 Pierwsze publiczne wydanie: kod na GitHubie (Apache-2.0), pakiet w npm, paczka `.mcpb`
