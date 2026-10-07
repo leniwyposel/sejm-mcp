@@ -1,0 +1,12 @@
+node_modules
+dist
+build
+.git
+.github
+.claude-plugin
+plugin
+ewaluacja
+testy
+*.tgz
+*.mcpb
+.DS_Store

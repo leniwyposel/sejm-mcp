@@ -31,6 +31,9 @@ Requires [Node.js](https://nodejs.org) 22+ (except Claude Desktop, which ships i
   ```
 
 - **Claude Code:** `claude mcp add sejm -- npx -y sejm-mcp` (add `--scope user` for all projects).
+- **Docker** (no Node.js needed; build the image yourself from the repository):
+  `docker build -t sejm-mcp https://github.com/leniwyposel/sejm-mcp.git`, then
+  `claude mcp add sejm -- docker run -i --rm sejm-mcp`. OCR of scanned pages works in the container too.
 - **Cursor, VS Code, Windsurf and others:** the same `command`/`args` entry (see the [Polish README](https://github.com/leniwyposel/sejm-mcp/blob/main/README.md#instalacja) for exact file paths).
 
 When the Sejm API is down, this server is down too. You can then use the hosted version, which
