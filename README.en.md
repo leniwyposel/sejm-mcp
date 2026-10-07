@@ -9,6 +9,11 @@
   Answers come from the official data of the Polish Sejm, with a link to the source.
 </p>
 
+<p align="center">
+  <a href="https://mcpservers.org/servers/leniwyposel/sejm-mcp"><img src="https://mcpservers.org/badge.svg" alt="Listed on mcpservers.org"></a>
+  <a href="https://glama.ai/mcp/servers/leniwyposel/sejm-mcp"><img src="https://glama.ai/mcp/servers/leniwyposel/sejm-mcp/badges/score.svg" alt="sejm-mcp on Glama"></a>
+</p>
+
 # sejm-mcp
 
 **sejm-mcp** is a Model Context Protocol (MCP) server for the public APIs of the Polish

@@ -16,6 +16,11 @@
 </p>
 
 <p align="center">
+  <a href="https://mcpservers.org/servers/leniwyposel/sejm-mcp"><img src="https://mcpservers.org/badge.svg" alt="Listed on mcpservers.org"></a>
+  <a href="https://glama.ai/mcp/servers/leniwyposel/sejm-mcp"><img src="https://glama.ai/mcp/servers/leniwyposel/sejm-mcp/badges/score.svg" alt="sejm-mcp w katalogu Glama"></a>
+</p>
+
+<p align="center">
   <a href="#co-możesz-zapytać">Przykłady</a> •
   <a href="#instalacja">Instalacja</a> •
   <a href="#jak-czytać-odpowiedzi">Jak czytać odpowiedzi</a> •
