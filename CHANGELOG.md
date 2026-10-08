@@ -6,6 +6,16 @@ mogą się jeszcze zmieniać; każda taka zmiana będzie tu opisana.
 
 ## [Nieopublikowane]
 
+## [0.3.1] - 2026-10-08
+
+### Zmienione
+
+- `@modelcontextprotocol/server` 2.1.0 → 2.2.0 (wraz z `@modelcontextprotocol/core`); bez zmian
+  w narzędziach i ich odpowiedziach.
+- `vitest` 5.0.1 → 5.0.3 (tylko testy).
+- README w dwóch językach (PL/EN z przełącznikiem), plakietki mcpservers.org i Glama,
+  `glama.json`, ręczna publikacja w rejestrze MCP przez GitHub OIDC.
+
 ### Dodane
 
 - `Dockerfile` i `.dockerignore`: serwer w kontenerze (`docker run -i --rm sejm-mcp`), dwuetapowe
@@ -152,4 +162,5 @@ Wydanie wewnętrzne (niepubliczne): 28 narzędzi do API Sejmu RP i bazy aktów p
 reguły liczenia (próg przy wecie, apel o kworum, klub z dnia głosowania, termin odpowiedzi
 na pismo od doręczenia) z testami na prawdziwych rekordach, wtyczka Claude Code ze skillem.
 
+[0.3.1]: https://github.com/leniwyposel/sejm-mcp/releases/tag/v0.3.1
 [0.3.0]: https://github.com/leniwyposel/sejm-mcp/releases/tag/v0.3.0

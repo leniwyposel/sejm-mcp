@@ -1,7 +1,7 @@
 {
   "name": "sejm",
   "displayName": "Sejm RP",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Posłowie, głosowania, interpelacje, procesy legislacyjne i akty prawne z publicznych API Kancelarii Sejmu, z instrukcją, jak odpowiadać na podstawie wyników.",
   "author": { "name": "Leniwy Poseł" },
   "homepage": "https://github.com/leniwyposel/sejm-mcp",

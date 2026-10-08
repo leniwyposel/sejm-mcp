@@ -1,6 +1,6 @@
 {
   "name": "sejm-mcp",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Serwer MCP do publicznych API Sejmu RP: posłowie, głosowania, interpelacje, procesy legislacyjne i akty prawne (ELI). Działa lokalnie, rozmawia wyłącznie z api.sejm.gov.pl.",
   "mcpName": "io.github.leniwyposel/sejm-mcp",
   "license": "Apache-2.0",
@@ -59,7 +59,7 @@
     "mcpb": "node skrypty/pakuj-mcpb.mjs"
   },
   "dependencies": {
-    "@modelcontextprotocol/server": "2.1.0",
+    "@modelcontextprotocol/server": "2.2.0",
     "unpdf": "1.8.1",
     "word-extractor": "1.0.4",
     "zod": "4.6.5"
@@ -71,7 +71,7 @@
     "pdfjs-dist": "6.3.289",
     "tesseract.js-core": "7.0.0",
     "typescript": "^7.0.2",
-    "vitest": "^5.0.1"
+    "vitest": "^5.0.2"
   },
   "publishConfig": {
     "access": "public"
