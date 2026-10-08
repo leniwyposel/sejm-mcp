@@ -16,7 +16,7 @@ const PREFIKS = '/sejm/';
 /** Ścieżka zaczynająca się od `eli/` idzie do API aktów prawnych, każda inna do API Sejmu. */
 const PREFIKS_ELI = '/eli/';
 
-export const WERSJA = '0.3.0';
+export const WERSJA = '0.3.1';
 const USER_AGENT = `sejm-mcp/${WERSJA} (+https://github.com/leniwyposel/sejm-mcp)`;
 
 export type Parametry = Record<string, string | number | boolean | undefined | null>;
