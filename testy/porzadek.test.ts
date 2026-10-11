@@ -63,8 +63,8 @@ describe('glosowania_posiedzenia z porzadek=true', () => {
     punktow: number;
     glosowanPodPunktami: number;
     pozostalychGlosowan: number;
-    punkty: Array<{ punkt: number; glosowania?: Array<{ glosowanie: string; wynik: string }>; glosowan?: number }>;
-    pozostaleGlosowania: { nazwa: string; glosowania: Array<{ glosowanie: string; wynik: string }> };
+    punkty: Array<{ punkt: number; glosowania?: Array<{ glosowanie: string; wynikWyliczony: string }>; glosowan?: number }>;
+    pozostaleGlosowania: { nazwa: string; glosowania: Array<{ glosowanie: string; wynikWyliczony: string }> };
   };
 
   it('każde głosowanie stoi raz, porcje mieszczą się w limicie znaków, odPunktu daje resztę', async () => {
@@ -81,7 +81,7 @@ describe('glosowania_posiedzenia z porzadek=true', () => {
         expect(w.odpowiedz).toMatch(/Porządek obrad: 53 punkty; pod punktami 137 głosowań, w grupie „Pozostałe głosowania” 10\./);
         widziane.push(...p.pozostaleGlosowania.glosowania.map((g) => g.glosowanie));
         const apel = p.pozostaleGlosowania.glosowania.find((g) => g.glosowanie === '65/3')!;
-        expect(apel.wynik).toBe('Kworum stwierdzone: 402 obecnych');
+        expect(apel.wynikWyliczony).toBe('Kworum stwierdzone: 402 obecnych');
       }
       odPunktu = (w as { nastepnyPunkt?: number | null }).nastepnyPunkt ?? undefined;
       if (!odPunktu) break;

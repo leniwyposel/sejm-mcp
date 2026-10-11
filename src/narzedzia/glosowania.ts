@@ -25,7 +25,7 @@ import {
   punktyPorzadku,
   rozlozNaPunkty,
 } from '../reguly/porzadek.js';
-import { czysty, klucz } from '../tekst.js';
+import { czysty, htmlNaTekst, klucz } from '../tekst.js';
 import {
   brak404, OPIS_CZESCIOWY,
   czesciowy,
@@ -136,8 +136,21 @@ const UWAGA_KWORUM =
   'obecnych to suma wszystkich naciśnięć. Brak naciśnięcia to opuszczony apel, który nie wlicza się do nieobecności w głosowaniach (statystyka Sejmu apeli nie liczy).';
 const UWAGA_LISTA =
   'Wybór z listy (rodzaj „lista”) nie ma zbiorczych głosów za i przeciw, ale karta każdego posła niesie jego głos przy każdym kandydacie: ' +
-  'pole wybory w glosPosla i w liście imiennej. Kandydat to napis z rejestru (bywa sam inicjał imienia): nie dopisuj imienia, którego tam nie ma.';
-const UWAGA_NIEGLOSOWALO = 'nieglosowalo to liczba Sejmu „nie głosowało”: posłowie nieobecni i nieuczestniczący razem.';
+  'pole wybory w glosPosla i w liście imiennej. kandydatWRejestrze (i wybrani) to napis dokładnie jak w rejestrze, często z samym inicjałem imienia („K. Morawiecki”); ' +
+  'rejestr głosowania nie podaje pełnego imienia ani numeru kandydata. Nie rozwijaj inicjału z pamięci. Pole poselKadencji pojawia się tylko wtedy, ' +
+  'gdy na liście posłów tej kadencji (rejestr Sejmu, /termN/MP) jest dokładnie jedna osoba o tym nazwisku i imieniu na tę literę: to dopasowanie serwera, nie pole głosowania. ' +
+  'Bez poselKadencji podaj kandydata tak, jak zapisał go rejestr. ' +
+  'Kto został wybrany (wybrani, „Wybrano: …”), wylicza ten serwer z głosów przy kandydatach i progu; rejestr nie ma pola z wynikiem wyboru.';
+const UWAGA_NIEGLOSOWALO =
+  'nieglosowalo to liczba z rejestru Sejmu („nie głosowało”, pole notParticipating): posłowie, którzy nie oddali głosu. ' +
+  'Rejestr zwykłego głosowania zapisuje tylko głos za, przeciw, wstrzymanie się albo jego brak (na liście imiennej kod ABSENT); ' +
+  'NIE zapisuje, kto był na sali obrad. Na pytanie „kto był na sali, ale nie głosował” odpowiedz, że rejestr tego nie zapisuje, ' +
+  'i podaj najwyżej liczbę albo listę tych, którzy nie głosowali (nie „obecnych”). przyciskObecny pojawia się tylko, gdy rejestr ma głosy „obecny” (PRESENT).';
+const UWAGA_WYNIK =
+  'Pola wynikWyliczony, przeszlo i rozstrzygniecie (także przy wecie i uchwale Senatu) wylicza ten serwer z liczb głosów i wymaganej większości; rejestr Sejmu nie ma pola z wynikiem. ' +
+  'To, co ogłosił prowadzący obrady, jest w polu stenogramPoGlosowaniu (dosłownie ze stenogramu dnia), gdy serwer je znalazł. ' +
+  'Nie pisz „rejestr zapisał przyjęto”. Przy mniej niż 230 głosujących serwer wyniku nie wylicza (przeszlo: null): co ogłosił Marszałek, ' +
+  'jest w stenogramie dnia (pole stenogram; słowa Marszałka po głosowaniu daje tresc_wypowiedzi z parametrem fraza).';
 const UWAGA_SENAT =
   'Przy uchwale Senatu Sejm głosuje WNIOSEK O ODRZUCENIE poprawki (albo uchwały Senatu odrzucającej ustawę), bezwzględną większością (art. 121 ust. 3 Konstytucji). ' +
   'przeszlo mówi o tym wniosku: przeszlo=false znaczy, że poprawka Senatu jest PRZYJĘTA. Głos „za” to głos za odrzuceniem poprawki, „przeciw” to głos za poprawką. ' +
@@ -198,7 +211,9 @@ function skrotGlosowania(g: GlosowanieZRejestru) {
       : {}),
     // Przy apelu o kworum żadne „stwierdzone” ani „przeszło”: model czytał to jako przyjęcie.
     // Przy wecie samo „Odrzucono” czytano jako „odrzucono weto”, czyli odwrotnie.
-    wynik:
+    // Nazwa mówi, skąd wartość: przy gołym „wynik” Haiku pisał „rejestr podaje rozstrzygnięcie”,
+    // a rejestr Sejmu nie ma pola z wynikiem.
+    wynikWyliczony:
       w.rodzaj === 'kworum'
         ? opisApelu(w)
         : weto
@@ -207,6 +222,14 @@ function skrotGlosowania(g: GlosowanieZRejestru) {
             : 'Nie uchwalono ponownie: weto utrzymane'
           : w.etykieta,
     przeszlo: w.przeszlo,
+    // Model z samym linkiem do stenogramu odpowiadał „nie wiadomo” i do stenogramu nie zaglądał (test 11.10.2026).
+    ...(w.ponizejPolowy
+      ? {
+          sprawdzWStenogramie:
+            `Zanim odpowiesz, przeczytaj, co Marszałek ogłosił po tym głosowaniu: wypowiedzi_posiedzenia dla dnia ${g.date.slice(0, 10)}, ` +
+            `potem tresc_wypowiedzi Marszałka; szukaj zdania „Głosowało ${g.yes + g.no + g.abstain} posłów”. Przytocz jego słowa dosłownie.`,
+        }
+      : {}),
     ...(w.rodzaj === 'kworum'
       ? {
           kworumJest: w.kworumJest,
@@ -223,15 +246,20 @@ function skrotGlosowania(g: GlosowanieZRejestru) {
     // Przy wyborze z listy za/przeciw/wstrzymało nie istnieją (rejestr podaje zera): pokazujemy kandydatów.
     ...(w.rodzaj === 'lista'
       ? {
-          kandydaci: (g.votingOptions ?? []).map((o) => ({ kandydat: nazwaZListy(o.option), glosow: o.votes })),
-          wybrani: w.wybrani.map(nazwaZListy),
+          // Napis kandydata dokładnie jak w rejestrze („K. Morawiecki”): Haiku rozwijał inicjał z pamięci
+          // („Krzysztof”). Pełne imię dopisuje tylko dopasowanie do listy posłów (poselKadencji).
+          kandydaci: (g.votingOptions ?? []).map((o): Kandydat => ({ kandydatWRejestrze: o.option.trim(), glosow: o.votes })),
+          wybrani: w.wybrani.map((x) => x.trim()),
           przeciwWszystkim: g.againstAll ?? null,
           glosowalo: g.totalVoted,
         }
       : w.rodzaj === 'kworum'
         ? // Na apelu przycisk nie jest głosem: pokazujemy, co naciśnięto, pod nazwą, która tego nie udaje.
           { nacisniecia: { za: g.yes, przeciw: g.no, wstrzymanie: g.abstain, obecny: g.present } }
-        : { za: g.yes, przeciw: g.no, wstrzymalo: g.abstain, obecniBezGlosu: g.present }),
+        : // Bez „obecniBezGlosu: 0”: model czytał to jako „rejestr wie, kto był na sali i nie głosował: nikt”
+          //. Rejestr zwykłego głosowania zna tylko głos albo jego brak;
+          // liczba z przyciskiem „obecny” (PRESENT) pojawia się tylko wtedy, gdy rejestr ją ma.
+          { za: g.yes, przeciw: g.no, wstrzymalo: g.abstain, ...(g.present ? { przyciskObecny: g.present } : {}) }),
     nieglosowalo: g.notParticipating,
   };
 }
@@ -250,7 +278,7 @@ function zwiezle(g: SkrotGlosowania): Record<string, unknown> {
     if (v === null && k !== 'punkt') continue;
     if (k === 'wiekszosc' && v === 'większość zwykła') continue;
     if (k === 'akt' && v === 'ustawa lub uchwała') continue;
-    if (k === 'rozstrzygniecie' && v === g.wynik) continue;
+    if (k === 'rozstrzygniecie' && v === g.wynikWyliczony) continue;
     wynik[k] = v;
   }
   return wynik;
@@ -300,7 +328,83 @@ export function zdanieOGlosowaniu(g: GlosowanieSurowe & { sitting: number; votin
     return `${nr} nad poprawką Senatu (głosowano wniosek o jej odrzucenie; „za” znaczy za odrzuceniem poprawki): ${liczby}${prog}. Rozstrzygnięcie: ${w.etykieta}.`;
   }
   if (w.senat) return `${nr} nad uchwałą Senatu odrzucającą ustawę (głosowano wniosek o odrzucenie tej uchwały): ${liczby}${prog}. Rozstrzygnięcie: ${w.etykieta}.`;
-  return `${nr}: ${liczby}${prog}. Wynik: ${w.przeszlo ? 'przyjęto' : 'odrzucono'}.`;
+  if (w.ponizejPolowy) return `${nr}: ${liczby}. ${w.etykieta}.`;
+  return `${nr}: ${liczby}${prog}. Wynik (wyliczony z liczb, rejestr nie ma pola z wynikiem): ${w.przeszlo ? 'przyjęto' : 'odrzucono'}.`;
+}
+
+/** Co rejestr wie o niegłosujących, jednym zdaniem: bez tego model czytał zero „obecnych bez głosu” jako fakt o sali. */
+export function zdanieONieglosujacych(g: Pick<GlosowanieSurowe, 'notParticipating' | 'present'>): string {
+  return (
+    `Nie głosowało ${g.notParticipating} posłów (w rejestrze „nie głosowało”, na liście imiennej kod ABSENT). ` +
+    'Rejestr głosowania nie zapisuje, kto był wtedy na sali obrad: zna tylko oddane głosy i ich brak.'
+  );
+}
+
+/**
+ * Słowa prowadzącego obrady zaraz po głosowaniu, wycięte ze stenogramu dnia. Rejestr nie zapisuje,
+ * co Marszałek ogłosił (np. brak kworum przy 18/127), a cała jego wypowiedź z dnia to ~110 tys.
+ * znaków: model czytający ją porcjami zużywał ~240 tys. tokenów. Szukamy zdania, którym Marszałek
+ * odczytuje wynik („Głosowało 227 posłów. 221 - za, 5 - przeciw”), po liczbach z rekordu, i oddajemy
+ * dosłowny akapit od niego. Zwykłe wyszukanie tekstu, bez rozpoznawania sensu.
+ */
+export function fragmentPoGlosowaniu(tekst: string, g: Pick<GlosowanieSurowe, 'yes' | 'no' | 'abstain'>, ile = 900): string | null {
+  const n = g.yes + g.no + g.abstain;
+  // Marszałek odczytuje wynik na kilka sposobów („221 - za, 5 - przeciw”, „Za - 231, przeciw nie był
+  // nikt”, „Większość 3/5 - 266. 241 - za…”), więc kotwicą jest „Głosowało N posłów”, a po niej
+  // w krótkim oknie muszą paść wszystkie niezerowe liczby z rekordu, w dowolnym szyku.
+  const kotwica = new RegExp(`Głosowało\\s+${n}\\s+posł`, 'gu');
+  const liczby = [g.yes, g.no, g.abstain].filter((x) => x > 0);
+  const trafienia: number[] = [];
+  for (const m of tekst.matchAll(kotwica)) {
+    // Okno to samo zdanie z wynikiem: do „Wyniki głosowania”, następnego „Głosowało” albo 160 znaków.
+    // Szersze okno wchodziło na odczyt kolejnego głosowania i dawało fałszywe dwa trafienia.
+    let okno = tekst.slice(m.index + m[0].length, m.index + m[0].length + 160);
+    const koniecOkna = okno.search(/Wyniki głosowania|Głosowało|Kto z pa/);
+    if (koniecOkna >= 0) okno = okno.slice(0, koniecOkna);
+    const jednomyslnie =
+      (g.no === 0 && g.abstain === 0 && /wszyscy byli za/i.test(okno)) || (g.yes === 0 && g.abstain === 0 && /wszyscy byli przeciw/i.test(okno));
+    // Każda niezerowa liczba musi stać przy swoim słowie, w obu szykach Marszałka („221 - za”, „Za - 231”,
+    // „Za było 247”, „1 się wstrzymał”, „wstrzymało się 2”): same liczby myliły 427/0/18 z 18/427/0.
+    const przy = (x: number, slowo: string) =>
+      x === 0 || new RegExp(`(^|[^0-9])${x}\\s*[-–—]?\\s*(się\\s+)?${slowo}|${slowo}[a-ząćęłńóśźż]*\\s*(było|się|[-–—])?\\s*${x}([^0-9]|$)`, 'iu').test(okno);
+    const zgodne = przy(g.yes, 'za') && przy(g.no, 'przeciw') && przy(g.abstain, 'wstrzyma');
+    if (jednomyslnie || (liczby.length > 0 && zgodne)) trafienia.push(m.index);
+  }
+  // Dwa głosowania tego dnia z tymi samymi liczbami: nie zgadujemy, który akapit jest nasz.
+  if (trafienia.length !== 1) return null;
+  let reszta = tekst.slice(trafienia[0], trafienia[0] + ile);
+  // Akapit kończy się przed odczytem następnego głosowania: przy 19/8 sięgał wyniku druku 708.
+  const nastepne = reszta.slice(20).search(/Głosowało\s+\d+\s+posł|Kto z pań i panów posłów jest za|Przystępujemy do/);
+  if (nastepne >= 0) reszta = reszta.slice(0, 20 + nastepne).trimEnd();
+  // Kończymy na granicy zdania, żeby nie urwać cytatu w pół słowa.
+  const kropka = reszta.lastIndexOf('.');
+  // „Wyniki głosowania” to etykieta linku w HTML stenogramu, nie słowa Marszałka; modele cytowały ją dosłownie.
+  return (kropka > 0 && reszta.length === ile ? reszta.slice(0, kropka + 1) : reszta)
+    .replace(/\s*(Indywidualne wyniki głosowania|Wyniki głosowania)\s*/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/** Spis wypowiedzi dnia → wypowiedzi prowadzącego obrady → pierwszy fragment po głosowaniu. Błąd sieci to null, nie wyjątek. */
+async function stenogramPoGlosowaniu(zrodlo: ZrodloSejmu, kadencja: number, g: GlosowanieZRejestru) {
+  const dzien = g.date.slice(0, 10);
+  const baza = `${T(kadencja)}/proceedings/${g.sitting}/${dzien}/transcripts`;
+  // Wspólny termin na całe dociąganie (bez niego do 5 zapytań po 30 s, czyli
+  // ~150 s, gdy Sejm wisi). Stenogram to dodatek: lepiej go nie dać niż trzymać odpowiedź.
+  const termin = Date.now() + 8_000;
+  try {
+    const spis = (await zrodlo.json<{ statements?: Array<{ num: number; name?: string }> }>(baza, { limitCzasu: 8_000, termin }))?.statements ?? [];
+    const prowadzacy = spis.filter((s) => /^(wice)?marsza[łl]ek/i.test(s.name ?? '')).slice(0, 4);
+    for (const s of prowadzacy) {
+      if (Date.now() >= termin) break;
+      const html = await zrodlo.tekst(`${baza}/${s.num}`, { limitCzasu: 8_000, termin });
+      const cytat = html ? fragmentPoGlosowaniu(htmlNaTekst(html), g) : null;
+      if (cytat) return { cytat, mowca: s.name ?? 'Marszałek', wypowiedz: s.num, zrodlo: zrodlo.adres(`${baza}/${s.num}`) };
+    }
+  } catch {
+    // Stenogram bywa niedostępny albo wolny: wtedy zostaje podpowiedź sprawdzWStenogramie.
+  }
+  return null;
 }
 
 /** Bliźniacze głosowania jako pole na wierzchu wyniku, nie uwaga na końcu (model przeoczał uwagi). */
@@ -430,6 +534,7 @@ function uwagaBlizniaki(lista: Array<{ data: string; temat: string | null }>): s
 /** Uwagi tylko o tym, co w tej odpowiedzi faktycznie występuje. */
 function uwagiDoGlosowan(lista: ReturnType<typeof skrotGlosowania>[]): string[] {
   const uwagi = [UWAGA_NIEGLOSOWALO];
+  if (lista.some((g) => g.rodzaj === 'za-przeciw')) uwagi.push(UWAGA_WYNIK);
   if (lista.some((g) => g.progZa !== null)) uwagi.push(UWAGA_PROG);
   if (lista.some((g) => g.rodzaj === 'kworum')) uwagi.push(UWAGA_KWORUM);
   if (lista.some((g) => g.rodzaj === 'lista')) uwagi.push(UWAGA_LISTA);
@@ -496,7 +601,7 @@ function klubPoPolsku(k: KubelkiKlubu, lista: boolean) {
         za: k.za,
         przeciw: k.przeciw,
         wstrzymalo: k.wstrzymanie,
-        obecniBezGlosu: k.obecny,
+        ...(k.obecny ? { przyciskObecny: k.obecny } : {}),
         nieobecni: k.nieobecny,
         nieuczestniczacy: k.nieuczestniczacy,
       };
@@ -751,6 +856,7 @@ export const glosowaniaPosiedzenia = narzedzie({
         uwagi: [...uwagaKadencji, `Dzień ${a.data} nie należy do posiedzenia ${a.posiedzenie} (jego dni z głosowaniami: ${dni.join(', ')}). Numer posiedzenia danego dnia daje lista_posiedzen z od/do.`],
       };
     }
+    await dopasujKandydatow(zrodlo, k, wybrane);
     const b = bilans(wybrane);
     const s = b.nadUchwalamiSenatu;
     const zdanieSenat = s.glosowan
@@ -759,7 +865,8 @@ export const glosowaniaPosiedzenia = narzedzie({
         (s.nadOdrzuceniemUstawy ? `; nad uchwałą Senatu odrzucającą ustawę ${s.nadOdrzuceniemUstawy}` : '')
       : '';
     const odpowiedz =
-      `Posiedzenie ${a.posiedzenie}${a.data ? `, dzień ${a.data}` : ''}${k !== 10 ? ` (kadencja ${k})` : ''}: ${odmiana(b.wszystkich, ['głosowanie', 'głosowania', 'głosowań'])}; przyjęto ${b.przyjetych}, odrzucono ${b.odrzuconych}${zdanieSenat}; ` +
+      `Posiedzenie ${a.posiedzenie}${a.data ? `, dzień ${a.data}` : ''}${k !== 10 ? ` (kadencja ${k})` : ''}: ${odmiana(b.wszystkich, ['głosowanie', 'głosowania', 'głosowań'])}; ` +
+      `przyjęto ${b.przyjetych}, odrzucono ${b.odrzuconych} (wylicza ten serwer z liczb głosów i progów, rejestr nie ma pola z wynikiem)${zdanieSenat}; ` +
       `apele o kworum ${b.apeliOKworum}${b.kworum.length ? ` (${b.kworum.map((q) => `${q.glosowanie}: obecnych ${q.obecnych}, ${q.kworumJest ? 'kworum stwierdzone' : 'brak kworum'}`).join('; ')})` : ''}` +
       `${b.apeliOKworum ? `, więc bez apeli ${odmiana(b.wszystkich - b.apeliOKworum, ['głosowanie', 'głosowania', 'głosowań'])} (tyle z reguły liczy statystyka Sejmu)` : ''}; ` +
       `wybory z listy ${b.wyborowZListy}; głosowania nad całością projektu: ustaw ${b.nadCaloscia.ustaw.razem} (przyjęto ${b.nadCaloscia.ustaw.przyjetych}), ` +
@@ -843,8 +950,7 @@ function przytnij(t: string, max = MAKS_LINII): string {
 }
 
 /**
- * Porządek obrad z głosowaniami pod punktami, jak strona posiedzenia w serwisie leniwyposel.pl:
- * przypisanie robi `rozlozNaPunkty` (src/reguly/porzadek.ts), werdykt ten sam co w liście
+ * Porządek obrad z głosowaniami pod punktami: przypisanie robi `rozlozNaPunkty` (src/reguly/porzadek.ts), werdykt ten sam co w liście
  * (`skrotGlosowania`). Porządek przychodzi z `/proceedings/{n}` (pole agenda). `null`, gdy
  * porządku nie ma; awaria sieci przy porządku też daje `null` z uwagą, a nie błąd całości.
  */
@@ -874,8 +980,8 @@ async function porzadekZGlosowaniami(
     const s = wgNumeru.get(g.votingNumber);
     const w = wynikGlosowania(g);
     // Werdykt bez nawiasu z uzasadnieniem: przy poprawkach Senatu wyjaśnia go uwaga, a przy apelu etykieta mówi wszystko.
-    const wynik = w.rodzaj === 'kworum' ? w.etykieta : String(s?.wynik ?? w.etykieta).replace(/\s*\([^()]*\)$/, '');
-    return { glosowanie: `${g.sitting}/${g.votingNumber}`, tytul: przytnij(liniaGlosowania(g.title, g.topic, podPunktem)), wynik };
+    const wynikWyliczony = w.rodzaj === 'kworum' ? w.etykieta : String(s?.wynikWyliczony ?? w.etykieta).replace(/\s*\([^()]*\)$/, '');
+    return { glosowanie: `${g.sitting}/${g.votingNumber}`, tytul: przytnij(liniaGlosowania(g.title, g.topic, podPunktem)), wynikWyliczony };
   };
   const wszystkiePunkty = jedenDzien ? rozklad.punkty.filter((p) => p.glosowania.length > 0) : rozklad.punkty;
   const od = odPunktu ? wszystkiePunkty.findIndex((p) => p.punkt.poz >= odPunktu) : 0;
@@ -951,6 +1057,9 @@ function zliczRodzaje(lista: Array<{ rodzaj: string }>): Record<string, number> 
   return Object.fromEntries(Object.entries(wynik).sort((x, y) => y[1] - x[1]));
 }
 
+/** Do tylu trafień pełnej frazy dobieramy głosowania z rdzeniami frazy w opisie (description). */
+const DOBIERZ_DO = 20;
+
 /** Ile rdzeni najwyżej pobieramy osobno, gdy pełna fraza nie trafia (po 5 zapytań na rdzeń). */
 const MAKS_RDZENI = 2;
 /** Tyle najnowszych trafień jednego rdzenia przeglądamy (porcjami po 100). */
@@ -960,7 +1069,7 @@ export const szukajGlosowan = narzedzie({
   nazwa: 'szukaj_glosowan',
   tytul: 'Szukaj głosowań',
   opis:
-    'Wyszukuje głosowania po słowie w tytule (wyszukiwarka rejestru Sejmu), opcjonalnie w przedziale dat lub na jednym posiedzeniu. ' +
+    'Wyszukuje głosowania po słowie w tytule i temacie (wyszukiwarka rejestru Sejmu), a przy kilku trafieniach dobiera głosowania z tymi słowami w opisie; opcjonalnie w przedziale dat lub na jednym posiedzeniu. ' +
     'Domyślnie najnowsze najpierw. Tytuły są w dopełniaczu i bez skrótów: szukaj "ustawy budżetowej na rok 2024", ' +
     '"Krajowej Radzie Sądownictwa", nie "budżetowa 2024" ani "KRS"; rdzeń słowa też działa ("budżet", "podatk"). ' +
     'Fraza z nazwiskiem posła (np. „Mejza immunitet”) szuka tego nazwiska w TYTUŁACH głosowań (wnioski o uchylenie immunitetu, sprawy z oskarżenia prywatnego); ' +
@@ -1145,6 +1254,52 @@ export const szukajGlosowan = narzedzie({
         dodatkowe.push('Zero trafień. Rejestr szuka dosłownie w tytule: rozwiń skróty (KRS, NFZ, ZUS, TK) i spróbuj samego rdzenia słowa.');
       }
     }
+    // Pełna fraza trafiła, ale wyszukiwarka Sejmu szuka ciągłego napisu tylko w tytule i temacie. Temat 65/12
+    // ma literówkę rejestru („wnioskuo wyrażenie zgody przez Sejm na zatrzymanie…”), więc fraza z pytania
+    // dawała samo 63/71, choć opis (description) 65/12 brzmi dokładnie jak pytanie.
+    // Przy małej liczbie trafień dobieramy więc głosowania z rdzeniami frazy w tytule, temacie LUB opisie.
+    if (a.fraza && !zRdzeni && lacznie !== null && lacznie > 0 && lacznie <= DOBIERZ_DO && lacznie <= dane.length && a.przesuniecie === 0) {
+      const rdz = rdzenie(a.fraza);
+      if (rdz.length >= 2) {
+        try {
+          const liczby = await Promise.all(
+            rdz.map(async (r) => ({ r, ile: (await zrodlo.lista<unknown>(sciezka, { parametry: { ...filtr, title: r, limit: 1, offset: 0 } })).razem ?? 0 })),
+          );
+          const najrzadszy = liczby.filter((x) => x.ile > 0).sort((x, y) => x.ile - y.ile)[0];
+          if (najrzadszy && najrzadszy.ile <= OKNO_RDZENIA) {
+            const porcje = [];
+            for (let off = 0; off < najrzadszy.ile; off += 100) porcje.push({ ...filtr, title: najrzadszy.r, limit: 100, offset: off });
+            const surowe = (await Promise.all(porcje.map((par) => zrodlo.lista<unknown>(sciezka, { parametry: par })))).flatMap((o) =>
+              jakoLista<GlosowanieZRejestru>(o.dane, 'wyniki wyszukiwania'),
+            );
+            const sa = new Set(dane.map((g) => g.glosowanie));
+            const tekst = (g: GlosowanieZRejestru) => `${g.title ?? ''} ${g.topic ?? ''} ${g.description ?? ''}`;
+            const nowe = surowe
+              .filter((g) => !sa.has(`${g.sitting}/${g.votingNumber}`) && maWszystkie(tekst(g), rdz))
+              .map((g) => {
+                jakoRekord(g, 'głosowanie', LICZBY_GLOSOWANIA);
+                return skrotGlosowania(g);
+              });
+            if (nowe.length) {
+              const pelna = uporzadkuj([...dane, ...nowe]);
+              wynik = pelna.slice(0, a.limit);
+              wszystkich = pelna.length;
+              pelnaLista = pelna;
+              doPodsumowania = pelna;
+              zRdzeni = true;
+              zrodlaAdresy = [...zrodlaAdresy, zrodlo.adres(sciezka, { ...filtr, title: najrzadszy.r })];
+              dodatkowe.push(
+                `Wyszukiwarka Sejmu znalazła pełną frazę w ${odmiana(lacznie, ['głosowaniu', 'głosowaniach', 'głosowaniach'])}; dołączono jeszcze ` +
+                  `${nowe.map((g) => g.glosowanie).join(', ')}: mają wszystkie rdzenie frazy (${rdz.join(', ')}) w tytule, temacie albo opisie, ` +
+                  'choć ich temat w rejestrze brzmi inaczej (np. literówka). Sprawdź, które głosowanie pasuje do pytania; może pasować kilka.',
+              );
+            }
+          }
+        } catch (e) {
+          czesci.push(czesciowyZBledu(e, 'głosowań, w których fraza stoi w opisie, a nie w temacie (dobieranie po rdzeniach); głosowania z pełną frazą są pokazane'));
+        }
+      }
+    }
     // Podsumowanie według rodzaju liczymy ze WSZYSTKICH trafień: model dostawał 57 trafień frazy
     // „kworum” i podawał 57 apeli, choć pole rodzaj mówiło 52 apele i 5 zwykłych głosowań (04-b).
     if (!doPodsumowania && lacznie !== null && lacznie > dane.length && lacznie <= PODSUMOWANIE_DO && wynik === dane) {
@@ -1201,6 +1356,7 @@ export const szukajGlosowan = narzedzie({
     };
     // Porcja ponad ok. 20 tys. znaków trafiała u klienta do pliku (20-5): przycinamy od końca w kolejności rejestru.
     const zrodlowa = zRdzeni || wynik !== dane ? wynik : daneSurowe;
+    await dopasujKandydatow(zrodlo, a.kadencja, zrodlowa);
     const uloz = zRdzeni || wynik !== dane ? (x: SkrotGlosowania[]) => x : uporzadkuj;
     const n = porcjaWRozmiarze(zrodlowa, (p) => zloz(uloz(p)));
     const w = zloz(uloz(zrodlowa.slice(0, n)));
@@ -1209,28 +1365,52 @@ export const szukajGlosowan = narzedzie({
   },
 });
 
+interface Kandydat {
+  kandydatWRejestrze: string;
+  glosow: number;
+  poselKadencji?: { id: number; imieNazwisko: string };
+}
+
+/** „K. Morawiecki” (VIII kadencja, 1/1) albo „Witek E.” (VIII kadencja, 85/25): inicjał i nazwisko z rejestru. */
+const INICJAL = /^([A-ZĄĆĘŁŃÓŚŹŻ])\.\s+(.+)$/u;
+const INICJAL_NA_KONCU = /^(.+?)\s+([A-ZĄĆĘŁŃÓŚŹŻ])\.$/u;
+
+function inicjalINazwisko(napis: string): { inicjal: string; nazwisko: string } | null {
+  const m = INICJAL.exec(napis);
+  if (m) return { inicjal: m[1], nazwisko: m[2] };
+  const k = INICJAL_NA_KONCU.exec(napis);
+  return k ? { inicjal: k[2], nazwisko: k[1] } : null;
+}
+
 /**
- * Kandydaci z wyboru z listy. Starsze kadencje zapisują ich inicjałem („M. KUCHCIŃSKI”), a model
- * rozwijał inicjał z pamięci („Maciej”, choć Marek). Jeśli wśród posłów kadencji jest dokładnie
- * jedna osoba o tym nazwisku i inicjale, podajemy jej pełne imię i numer.
+ * Kandydaci z wyboru z listy. Rejestr zapisuje ich inicjałem („M. KUCHCIŃSKI”, „K. Morawiecki”) i nie
+ * podaje numeru posła, a model rozwijał inicjał z pamięci („Maciej”, choć Marek; „Krzysztof”, choć
+ * Kornel). Napis z rejestru zostaje zawsze; gdy wśród posłów kadencji (lista /termN/MP) jest dokładnie
+ * jedna osoba o tym nazwisku i inicjale, dopisujemy ją jako poselKadencji. Dwie osoby albo żadna: nic
+ * nie dopisujemy. Awaria listy posłów też zostawia sam napis: to dodatek, nie wynik głosowania.
  */
-async function kandydaciZNazwiskami(
-  zrodlo: import('../klient.js').ZrodloSejmu,
-  kadencja: number,
-  opcje: Array<{ option: string; votes: number }>,
-) {
-  const inicjal = opcje.some((o) => /^[A-ZĄĆĘŁŃÓŚŹŻ]\.\s/u.test(o.option.trim()));
-  const poslowie = inicjal
-    ? jakoLista<{ id: number; firstName: string; lastName: string }>(await zrodlo.json<unknown>(`${T(kadencja)}/MP`), 'posłowie')
-    : [];
-  return opcje.map((o) => {
-    const m = /^([A-ZĄĆĘŁŃÓŚŹŻ])\.\s+(.+)$/u.exec(o.option.trim());
-    if (!m) return { kandydat: nazwaZListy(o.option), glosow: o.votes };
-    const pasujacy = poslowie.filter((p) => klucz(p.lastName) === klucz(m[2]) && klucz(p.firstName).startsWith(klucz(m[1])));
-    return pasujacy.length === 1
-      ? { kandydat: `${pasujacy[0].firstName} ${pasujacy[0].lastName}`, poselId: pasujacy[0].id, wRejestrze: o.option, glosow: o.votes }
-      : { kandydat: nazwaZListy(o.option), glosow: o.votes, uwaga: 'Rejestr podaje tylko inicjał imienia; nie rozwijaj go bez sprawdzenia w znajdz_posla.' };
-  });
+export async function dopasujKandydatow(zrodlo: ZrodloSejmu, kadencja: number, listy: ReadonlyArray<object>): Promise<void> {
+  const zInicjalem = listy.flatMap((g) => ('kandydaci' in g ? (g.kandydaci as Kandydat[]) : [])).filter((k) => inicjalINazwisko(k.kandydatWRejestrze) !== null);
+  if (!zInicjalem.length) return;
+  let poslowie: Array<{ id: number; firstName: string; lastName: string }>;
+  try {
+    poslowie = jakoLista(await zrodlo.json<unknown>(`${T(kadencja)}/MP`), 'posłowie');
+  } catch {
+    return;
+  }
+  for (const k of zInicjalem) {
+    const m = inicjalINazwisko(k.kandydatWRejestrze)!;
+    const pasujacy = poslowie.filter((p) => klucz(p.lastName) === klucz(m.nazwisko) && klucz(p.firstName).startsWith(klucz(m.inicjal)));
+    if (pasujacy.length === 1) k.poselKadencji = { id: pasujacy[0].id, imieNazwisko: `${pasujacy[0].firstName} ${pasujacy[0].lastName}` };
+  }
+}
+
+/** Zdanie o dopasowaniu inicjałów, żeby model nie musiał łączyć dwóch pól. */
+function zdanieOKandydatach(kandydaci: Kandydat[] | undefined): string | null {
+  const z = (kandydaci ?? []).filter((k) => k.poselKadencji);
+  return z.length
+    ? `Kandydaci w rejestrze zapisani inicjałem; na liście posłów kadencji to: ${z.map((k) => `„${k.kandydatWRejestrze}” = ${k.poselKadencji!.imieNazwisko} (id ${k.poselKadencji!.id})`).join(', ')}.`
+    : null;
 }
 
 /** Dlaczego posła nie ma na liście imiennej: ślubował później albo mandat już wygasł. */
@@ -1377,6 +1557,11 @@ export const glosowanie = narzedzie({
       niejasnosci.length === 0 ? undefined : niejasnosci.length === 1 ? niejasnosci[0] : { powod: niejasnosci.map((n) => n.powod).join(' '), coZrobic: niejasnosci.map((n) => n.coZrobic).join(' '), wynikiKlubow: niejasnosci.find((n) => n.wynikiKlubow)?.wynikiKlubow };
 
     const skrot = skrotGlosowania(g);
+    if (w.rodzaj === 'lista') await dopasujKandydatow(zrodlo, a.kadencja, [skrot]);
+    const kandydaci = 'kandydaci' in skrot ? skrot.kandydaci : undefined;
+    // Rejestr nie zapisuje, co Marszałek ogłosił po głosowaniu (przyjęcie, odrzucenie weta, brak kworum);
+    // dajemy jego słowa od razu przy każdym głosowaniu za-przeciw. Apel ma cytat z rejestru apeli, wybór z listy inny układ.
+    const poGlosowaniu = w.rodzaj === 'zwykle' ? await stenogramPoGlosowaniu(zrodlo, a.kadencja, g) : null;
     uwagi.push(...uwagiDoGlosowan([skrot]));
     if (a.listaImienna && !a.klub) {
       uwagi.push(
@@ -1416,13 +1601,26 @@ export const glosowanie = narzedzie({
     return {
       znaleziono: true,
       ...(wynikCzesciowyGlosowania ? { wynikCzesciowy: wynikCzesciowyGlosowania } : {}),
-      odpowiedz: [zdanieOGlosowaniu(g), zdanieListy, zdaniePosla, imiennicy.length ? `Imiennicy w tej kadencji: ${imiennicy.join('; ')}.` : null].filter(Boolean).join(' '),
+      odpowiedz: [
+        zdanieOGlosowaniu(g),
+        poGlosowaniu ? `${poGlosowaniu.mowca} po głosowaniu (stenogram, wypowiedź ${poGlosowaniu.wypowiedz}): „${poGlosowaniu.cytat}”` : null,
+        w.rodzaj === 'zwykle' ? zdanieONieglosujacych(g) : null,
+        w.rodzaj === 'lista' ? zdanieOKandydatach(kandydaci) : null,
+        zdanieListy,
+        zdaniePosla,
+        imiennicy.length ? `Imiennicy w tej kadencji: ${imiennicy.join('; ')}.` : null,
+      ]
+        .filter(Boolean)
+        .join(' '),
       ...(niejednoznaczne ? { niejednoznaczne } : {}),
       ...skrot,
+      // Stenogram dnia przy każdym głosowaniu: tam jest to, co Marszałek ogłosił na sali, czego rejestr nie zapisuje.
+      stenogram: zrodlo.adres(`${T(a.kadencja)}/proceedings/${g.sitting}/${g.date.slice(0, 10)}/transcripts/pdf`),
+      ...(poGlosowaniu ? { stenogramPoGlosowaniu: poGlosowaniu, sprawdzWStenogramie: undefined } : {}),
       glosowalo: g.totalVoted,
       przeciwWszystkim: w.rodzaj === 'lista' ? (g.againstAll ?? null) : undefined,
-      wybrani: w.rodzaj === 'lista' ? w.wybrani.map(nazwaZListy) : undefined,
-      kandydaci: w.rodzaj === 'lista' ? await kandydaciZNazwiskami(zrodlo, a.kadencja, g.votingOptions ?? []) : undefined,
+      wybrani: 'wybrani' in skrot ? skrot.wybrani : undefined,
+      kandydaci,
       kluby,
       glosPosla: glosyPoslow.length === 1 ? glosyPoslow[0] : glosyPoslow.length ? glosyPoslow : undefined,
       listaImienna: a.klub

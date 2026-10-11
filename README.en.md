@@ -50,7 +50,8 @@ from the figures on leniwyposel.pl, which applies its own rules described at
 
 Disk and consent: prints up to 20 MB are downloaded without asking. The Sejm usually does not
 announce the size, so the server counts bytes while downloading; past 20 MB it stops and asks
-you first, saying why. Downloaded prints, their extracted text and OCR results are cached in your
+you first, saying why. Downloaded prints, their extracted text, OCR results and the text of
+legal acts read from ELI PDFs (until ELI shows a newer version of the act) are cached in your
 user cache folder (`~/Library/Caches/sejm-mcp`, `~/.cache/sejm-mcp`, `%LOCALAPPDATA%\sejm-mcp\Cache`
 or `SEJM_MCP_SCHOWEK`), at most about 500 MB, least recently used files removed first. OCR of more
 than 10 pages at once also asks first. A single answer is capped at 28,000 characters; a longer
@@ -71,6 +72,21 @@ Three starter prompts:
    majority and how each club voted; return JSON for a chart."
 3. *Late ministerial answers:* "Which interpellations to the Minister of … have waited more than
    21 days since delivery? Give numbers and links."
+
+## Ready-made prompts
+
+The server also ships six ready-made prompts (MCP prompts), shown by clients as commands
+(in Claude Code type `/`, e.g. `/mcp__sejm__posel`; in Claude Desktop use the "+" button). Each
+tells the assistant which tools to use and to cite the source link. The prompt texts are in Polish.
+
+| Prompt | Arguments |
+|---|---|
+| `glosowania_dzis`: what the Sejm votes on today | none |
+| `posel`: who is this MP | first and last name |
+| `glos_posla`: how an MP voted on a bill | name, bill |
+| `etap_ustawy`: what stage a bill is at | title words or print number |
+| `kluby_w_glosowaniu`: how the clubs voted | sitting number, vote number |
+| `czy_obowiazuje`: is this act in force | act name or address, e.g. DU/1974/141 |
 
 ## Tools
 

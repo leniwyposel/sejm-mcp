@@ -108,8 +108,6 @@ export function rozstrzygniecieSenatu(
  * Niezależne potwierdzenie: statystyka posła w Sejmie (`/MP/{id}/votings/stats`) pomija
  * wszystkie pięć, tak jak pomija apele w trybie „obecny” (poseł 1, 23.04.2025: lista dnia ma
  * 6 pozycji z 33/5 „ABSTAIN”, statystyka mówi 5).
- *
- * Reguła taka sama jak w serwisie leniwyposel.pl (`shared/apele-kworum.ts`, decyzja z 2.10.2026).
  */
 export interface ApelDowolnyPrzycisk {
   kadencja: number;
@@ -267,6 +265,8 @@ export interface WynikGlosowania {
   apel?: ApelDowolnyPrzycisk;
   /** Głosowanie nad uchwałą Senatu: wtedy `przeszlo` mówi o WNIOSKU O ODRZUCENIE, nie o poprawce. */
   senat?: GlosowanieSenackie;
+  /** Głosujących mniej niż {@link KWORUM}: wynik niewyliczony (`przeszlo: null`), rozstrzyga stenogram. */
+  ponizejPolowy?: boolean;
   /** Przy uchwale Senatu: czy stanowisko Senatu (poprawka, odrzucenie ustawy) się ostało. */
   stanowiskoSenatuPrzyjete?: boolean;
   wybrani: string[];
@@ -360,6 +360,26 @@ export function wynikGlosowania(g: GlosowanieSurowe): WynikGlosowania {
       obecnych: null,
       wybrani,
       etykieta: wybrani.length > 0 ? `Wybrano: ${wybrani.map(nazwaZListy).join(', ')}` : 'Nikogo nie wybrano',
+      wiekszosc,
+    };
+  }
+
+  // Mniej niż 230 głosujących: rejestr nie ma pola z wynikiem, a o tym, czy Sejm podjął decyzję,
+  // mówi dopiero Marszałek na sali (stenogram). 18/127 z 1.10.2024: 221 za, 5 przeciw, z liczb
+  // wychodziło „przyjęto”, a Marszałek stwierdził brak kworum i że Sejm uchwały nie podjął.
+  // Serwer nie zgaduje w żadną stronę: nie wylicza wyniku i odsyła do stenogramu.
+  const glosujacych = g.yes + g.no + g.abstain;
+  if (glosujacych < KWORUM) {
+    return {
+      rodzaj,
+      przeszlo: null,
+      prog,
+      obecnych: null,
+      ponizejPolowy: true,
+      wybrani: [],
+      etykieta:
+        `Głosowało ${glosujacych}, mniej niż połowa ustawowej liczby posłów (${KWORUM}, art. 120 Konstytucji). ` +
+        'Rejestr nie mówi, czy Sejm podjął decyzję; co ogłosił Marszałek, zapisuje stenogram tego dnia',
       wiekszosc,
     };
   }

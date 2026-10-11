@@ -18,7 +18,7 @@ import { z } from 'zod';
 import { adresPliku, BladSejmu, type ZrodloSejmu } from '../klient.js';
 import { odmiana } from '../reguly/daty.js';
 import { Schowek, sha256 } from '../schowek.js';
-import { czysty } from '../tekst.js';
+import { czysty, szukajFrazy } from '../tekst.js';
 import { KolejkaOcr, SEKUND_NA_STRONE, zapisaneOcr, type StronaOcr } from '../druki/ocr.js';
 import { kluczArtykulu, odczytajPdf, odczytajWord, rodzajPliku, spisTresci, WERSJA_ODCZYTU, type Odczyt, type WpisSpisu } from '../druki/odczyt.js';
 import { silnikGotowy } from '../druki/silnik-ocr.js';
@@ -26,6 +26,7 @@ import {
   BEZ_PYTANIA,
   brak404,
   czesciowy,
+  fraza,
   jakoRekord,
   kadencja,
   narzedzie,
@@ -308,6 +309,8 @@ const wejscie = z.object({
     .optional()
     .describe('Tylko gdy użytkownik zgodził się na to, o co pytało poprzednie wywołanie (pole potrzebnaZgoda): klucz zgody, np. ["duzy-plik"] albo ["ocr"]'),
   odswiez: z.boolean().default(false).describe('Pobierz plik z Sejmu od nowa zamiast z dysku'),
+  fraza,
+  od: z.coerce.number().int().min(0).default(0).describe('Z fraza: szukaj od tego znaku tekstu pliku (nastepneOd z poprzedniej odpowiedzi)'),
 });
 
 export function utworzTekstDruku(srodowisko: Srodowisko = SRODOWISKO) {
@@ -319,6 +322,7 @@ export function utworzTekstDruku(srodowisko: Srodowisko = SRODOWISKO) {
       'ze spisem treści (działy, rozdziały, artykuły, uzasadnienie) i numerami stron. Duży druk pokazuje porcjami: najpierw spis i pierwsze strony, ' +
       'potem strony="11-20" albo artykul="52". Plik pobiera z api.sejm.gov.pl raz i trzyma na dysku użytkownika: do 20 MB bez pytania, większy dopiero za zgodą użytkownika. ' +
       'Strony bez warstwy tekstowej (skany) są oznaczone; odczyt maszynowy daje ocr=true (wynik oznaczony jako odczyt maszynowy). ' +
+      'Parametr fraza: zamiast stron same trafienia w całym pliku z kontekstem i stroną do cytowania (pokazano, nastepneOd jako od do dalszych). ' +
       ZASADA_CYTOWANIA,
     wejscie,
     async wykonaj(a, zrodlo, kontekst = BEZ_PYTANIA) {
@@ -454,7 +458,10 @@ export function utworzTekstDruku(srodowisko: Srodowisko = SRODOWISKO) {
         odczyt = w;
       }
 
-      // 3. Zakres stron.
+      // 3. Fraza: same trafienia z kontekstem w całym pliku, każde ze stroną i adresem do cytowania.
+      if (a.fraza) return trafieniaWDruku(odczyt, a.fraza, a.od, { ...naglowek, zrodla }, d.number, plik, zSchowka, inne);
+
+      // 4. Zakres stron.
       const word = odczyt.rodzaj !== 'pdf';
       const jednostka = word ? (['część', 'części', 'części'] as [string, string, string]) : (['strona', 'strony', 'stron'] as [string, string, string]);
       const spis = spisTresci(odczyt.strony);
@@ -492,7 +499,7 @@ export function utworzTekstDruku(srodowisko: Srodowisko = SRODOWISKO) {
         znakow += t;
       }
 
-      // 4. OCR stron-skanów w pokazanym zakresie (tylko na prośbę i za zgodą).
+      // 5. OCR stron-skanów w pokazanym zakresie (tylko na prośbę i za zgodą).
       const skany = wybrane.filter((s) => odczyt!.strony[s - 1].skan);
       let ocr = new Map<number, StronaOcr>();
       let czesciowyOcr: ReturnType<typeof czesciowy> | undefined;
@@ -621,6 +628,77 @@ export function utworzTekstDruku(srodowisko: Srodowisko = SRODOWISKO) {
       }
     },
   });
+}
+
+/**
+ * Fraza w tekście druku: jak `fraza` w tresc_wypowiedzi, tresc_aktu i pismo (trafienia z kontekstem,
+ * pokazano, nastepneOd), ale każdy fragment niesie cytowanie ze stroną (w Wordzie: częścią), bo
+ * fragment druku bez strony nie da się sprawdzić. Strony-skany bez warstwy tekstowej nie są
+ * przeszukiwane i odpowiedź to mówi: brak trafienia na skanie nie znaczy, że słowa tam nie ma.
+ */
+export function trafieniaWDruku(
+  odczyt: Odczyt,
+  szukana: string,
+  od: number,
+  naglowek: Record<string, unknown> & { zrodla: string[] },
+  numer: string,
+  plik: { nazwa: string; adres: string },
+  zSchowka: boolean,
+  inne: string[],
+): Wynik {
+  const word = odczyt.rodzaj !== 'pdf';
+  const SEP = '\n\n';
+  const poczatki: number[] = [];
+  let tekst = '';
+  for (const s of odczyt.strony) {
+    poczatki.push(tekst.length);
+    tekst += s.tekst + SEP;
+  }
+  const strona = (pozycja: number) => {
+    let i = 0;
+    while (i + 1 < poczatki.length && poczatki[i + 1] <= pozycja) i++;
+    return i + 1;
+  };
+  const t = szukajFrazy(tekst, szukana, 400, 10, od);
+  const maly = tekst.toLocaleLowerCase('pl-PL');
+  const strony: number[] = [];
+  const fragmenty = t.fragmenty.map((f) => {
+    // Strona trafienia, nie początku kontekstu: kontekst sięga czasem na poprzednią stronę.
+    const nr = strona(Math.max(f.od, maly.indexOf(t.fraza.toLocaleLowerCase('pl-PL'), f.od)));
+    strony.push(nr);
+    return {
+      od: f.od,
+      tekst: f.tekst,
+      cytowanie: { druk: numer, plik: plik.nazwa, ...(word ? { czesc: nr, strona: null } : { strona: nr }), url: word ? plik.adres : `${plik.adres}#page=${nr}` },
+    };
+  });
+  const skany = odczyt.strony.flatMap((s, i) => (s.skan ? [i + 1] : []));
+  const jednostka = word ? (['część', 'części', 'części'] as [string, string, string]) : (['strona', 'strony', 'stron'] as [string, string, string]);
+  const gdzie = [...new Set(strony)];
+  return {
+    ...naglowek,
+    odpowiedz:
+      `Druk ${numer}, plik ${plik.nazwa} (${odmiana(odczyt.stron, jednostka)}${zSchowka ? ', z dysku' : ''}): fraza „${t.fraza}” pada ${odmiana(t.trafien, ['raz', 'razy', 'razy'])}` +
+      `${od ? ` od znaku ${od}` : ''}` +
+      (t.trafien ? `; pokazano ${t.pokazano} w ${odmiana(fragmenty.length, ['fragmencie', 'fragmentach', 'fragmentach'])} (${word ? 'części' : 'strony'} ${zakresyNapisem(gdzie)})` : '') +
+      (t.nastepneOd !== null ? `; dalsze trafienia: to samo wywołanie z od=${t.nastepneOd}` : '') +
+      '.',
+    fraza: t.fraza,
+    trafien: t.trafien,
+    pokazano: t.pokazano,
+    fragmenty,
+    nastepneOd: t.nastepneOd,
+    dlugosc: t.dlugosc,
+    cytowanie: ZASADA_CYTOWANIA,
+    zrodla: naglowek.zrodla,
+    uwagi: [
+      UWAGA_TEKST_Z_ZEWNATRZ,
+      'Szukanie bez wielkości liter; polskie znaki muszą się zgadzać. od przy fragmencie to pozycja w tekście całego pliku; stronę daje cytowanie.',
+      ...(t.trafien > t.pokazano ? [`Trafień jest ${t.trafien}, pokazano ${t.pokazano}: nie traktuj listy jako pełnej, dalsze daje od=${t.nastepneOd}.`] : []),
+      ...(skany.length ? [`${odmiana(skany.length, ['strona bez warstwy tekstowej (skan) nie była przeszukana', 'strony bez warstwy tekstowej (skany) nie były przeszukane', 'stron bez warstwy tekstowej (skanów) nie było przeszukanych'])}: ${zakresyNapisem(skany)}. Ich tekst daje strony="N" z ocr=true.`] : []),
+      ...(inne.length ? [`Inne pliki tego druku: ${inne.join(', ')} (argument plik).`] : []),
+    ],
+  };
 }
 
 export const tekstDruku = utworzTekstDruku();

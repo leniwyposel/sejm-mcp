@@ -319,6 +319,52 @@ export function fragment(tekst: string, od = 0, ile = 12_000): Fragment {
   };
 }
 
+export interface TrafieniaFrazy {
+  fraza: string;
+  trafien: number;
+  /** Fragmenty dosłownie z tekstu, z kontekstem; `od` to pozycja do dalszego czytania porcją. */
+  fragmenty: Array<{ od: number; tekst: string }>;
+  dlugosc: number;
+  /** Ile trafień objęły pokazane fragmenty (bliskie trafienia łączą się w jeden fragment). */
+  pokazano: number;
+  /** Gdy trafień jest więcej: podaj ten numer znaku jako `od` razem z `fraza`, żeby zobaczyć dalsze. */
+  nastepneOd: number | null;
+}
+
+/**
+ * Szuka frazy w długim tekście (stenogram dnia, akt, pismo) i oddaje tylko trafienia z kontekstem,
+ * zamiast kazać modelowi czytać całość porcjami po 12 tys. znaków. Bez wielkości liter; polskie
+ * znaki muszą się zgadzać (pozycje w tekście zostają te same).
+ */
+export function szukajFrazy(tekst: string, fraza: string, kontekst = 400, maks = 10, od = 0): TrafieniaFrazy {
+  const szukana = fraza.trim().toLocaleLowerCase('pl-PL');
+  const maly = tekst.toLocaleLowerCase('pl-PL');
+  const pozycje: number[] = [];
+  for (let i = szukana ? maly.indexOf(szukana, Math.max(0, od)) : -1; i !== -1; i = maly.indexOf(szukana, i + szukana.length)) pozycje.push(i);
+  const fragmenty: TrafieniaFrazy['fragmenty'] = [];
+  let doKonca = -1;
+  let pokazano = 0;
+  let nastepneOd: number | null = null;
+  for (const p of pozycje) {
+    if (fragmenty.length >= maks && p >= doKonca) {
+      nastepneOd = p;
+      break;
+    }
+    pokazano++;
+    // Trafienia blisko siebie łączymy w jeden fragment, żeby nie powtarzać tego samego tekstu.
+    if (p < doKonca) continue;
+    const od = Math.max(0, p - kontekst);
+    doKonca = Math.min(tekst.length, p + szukana.length + kontekst);
+    fragmenty.push({ od, tekst: tekst.slice(od, doKonca).replace(/\s+/g, ' ').trim() });
+  }
+  return { fraza: fraza.trim(), trafien: pozycje.length, fragmenty, dlugosc: tekst.length, pokazano, nastepneOd };
+}
+
+/** Porcja tekstu albo, gdy podano frazę, same trafienia z kontekstem. */
+export function porcjaAlboFraza(tekst: string, od: number, fraza?: string): Fragment | TrafieniaFrazy {
+  return fraza ? szukajFrazy(tekst, fraza, 400, 10, od) : fragment(tekst, od);
+}
+
 /** Porównanie bez wielkości liter i bez polskich znaków: „Łośko" = „losko". */
 export function klucz(s: string | null | undefined): string {
   return String(s ?? '')

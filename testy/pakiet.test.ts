@@ -91,7 +91,7 @@ describe('odporność narzędzi', () => {
     }) as typeof z.json;
     const w = await glosowanie.wykonaj(glosowanie.wejscie.parse({ posiedzenie: 10, numer: 1 }), z);
     expect(w.kluby).toBeNull();
-    expect(w.wynik).toBe('Przyjęto');
+    expect(w.wynikWyliczony).toBe('Przyjęto');
     expect(w.uwagi?.[0]).toMatch(/Rozbicia na kluby nie policzono/);
   });
 });

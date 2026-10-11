@@ -88,7 +88,8 @@ function glosowanieKoncowe(stages: EtapZRejestru[] | undefined) {
     numer: v.votingNumber,
     data: v.date,
     opis: czysty(v.description),
-    wynik: wynikGlosowania(v).etykieta,
+    // Wyliczony z liczb i progu: rejestr Sejmu nie ma pola z wynikiem.
+    wynikWyliczony: wynikGlosowania(v).etykieta,
     za: v.yes,
     przeciw: v.no,
     wstrzymalo: v.abstain,
@@ -876,7 +877,7 @@ function etapy(lista: EtapZRejestru[] | undefined, poziom = 0): unknown[] {
             // a zwykle to odrzucony wniosek o odrzucenie projektu.
             temat: czysty(e.voting.topic),
             opis: czysty(e.voting.description),
-            wynik: rozstrzygniecieWeta(e.voting)
+            wynikWyliczony: rozstrzygniecieWeta(e.voting)
               ? wynikGlosowania(e.voting).przeszlo
                 ? 'Uchwalono ponownie: weto odrzucone'
                 : 'Nie uchwalono ponownie: weto utrzymane'
@@ -948,7 +949,7 @@ export const proces = narzedzie({
         `Proces ${p.number} („${czysty(p.titleFinal) || czysty(p.title)}”): ${stan}` +
         (koncowe
           ? `. Głosowanie końcowe w Sejmie ${koncowe.posiedzenie}/${koncowe.numer} (${String(koncowe.data ?? '').slice(0, 10)}): ` +
-            `za ${koncowe.za}, przeciw ${koncowe.przeciw}, wstrzymało się ${koncowe.wstrzymalo}; ${koncowe.wynik}.`
+            `za ${koncowe.za}, przeciw ${koncowe.przeciw}, wstrzymało się ${koncowe.wstrzymalo}; ${koncowe.wynikWyliczony} (wyliczone z liczb, rejestr nie ma pola z wynikiem).`
           : '. Brak głosowania nad całością w etapach.') +
         (senat ? ` Senat${kiedy(senat.date)}: ${czysty(senat.position) || 'stanowisko bez opisu w rejestrze'}.` : '') +
         (akt?.promulgation ? ` Ogłoszona ${akt.promulgation}${akt.entryIntoForce ? `, wchodzi w życie ${akt.entryIntoForce}` : ''}.` : '') +

@@ -76,6 +76,24 @@ function skrotKomisji(k: KomisjaZRejestru) {
   };
 }
 
+/**
+ * Kod, którego Sejm nie zna (API oddaje wtedy 204 bez treści). Model zgadywał „CYF” zamiast CNT
+ * i dostawał „nieoczekiwaną postać odpowiedzi”: mówimy wprost, że takiej
+ * komisji nie ma, i od razu dajemy kody z rejestru, żeby wybrał właściwy bez kolejnego wywołania.
+ */
+export function nieznanaKomisja(kod: string, kadencja: number, wszystkie: Array<{ code: string; name: string }>, zrodla: string[]) {
+  return {
+    znaleziono: false,
+    odpowiedz: `Sejm nie zna komisji o kodzie ${kod} (kadencja ${kadencja}): rejestr nie ma ani komisji, ani podkomisji o tym kodzie.`,
+    kodyKomisji: wszystkie.map((k) => ({ kod: k.code, nazwa: czysty(k.name) })),
+    zrodla,
+    uwagi: [
+      'kodyKomisji to wszystkie komisje tej kadencji z rejestru (to samo daje narzędzie komisje bez parametrów); wybierz kod po nazwie i zapytaj ponownie. ' +
+        'Kody podkomisji (np. „INF01N”) daje komisje z kodem komisji macierzystej.',
+    ],
+  };
+}
+
 const kodyPodkomisji = (k: KomisjaZRejestru) =>
   (k.subCommittees ?? []).map((s) => (typeof s === 'string' ? s : String((s as { code?: string }).code ?? ''))).filter(Boolean);
 
@@ -140,13 +158,7 @@ export const komisje = narzedzie({
         // odpowiadało „nie ma komisji o kodzie INF01N”, choć samo przed chwilą podało ten kod.
         const sPod = `${T(a.kadencja)}/committees/${kod}`;
         const pod = jakoRekord<KomisjaZRejestru>(await zrodlo.json<unknown>(sPod), 'podkomisja', [], ['code']);
-        if (!pod) {
-          return {
-            znaleziono: false,
-            zrodla: [zrodlo.adres(sLista), zrodlo.adres(sPod)],
-            uwagi: [`Nie ma komisji ani podkomisji o kodzie ${kod} w kadencji ${a.kadencja}. Kody komisji daje to narzędzie bez parametrów, kody podkomisji: komisje z kodem komisji.`],
-          };
-        }
+        if (!pod) return nieznanaKomisja(kod, a.kadencja, wszystkie, [zrodlo.adres(sLista), zrodlo.adres(sPod)]);
         const macierzysta = wszystkie.find((x) => kodyPodkomisji(x).some((c) => c.toUpperCase() === kod));
         const { sCzl, sklad: czlonkowie } = await sklad(pod);
         return {

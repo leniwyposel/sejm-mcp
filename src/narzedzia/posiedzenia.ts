@@ -2,10 +2,11 @@ import { z } from 'zod';
 import { dzisWarszawa, odmiana, roznicaDni } from '../reguly/daty.js';
 import type { ZrodloSejmu } from '../klient.js';
 import { naCzas } from './na-czas.js';
-import { bezpiecznyLink, czysty, fragment, htmlNaTekst, klucz } from '../tekst.js';
+import { nieznanaKomisja } from './izba.js';
+import { bezpiecznyLink, czysty, fragment, htmlNaTekst, klucz, porcjaAlboFraza } from '../tekst.js';
 import { dodajDni } from '../reguly/daty.js';
 import { zdanieBledu } from '../bledy.js';
-import { brak404, OPIS_CZESCIOWY, czesciowy, data, jakoLista, jakoRekord, kadencja, limit, narzedzie, przesuniecie, sprawdzPrzedzial, T, UWAGA_TEKST_Z_ZEWNATRZ } from './wspolne.js';
+import { brak404, OPIS_CZESCIOWY, czesciowy, data, jakoLista, jakoRekord, kadencja, limit, narzedzie, fraza, przesuniecie, sprawdzPrzedzial, T, UWAGA_TEKST_Z_ZEWNATRZ } from './wspolne.js';
 
 interface PosiedzenieKomisji {
   code: string;
@@ -163,6 +164,16 @@ export const posiedzeniaKomisji = narzedzie({
       const wybrane = bezPowtorzen(wszystkie.filter((p) => p.code.toUpperCase() === kod && wZakresie(p))).sort(
         (x, y) => y.date.localeCompare(x.date) || y.num - x.num,
       );
+      // Nieznany kod (np. „CYF” zamiast CNT): rejestr oddaje pustą listę posiedzeń, a nie błąd, więc bez
+      // tego sprawdzenia wychodziło „0 posiedzeń” komisji, której nie ma.
+      if (!zapas && wszystkie.length === 0) {
+        const sLista = `${T(a.kadencja)}/committees`;
+        const lista = jakoLista<{ code: string; name: string }>(await zrodlo.json<unknown>(sLista), 'komisje');
+        if (!lista.some((k) => k.code.toUpperCase() === kod)) {
+          const sKod = `${T(a.kadencja)}/committees/${kod}`;
+          if (!(await zrodlo.json<unknown>(sKod))) return nieznanaKomisja(kod, a.kadencja, lista, [zrodlo.adres(sciezka), zrodlo.adres(sLista), zrodlo.adres(sKod)]);
+        }
+      }
       const dniPosiedzen = new Set(wybrane.map((p) => p.date)).size;
       const wspolnych = wybrane.filter((p) => (p.jointWith ?? []).length > 0).length;
       const zakres = od || doDnia ? ` od ${od ?? 'początku kadencji'} do ${doDnia ?? 'dziś'}` : ' w kadencji';
@@ -445,12 +456,15 @@ export const wypowiedziPosiedzenia = narzedzie({
 export const trescWypowiedzi = narzedzie({
   nazwa: 'tresc_wypowiedzi',
   tytul: 'Treść wypowiedzi ze stenogramu',
-  opis: 'Treść jednej wypowiedzi ze stenogramu Sejmu jako zwykły tekst, w porcjach po 12 tys. znaków.',
+  opis:
+    'Treść jednej wypowiedzi ze stenogramu Sejmu jako zwykły tekst, w porcjach po 12 tys. znaków. ' +
+    'Wypowiedź prowadzącego obrady („Marszałek”) to często cały dzień, ponad 100 tys. znaków: szukaj w niej parametrem fraza, zamiast czytać porcjami.',
   wejscie: z.object({
     posiedzenie: z.coerce.number().int().min(1),
     data: data.describe('Dzień posiedzenia (RRRR-MM-DD)'),
     numer: z.coerce.number().int().min(0).describe('Numer wypowiedzi z wypowiedzi_posiedzenia'),
     od: z.coerce.number().int().min(0).default(0).describe('Od którego znaku zacząć'),
+    fraza,
     kadencja,
   }),
   async wykonaj(a, zrodlo) {
@@ -460,7 +474,7 @@ export const trescWypowiedzi = narzedzie({
     return {
       znaleziono: true,
       // Stopka strony stenogramu („Przebieg posiedzenia”) to nawigacja, nie część wypowiedzi.
-      ...fragment(htmlNaTekst(html).replace(/\n*Przebieg posiedzenia\s*$/, ''), a.od),
+      ...porcjaAlboFraza(htmlNaTekst(html).replace(/\n*Przebieg posiedzenia\s*$/, ''), a.od, a.fraza),
       zrodla: [zrodlo.adres(sciezka)],
       uwagi: ['Stenogram z dnia posiedzenia może być jeszcze nieautoryzowany.', UWAGA_TEKST_Z_ZEWNATRZ],
     };

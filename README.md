@@ -53,6 +53,21 @@ Działa z posłami, klubami, komisjami, głosowaniami, interpelacjami i zapytani
 ustaw, posiedzeniami, stenogramami i transmisjami, a także z aktami prawnymi z Dziennika Ustaw
 i Monitora Polskiego.
 
+## Gotowe pytania
+
+Serwer ma też sześć gotowych pytań (MCP prompts). Klient pokazuje je jako polecenia, np. w Claude
+Code po wpisaniu `/` (`/mcp__sejm__posel`), a w Claude Desktop pod przyciskiem „+”. Każde mówi
+asystentowi, których narzędzi użyć i że ma podać link do źródła.
+
+| Pytanie | Co podajesz |
+|---|---|
+| Nad czym dziś głosuje Sejm? (`glosowania_dzis`) | nic |
+| Kim jest ten poseł? (`posel`) | imię i nazwisko |
+| Jak głosował poseł? (`glos_posla`) | imię i nazwisko, ustawę |
+| Na jakim etapie jest ustawa? (`etap_ustawy`) | słowa z tytułu albo numer druku |
+| Jak głosowały kluby? (`kluby_w_glosowaniu`) | numer posiedzenia i numer głosowania |
+| Czy ta ustawa już obowiązuje? (`czy_obowiazuje`) | nazwę aktu albo adres, np. DU/1974/141 |
+
 ## Instalacja
 
 Serwer działa na Twoim komputerze. Poza Claude Desktop potrzebny jest
@@ -248,8 +263,9 @@ Asystent ma obowiązek powiedzieć Ci to na początku odpowiedzi, prostymi słow
 - Działa na Twoim komputerze i łączy się wyłącznie z `api.sejm.gov.pl`. Twoje pytania nie
   trafiają ani do nas, ani do serwisu leniwyposel.pl.
 - Tylko czyta dane Sejmu. Nie czyta Twoich plików i nie uruchamia programów.
-- Na dysku zapisuje wyłącznie pobrane druki, tekst z nich odczytany i wyniki odczytu maszynowego
-  (OCR), żeby nie robić tego drugi raz. Leżą w katalogu podręcznym: `~/Library/Caches/sejm-mcp`
+- Na dysku zapisuje wyłącznie pobrane druki, tekst z nich odczytany, wyniki odczytu maszynowego
+  (OCR) i tekst aktów prawnych odczytany z PDF w bazie ELI (do czasu, aż ELI pokaże nowszą wersję aktu),
+  żeby nie robić tego drugi raz. Leżą w katalogu podręcznym: `~/Library/Caches/sejm-mcp`
   (macOS), `~/.cache/sejm-mcp` (Linux), `%LOCALAPPDATA%\sejm-mcp\Cache` (Windows); inny wskażesz
   zmienną `SEJM_MCP_SCHOWEK`. Katalog zajmuje najwyżej ok. 500 MB: ponad to serwer kasuje
   najdawniej używane pliki. Można go w każdej chwili skasować.

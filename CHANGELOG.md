@@ -6,11 +6,75 @@ mogą się jeszcze zmieniać; każda taka zmiana będzie tu opisana.
 
 ## [Nieopublikowane]
 
+## [0.3.1] - 2026-10-12
+
+### Poprawione
+
+- Nieznany kod komisji (API odpowiada 204 bez treści) daje „Sejm nie zna komisji o kodzie X” i listę
+  kodów komisji z rejestru, zamiast „Sejm oddał odpowiedź w nieoczekiwanej postaci”.
+  `posiedzenia_komisji` z takim kodem nie odpowiada już „0 posiedzeń”.
+- `szukaj_glosowan`: gdy pełna fraza trafia w kilka głosowań, serwer dobiera głosowania, które mają
+  wszystkie słowa frazy w tytule, temacie albo opisie. Temat 65/12 ma literówkę rejestru, więc
+  fraza z pytania o zgodę na zatrzymanie posła Wojciecha Króla trafiała tylko w 63/71.
+
+- Głosowanie, w którym głosowało mniej niż 230 posłów (połowa ustawowej liczby, art. 120
+  Konstytucji), nie dostaje już wyliczonego „przyjęto” ani „odrzucono”: `przeszlo` jest `null`,
+  a `glosowanie` od razu oddaje dosłowne słowa prowadzącego obrady zaraz po głosowaniu, wycięte
+  ze stenogramu dnia po liczbach z rekordu (`stenogramPoGlosowaniu`; gdy stenogram nie odpowiada,
+  zostaje podpowiedź `sprawdzWStenogramie`). Przy 18/127 (1.10.2024: 221 za, 5 przeciw, 227 głosujących) serwer
+  podawał „przyjęto”, a Marszałek stwierdził brak kworum i że Sejm uchwały nie podjął.
+- Wynik zwykłego głosowania jest opisany jako wyliczony z liczb (rejestr Sejmu nie ma pola
+  z wynikiem), a `glosowanie` podaje przy każdym głosowaniu link do stenogramu dnia (`stenogram`).
+  To samo dotyczy rozstrzygnięć przy wecie, przy uchwałach Senatu i przy wyborze z listy.
+
 ### Dodane
 
+- Parametr `fraza` w `tekst_druku` (jak w `tresc_wypowiedzi`, `tresc_aktu` i `pismo`): trafienia
+  z kontekstem w całym pliku, `pokazano`, `nastepneOd` (podany jako `od` razem z `fraza`), a przy
+  każdym fragmencie cytowanie ze stroną. Strony-skany bez warstwy tekstowej nie są przeszukiwane
+  i odpowiedź to mówi.
+- Tekst aktu z PDF w ELI (np. Konstytucja, ok. 13 MB) serwer czyta raz i trzyma w schowku na dysku,
+  pod adresem ELI i datą zmiany rekordu w ELI; od nowa czyta go dopiero, gdy ELI pokaże nowszą datę.
+
+- `glosowanie` przy każdym głosowaniu za-przeciw oddaje słowa prowadzącego obrady zaraz po nim
+  (`stenogramPoGlosowaniu`), dosłownie ze stenogramu dnia. Serwer szuka zdania „Głosowało N posłów”,
+  przy którym stoją liczby za, przeciw i wstrzymujących się z rekordu, każda przy swoim słowie.
+  Gdy tego dnia dwa głosowania mają te same liczby, nie zgaduje i nie zwraca fragmentu. Dociąganie
+  stenogramu ma wspólny limit 8 s, a etykieta „Wyniki głosowania” z HTML stenogramu nie trafia do cytatu. Na czterech
+  dniach posiedzeń (2024–2026) znalazł 81–98% głosowań, a reszta to właśnie takie powtórki.
+- Parametr `fraza` w `tresc_wypowiedzi`, `tresc_aktu` i `pismo`: zamiast porcji po 12 tys. znaków
+  zwraca same trafienia z kontekstem i ich pozycje. Wypowiedź prowadzącego obrady to często cały
+  dzień, ponad 100 tys. znaków. Wynik mówi, ile trafień pokazano, a `nastepneOd` (podany jako `od`
+  razem z `fraza`) prowadzi do dalszych.
+- Gotowe pytania (MCP prompts), sześć: „Nad czym dziś głosuje Sejm?” (`glosowania_dzis`),
+  „Kim jest ten poseł?” (`posel`), „Jak głosował poseł?” (`glos_posla`), „Na jakim etapie jest
+  ustawa?” (`etap_ustawy`), „Jak głosowały kluby?” (`kluby_w_glosowaniu`) i „Czy ta ustawa już
+  obowiązuje?” (`czy_obowiazuje`). Każde mówi asystentowi, których narzędzi użyć, i każe podać
+  link do źródła; zły argument (np. numer posiedzenia, który nie jest liczbą) to błąd protokołu.
 - `Dockerfile` i `.dockerignore`: serwer w kontenerze (`docker run -i --rm sejm-mcp`), dwuetapowe
   budowanie na `node:22-slim`, użytkownik bez uprawnień roota, silnik OCR w obrazie. Przygotowanie
   wpisu w katalogu Docker MCP.
+
+### Zmienione
+
+- Zwykłe głosowanie nie ma już pola `obecniBezGlosu: 0` (ani w głosowaniu, ani przy klubach). Model
+  czytał je jako „rejestr wie, kto był na sali i nie głosował: nikt”, a rejestr zwykłego głosowania
+  zapisuje tylko głos albo jego brak. Liczba z przyciskiem „obecny” (`przyciskObecny`) pojawia się
+  tylko wtedy, gdy rejestr ją ma; `glosowanie` mówi wprost, że rejestr nie zapisuje, kto był na sali.
+- Rozstrzygnięcie w listach głosowań (`glosowania_posiedzenia`, także z `porzadek=true`,
+  `szukaj_glosowan`, `glosowanie` i etapy w `proces`) nazywa się `wynikWyliczony` zamiast `wynik`,
+  a zdania mówią, że wylicza je ten serwer z liczb głosów i progów (rejestr nie ma pola z wynikiem).
+- Wybór z listy: kandydat to `kandydatWRejestrze`, napis dokładnie jak w rejestrze („K. Morawiecki”),
+  także w `szukaj_glosowan` i `glosowania_posiedzenia`. Pełne imię (`poselKadencji`) serwer dopisuje
+  tylko wtedy, gdy na liście posłów tej kadencji jest dokładnie jedna osoba o tym nazwisku
+  i inicjale; rejestr głosowania nie podaje numeru kandydata, więc w innych przypadkach zostaje napis.
+
+- `@modelcontextprotocol/server` 2.1.0 → 2.3.1 (wraz z `@modelcontextprotocol/core`); bez zmian
+  w narzędziach i ich odpowiedziach.
+- `vitest` 5.0.1 → 5.0.3 (tylko testy).
+- README w dwóch językach (PL/EN z przełącznikiem), plakietki mcpservers.org i Glama,
+  `glama.json`, ręczna publikacja w rejestrze MCP przez GitHub OIDC.
+
 
 ## [0.3.0] - 2026-10-02
 
@@ -152,4 +216,5 @@ Wydanie wewnętrzne (niepubliczne): 28 narzędzi do API Sejmu RP i bazy aktów p
 reguły liczenia (próg przy wecie, apel o kworum, klub z dnia głosowania, termin odpowiedzi
 na pismo od doręczenia) z testami na prawdziwych rekordach, wtyczka Claude Code ze skillem.
 
+[0.3.1]: https://github.com/leniwyposel/sejm-mcp/releases/tag/v0.3.1
 [0.3.0]: https://github.com/leniwyposel/sejm-mcp/releases/tag/v0.3.0

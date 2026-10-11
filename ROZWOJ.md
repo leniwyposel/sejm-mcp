@@ -61,8 +61,8 @@ npm run build && npm run mcpb   # build/sejm-mcp.mcpb
   i `ocr-watek.ts`: rozpoznawanie w osobnym wątku). Silnik kopiuje do `dist/silnik-ocr`
   `skrypty/kopiuj-silnik-ocr.mjs` przy każdym `npm run build`, z paczek npm w devDependencies.
 - `src/schowek.ts`: jedyne miejsce, które zapisuje na dysk (katalog podręczny użytkownika).
-- `ewaluacja/`: sprawdzian na prawdziwych modelach (100 trudnych pytań z odpowiedziami
-  wzorcowymi); opis w [ewaluacja/README.md](ewaluacja/README.md).
+  `src/akty-schowek.ts` trzyma w nim tekst aktów ELI odczytany z PDF, pod adresem ELI i datą
+  zmiany rekordu w ELI (`changeDate`): nowsza data w ELI znaczy odczyt od nowa.
 
 ## Zasady
 

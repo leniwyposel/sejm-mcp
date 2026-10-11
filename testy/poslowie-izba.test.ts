@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { komisje } from '../src/narzedzia/izba.js';
-import { wypowiedziPosiedzenia } from '../src/narzedzia/posiedzenia.js';
+import { posiedzeniaKomisji, wypowiedziPosiedzenia } from '../src/narzedzia/posiedzenia.js';
 import { kluby, profilPosla, znajdzPosla } from '../src/narzedzia/poslowie.js';
 import { czyscArgumenty, czyscWejscie, opisKadencji, wejscieCzyszczone } from '../src/narzedzia/wspolne.js';
 import { fikstura, ZrodloZFikstur } from './pomoc.js';
@@ -183,7 +183,32 @@ describe('izba: kluby i komisje (testy 03, 12, 17)', () => {
     const z = new ZrodloZFikstur({ 'term10/committees': 'komisje-inf.json', 'term10/committees/XYZ99': null });
     const w = await komisje.wykonaj(wejscie(komisje.wejscie, { kod: 'XYZ99' }), z);
     expect(w).toMatchObject({ znaleziono: false });
-    expect((w.uwagi as string[])[0]).toMatch(/Nie ma komisji ani podkomisji o kodzie XYZ99/);
+    expect(w.odpowiedz).toMatch(/Sejm nie zna komisji o kodzie XYZ99/);
+  });
+
+  // Model zgadywał „CYF” zamiast CNT, API oddawało 204 bez treści,
+  // a serwer mówił „nieoczekiwana postać odpowiedzi”. Lista komisji to prawdziwa odpowiedź z 11.10.2026.
+  it('nieznany kod komisji (204 z API): „Sejm nie zna komisji o kodzie CYF” i kody z rejestru', async () => {
+    const z = new ZrodloZFikstur({ 'term10/committees': 'komisje-2026-10-11.json', 'term10/committees/CYF': null });
+    const w = await komisje.wykonaj(wejscie(komisje.wejscie, { kod: 'cyf' }), z);
+    expect(w).toMatchObject({ znaleziono: false });
+    expect(w.odpowiedz).toBe('Sejm nie zna komisji o kodzie CYF (kadencja 10): rejestr nie ma ani komisji, ani podkomisji o tym kodzie.');
+    const kody = w.kodyKomisji as Array<{ kod: string; nazwa: string }>;
+    expect(kody).toHaveLength(40);
+    expect(kody.find((k) => k.kod === 'CNT')?.nazwa).toMatch(/Cyfryzacji/);
+    expect((w.uwagi as string[]).join(' ')).toMatch(/komisje bez parametrów/);
+  });
+
+  it('posiedzenia_komisji z nieznanym kodem: nie „0 posiedzeń”, tylko „Sejm nie zna komisji”', async () => {
+    const z = new ZrodloZFikstur({
+      'term10/committees/CYF/sittings': 'komisja-cyf-posiedzenia-2026-10-11.json',
+      'term10/committees': 'komisje-2026-10-11.json',
+      'term10/committees/CYF': null,
+    });
+    const w = await posiedzeniaKomisji.wykonaj(wejscie(posiedzeniaKomisji.wejscie, { komisja: 'CYF', od: '2026-07-01', do: '2026-07-31' }), z);
+    expect(w).toMatchObject({ znaleziono: false });
+    expect(w.odpowiedz).toMatch(/^Sejm nie zna komisji o kodzie CYF/);
+    expect((w.kodyKomisji as Array<{ kod: string }>).map((k) => k.kod)).toContain('CNT');
   });
 
   it('opisKadencji', () => {

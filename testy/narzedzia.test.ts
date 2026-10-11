@@ -82,7 +82,7 @@ describe('głosowania', () => {
     const w = await glosowanie.wykonaj(wejscie(glosowanie.wejscie, { posiedzenie: 18, numer: 46, poselId: 1 }), z);
     expect(w).toMatchObject({
       rodzaj: 'kworum',
-      wynik: 'apel o kworum: nic nie jest przyjmowane ani odrzucane; kworum stwierdzone: 396 obecnych (≥ 230, połowa ustawowej liczby posłów)',
+      wynikWyliczony: 'apel o kworum: nic nie jest przyjmowane ani odrzucane; kworum stwierdzone: 396 obecnych (≥ 230, połowa ustawowej liczby posłów)',
       kworumJest: true,
       glosPosla: { id: 1, klubWDniuGlosowania: 'PiS', glos: 'obecność na apelu o kworum (to jest udział)' },
     });
@@ -139,10 +139,10 @@ describe('legislacja i posiedzenia', () => {
   it('proces: etapy spłaszczone z werdyktem głosowania', async () => {
     const z = new ZrodloZFikstur({ 'term10/processes/1': 'proces-1.json' });
     const w = await proces.wykonaj(wejscie(proces.wejscie, { numer: '1' }), z);
-    const etapy = w.etapy as Array<{ poziom: number; glosowanie?: { wynik: string } }>;
+    const etapy = w.etapy as Array<{ poziom: number; glosowanie?: { wynikWyliczony: string } }>;
     expect(etapy.some((e) => e.poziom === 1)).toBe(true);
-    expect(etapy.find((e) => e.glosowanie)?.glosowanie?.wynik).toBe('Przyjęto');
-    expect(w.glosowanieKoncowe).toMatchObject({ posiedzenie: 1, numer: 2, wynik: 'Przyjęto' });
+    expect(etapy.find((e) => e.glosowanie)?.glosowanie?.wynikWyliczony).toBe('Przyjęto');
+    expect(w.glosowanieKoncowe).toMatchObject({ posiedzenie: 1, numer: 2, wynikWyliczony: 'Przyjęto' });
   });
 
   it('posiedzenia_komisji: porządek jako tekst', async () => {
@@ -354,7 +354,7 @@ describe('runda 4: poprawki', () => {
     const z = new ZrodloZFikstur({});
     z.json = (async () => weto) as typeof z.json;
     const w = await glosowanie.wykonaj(wejscie(glosowanie.wejscie, { posiedzenie: 65, numer: 10 }), z);
-    expect(w.wynik).toBe('Nie uchwalono ponownie: weto utrzymane');
+    expect(w.wynikWyliczony).toBe('Nie uchwalono ponownie: weto utrzymane');
     expect(w.rozstrzygniecie).toMatch(/weto Prezydenta utrzymane/);
   });
 

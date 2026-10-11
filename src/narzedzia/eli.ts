@@ -6,9 +6,10 @@
 
 import { z } from 'zod';
 import { dzisWarszawa } from '../reguly/daty.js';
-import { czytajPdf, OPCJE_AKTU, UWAGA_PDF, UWAGA_PRZYPISY, uwagaOdczytuPdf, type TekstPdf } from '../pdf.js';
-import { bezpiecznyLink, czysty, fragment, htmlNaTekst, klucz } from '../tekst.js';
-import { brak404, OPIS_CZESCIOWY, czesciowy, czesciowyZBledu, dolaczCzesciowe, type Wynik, type WynikCzesciowy, data, jakoLista, jakoRekord, limit, maWszystkie, narzedzie, przesuniecie, rdzenie, UWAGA_RDZENIE, UWAGA_TEKST_Z_ZEWNATRZ } from './wspolne.js';
+import { czytajPdfAktu, type WynikPdfAktu } from '../akty-schowek.js';
+import { OPCJE_AKTU, UWAGA_PDF, UWAGA_PRZYPISY, uwagaOdczytuPdf, type TekstPdf } from '../pdf.js';
+import { bezpiecznyLink, czysty, fragment, htmlNaTekst, klucz, porcjaAlboFraza } from '../tekst.js';
+import { brak404, OPIS_CZESCIOWY, czesciowy, czesciowyZBledu, dolaczCzesciowe, type Wynik, type WynikCzesciowy, data, jakoLista, jakoRekord, limit, maWszystkie, narzedzie, fraza, przesuniecie, rdzenie, UWAGA_RDZENIE, UWAGA_TEKST_Z_ZEWNATRZ } from './wspolne.js';
 
 interface AktZRejestru {
   ELI?: string;
@@ -33,6 +34,8 @@ interface AktZRejestru {
   releasedBy?: string[];
   legalStatusDate?: string | null;
   comments?: string | null;
+  /** Ostatnia zmiana rekordu w ELI: klucz świeżości tekstu z PDF trzymanego na dysku. */
+  changeDate?: string | null;
   prints?: Array<{ link?: string; number?: string; term?: number; linkProcessAPI?: string; linkPrintAPI?: string }>;
   references?: Record<string, Array<{ id: string; art?: string; date?: string }>>;
 }
@@ -935,6 +938,7 @@ export const trescAktu = narzedzie({
       .default('aktualne')
       .describe('aktualne: z najnowszego tekstu jednolitego, z HTML albo, gdy ELI ma go tylko w PDF, z PDF (domyślnie); pierwotne: z dnia ogłoszenia'),
     od: z.number().int().min(0).default(0).describe('Od którego znaku zacząć (dla długich tekstów)'),
+    fraza,
   }),
   async wykonaj(a, zrodlo) {
     // Powody częściowości zbierane po drodze (awaria pomocniczego zapytania, PDF nieodczytany albo ucięty)
@@ -1006,7 +1010,7 @@ export const trescAktu = narzedzie({
           }
           // Najnowszy tekst jednolity jest tylko w PDF: czytamy go zamiast starszego HTML-a.
           if (t && !nowszyPdf && moznaPdf && t.textPDF) {
-            const w = await czytajPdf(zrodlo, zrodlo.adres(`eli/acts/${id}/text.pdf`), OPCJE_AKTU, termin);
+            const w = await czytajPdfAktu(zrodlo, id, t.changeDate, zrodlo.adres(`eli/acts/${id}/text.pdf`), OPCJE_AKTU, termin);
             if (w.ok) {
               x = t;
               adres = id;
@@ -1134,6 +1138,12 @@ export const trescAktu = narzedzie({
           (tekstZ ? `, cytowany z tekstu jednolitego ${tekstZ.oznaczenie ?? adres}${tekstZ.stanPrawnyNa ? ` (stan prawny na ${tekstZ.stanPrawnyNa})` : ''}` : ', brzmienie z dnia ogłoszenia') +
           ', tekst odczytany z PDF';
         const uwagiPdf = [UWAGA_PDF, uwagaOdczytuPdf(w)];
+        const zDysku = (w as WynikPdfAktu).zDysku;
+        if (zDysku) {
+          uwagiPdf.push(
+            `Tekst tego PDF odczytano wcześniej i wzięto z dysku użytkownika: ELI pokazuje tę samą wersję aktu (zmiana rekordu ${zDysku.zmianaWEli}), więc plik się nie zmienił. Nowsza data w ELI = odczyt od nowa.`,
+          );
+        }
         // „Art. 446¹.⁶⁾”: znacznik zostaje, bo taki jest w dzienniku, ale model brał go za część numeru.
         if (/[⁰¹²³⁴⁵⁶⁷⁸⁹]+⁾/.test(w.tekst)) uwagiPdf.push(UWAGA_PRZYPISY);
         // Ile stron przeczytano i czy całość: bez tego model nie wiedział, czy brak czegoś w tekście to brak w pliku.
@@ -1195,7 +1205,7 @@ export const trescAktu = narzedzie({
           adres,
           zPdf: true,
           jednostka,
-          ...fragment(tekst, a.od),
+          ...porcjaAlboFraza(tekst, a.od, a.fraza),
           pdf: adresPdf,
           ...stronyPdf,
           ...(zmianyPo.length ? { zmianyPoTekscie: zmianyPo } : {}),
@@ -1216,7 +1226,7 @@ export const trescAktu = narzedzie({
         let wPdf = tekstPdf;
         let powod: string | null = null;
         if (!wPdf && moznaPdf && pdf) {
-          const w = await czytajPdf(zrodlo, pdf, OPCJE_AKTU, termin);
+          const w = await czytajPdfAktu(zrodlo, adres, x.changeDate, pdf, OPCJE_AKTU, termin);
           if (w.ok) wPdf = w;
           else {
             powod = w.powod;
@@ -1352,7 +1362,7 @@ export const trescAktu = narzedzie({
         zrodloTekstu: zrodloTekstu('html'),
         adres,
         jednostka: id,
-        ...fragment(tekst, a.od),
+        ...porcjaAlboFraza(tekst, a.od, a.fraza),
         pdf,
         ...(zmianyPo.length ? { zmianyPoTekscie: zmianyPo } : {}),
         zrodla: [zrodlo.adres(sTekst)],

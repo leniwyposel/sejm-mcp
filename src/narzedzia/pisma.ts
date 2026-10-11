@@ -17,8 +17,8 @@ import {
 import type { ZrodloSejmu } from '../klient.js';
 import { czytajPdf, OPCJE_PISMA, UWAGA_PDF } from '../pdf.js';
 import { naCzas } from './na-czas.js';
-import { bezpiecznyLink, czysty, fragment, htmlNaTekst, klucz } from '../tekst.js';
-import { brak404, OPIS_CZESCIOWY, czesciowy, polaczCzesciowe, type WynikCzesciowy, autorzy, data, jakoLista, jakoRekord, kadencja, limit, maWszystkie, narzedzie, nazwiskaPoslow, przesuniecie, sprawdzPrzedzial, T, UWAGA_TEKST_Z_ZEWNATRZ } from './wspolne.js';
+import { bezpiecznyLink, czysty, fragment, htmlNaTekst, klucz, porcjaAlboFraza } from '../tekst.js';
+import { brak404, OPIS_CZESCIOWY, czesciowy, polaczCzesciowe, type WynikCzesciowy, autorzy, data, jakoLista, jakoRekord, kadencja, limit, maWszystkie, narzedzie, nazwiskaPoslow, fraza, przesuniecie, sprawdzPrzedzial, T, UWAGA_TEKST_Z_ZEWNATRZ } from './wspolne.js';
 
 interface PismoZRejestru {
   num: number;
@@ -703,6 +703,7 @@ export const pismo = narzedzie({
       .optional()
       .describe('Klucz odpowiedzi (pole klucz z listy odpowiedzi): dołącz jej treść'),
     od: z.coerce.number().int().min(0).default(0).describe('Od którego znaku treści zacząć (dla długich tekstów)'),
+    fraza,
     kadencja,
   }),
   async wykonaj(a, zrodlo) {
@@ -751,7 +752,7 @@ export const pismo = narzedzie({
           pdfWCalosci = zPdf.calosc;
           zrodla.push(...zPdf.przeczytane);
           tresc = {
-            ...fragment(zPdf.tekst, a.od),
+            ...porcjaAlboFraza(zPdf.tekst, a.od, a.fraza),
             zPdf: true,
             przeczytanoStron: zPdf.strony.join('; '),
             ...(zPdf.calosc ? { przeczytanoCaly: true } : {}),
@@ -775,7 +776,7 @@ export const pismo = narzedzie({
           }
         } else {
           tresc = {
-            ...(tekst ? fragment(tekst, a.od) : {}),
+            ...(tekst ? porcjaAlboFraza(tekst, a.od, a.fraza) : {}),
             tylkoWZalaczniku:
               `Treść tej odpowiedzi jest tylko w załączniku PDF (zalacznikPdf), a serwer nie zdołał jej odczytać: ${zPdf.nieprzeczytane.map((n) => n.powod).join('; ') || 'brak powodu'}. ` +
               'Podaj czytelnikowi adres PDF.',
@@ -790,7 +791,7 @@ export const pismo = narzedzie({
           );
         }
       } else {
-        tresc = tekst === null ? { brak: 'Rejestr nie ma tej treści (odpowiedź bywa tylko w załączniku PDF).', zalacznikPdf: pdf } : fragment(tekst, a.od);
+        tresc = tekst === null ? { brak: 'Rejestr nie ma tej treści (odpowiedź bywa tylko w załączniku PDF).', zalacznikPdf: pdf } : porcjaAlboFraza(tekst, a.od, a.fraza);
       }
     }
 

@@ -1,9 +1,7 @@
 /**
  * Porządek obrad posiedzenia Sejmu i głosowania pod jego punktami.
  *
- * Ta sama reguła co strona posiedzenia w serwisie leniwyposel.pl (`shared/porzadek-posiedzenia.ts`,
- * `shared/glosowania-punktow.ts`, `shared/porzadek-nazwy.ts`, stan z 2.10.2026). Moduł jest czysty:
- * dostaje pole `agenda` z `/proceedings/{n}` i listę `/votings/{n}`, nie pyta sieci.
+ * Moduł jest czysty: dostaje pole `agenda` z `/proceedings/{n}` i listę `/votings/{n}`, nie pyta sieci.
  *
  * Co wiemy o `agenda` (HTML):
  *  - porządek zapowiedzianego posiedzenia ma kilka list `<ol>`: właściwy porządek, „Porządek dzienny

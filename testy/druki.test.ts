@@ -153,6 +153,42 @@ describe('tekst_druku', () => {
     expect(drugi.spis).toBeUndefined();
   });
 
+  // Ta sama semantyka co fraza w tresc_wypowiedzi / tresc_aktu / pismo, plus strona przy każdym fragmencie.
+  it('fraza: trafienia z kontekstem w całym pliku, każde ze stroną i adresem #page=N; od prowadzi dalej', async () => {
+    const { s } = srodowisko();
+    const n = utworzTekstDruku(s);
+    const z = zrodlo();
+    const w = await n.wykonaj(n.wejscie.parse({ numer: '2690', fraza: 'Cieszyński' }), z);
+    expect(w).toMatchObject({ trafien: 3, pokazano: 3, nastepneOd: null });
+    const fr = w.fragmenty as Array<{ od: number; tekst: string; cytowanie: Record<string, unknown> }>;
+    expect(fr.length).toBeGreaterThan(0);
+    for (const f of fr) {
+      expect(f.tekst).toMatch(/Cieszyński/);
+      expect(f.cytowanie).toMatchObject({ druk: '2690', plik: '2690.pdf', strona: 2, url: 'https://api.sejm.gov.pl/sejm/term10/prints/2690/2690.pdf#page=2' });
+    }
+    expect(w.odpowiedz).toMatch(/fraza „Cieszyński” pada 3 razy; pokazano 3 .*strony 2/);
+    expect(w.strony).toBeUndefined();
+
+    // Słowo na obu stronach: strona trafienia, nie początku kontekstu.
+    const t = await n.wykonaj(n.wejscie.parse({ numer: '2690', fraza: 'teleinformatyczn' }), z);
+    expect(t.trafien).toBe(3);
+    const strony = (t.fragmenty as Array<{ cytowanie: { strona: number } }>).map((f) => f.cytowanie.strona);
+    expect(strony[0]).toBe(1);
+    expect(strony.at(-1)).toBe(2);
+
+    // od: szukanie od pozycji za pierwszym trafieniem.
+    const dalej = await n.wykonaj(n.wejscie.parse({ numer: '2690', fraza: 'Cieszyński', od: (fr[0].od as number) + 401 }), z);
+    expect(dalej.trafien as number).toBeLessThan(3);
+    expect(z.pobraniaPlikow).toHaveLength(1);
+  });
+
+  it('fraza w pliku ze skanami: mówi, których stron nie przeszukano', async () => {
+    const { s } = srodowisko();
+    const n = utworzTekstDruku(s);
+    const w = await n.wykonaj(n.wejscie.parse({ numer: '2660', fraza: 'Senat' }), zrodlo());
+    expect((w.uwagi as string[]).join(' ')).toMatch(/2 strony bez warstwy tekstowej \(skany\) nie były przeszukane: 3–4/);
+  });
+
   it('druk 2660 (mieszany): skany oznaczone, bez OCR bez pytania, podpowiedź ocr=true', async () => {
     const { s, stan } = srodowisko();
     const n = utworzTekstDruku(s);

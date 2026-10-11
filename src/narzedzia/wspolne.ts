@@ -352,6 +352,14 @@ export const limit = (domyslnie: number, max: number) =>
 
 export const przesuniecie = z.coerce.number().int().min(0).default(0).describe('Od którego wyniku zacząć (stronicowanie)');
 
+/** Szukanie w długim tekście zamiast czytania go porcjami: oddaje same trafienia z kontekstem. */
+export const fraza = z
+  .string()
+  .min(2)
+  .max(200)
+  .optional()
+  .describe('Szukaj tej frazy w tekście (bez wielkości liter, z polskimi znakami): zamiast porcji zwraca tylko trafienia z kontekstem i ich pozycje (od)');
+
 /** Skróty, których rejestr w tytułach nie używa: w tytule jest pełna nazwa w przypadku zależnym. */
 const SKROTY: Record<string, string> = {
   ZUS: 'Ubezpieczeń Społecznych',

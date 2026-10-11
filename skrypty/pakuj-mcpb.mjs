@@ -15,6 +15,7 @@ const WYJSCIE = join(KORZEN, 'build', 'sejm-mcp.mcpb');
 
 const pakiet = JSON.parse(readFileSync(join(KORZEN, 'package.json'), 'utf8'));
 const { NARZEDZIA } = await import(join(KORZEN, 'dist', 'narzedzia', 'index.js'));
+const { GOTOWE_PYTANIA } = await import(join(KORZEN, 'dist', 'pytania.js'));
 
 rmSync(join(KORZEN, 'build'), { recursive: true, force: true });
 mkdirSync(ETAP, { recursive: true });
@@ -50,6 +51,16 @@ const manifest = {
     mcp_config: { command: 'node', args: ['${__dirname}/dist/index.js'] },
   },
   tools: NARZEDZIA.map((n) => ({ name: n.nazwa, description: pierwszeZdanie(n.opis) })),
+  // Gotowe pytania: tekst z miejscami na argumenty w składni manifestu (${arguments.nazwa}).
+  prompts: GOTOWE_PYTANIA.map((p) => {
+    const argumenty = Object.keys(p.argumenty?.shape ?? {});
+    return {
+      name: p.nazwa,
+      description: p.opis,
+      ...(argumenty.length ? { arguments: argumenty } : {}),
+      text: p.tresc(Object.fromEntries(argumenty.map((a) => [a, `\${arguments.${a}}`]))),
+    };
+  }),
   keywords: ['sejm', 'parlament', 'polska', 'prawo', 'eli'],
   license: 'Apache-2.0',
   compatibility: { platforms: ['darwin', 'win32', 'linux'], runtimes: { node: '>=22.0.0' } },

@@ -70,6 +70,13 @@ describe('KlientSejmu', () => {
     expect(await k.json('term10/MP/99999')).toBeNull();
   });
 
+  // Tak Sejm odpowiada na nieznany kod komisji (term10/committees/CYF, sprawdzone 11.10.2026): 204 bez treści.
+  it('204 bez treści to null („nie ma”), nie błąd „nieoczekiwana postać”', async () => {
+    const k = new KlientSejmu(new BezPamieci(), async () => new Response(null, { status: 204 }), bezSpania);
+    expect(await k.json('term10/committees/CYF')).toBeNull();
+    expect(await k.lista('term10/committees/CYF')).toEqual({ dane: [], razem: 0 });
+  });
+
   it('ponawia po 503 i zwraca odpowiedź', async () => {
     let n = 0;
     const k = new KlientSejmu(new BezPamieci(), async () => (++n < 3 ? new Response('', { status: 503 }) : odpowiedzJson({ ok: 1 })), bezSpania);

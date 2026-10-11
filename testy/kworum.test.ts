@@ -120,3 +120,108 @@ describe('poseł na apelu o kworum: każde naciśnięcie to obecność, brak nac
     expect(b.kworum).toEqual([{ glosowanie: '33/5', obecnych: 429, kworumJest: true }]);
   });
 });
+
+// Rekord pobrany z api.sejm.gov.pl 2026-10-11. Marszałek po tym głosowaniu (stenogram 18. posiedzenia,
+// 1.10.2024, s. 534–535): „Głosowało 227 posłów. 221 – za, 5 – przeciw, 1 się wstrzymał. Ale mamy brak
+// kworum.” i „stwierdzam, że Sejm nie podjął uchwały”. Z samych liczb wychodziło „przyjęto”.
+describe('mniej niż 230 głosujących: serwer nie wylicza wyniku, odsyła do stenogramu', () => {
+  it('18/127: 221/5/1 przy 227 głosujących to nie „przyjęto”', () => {
+    const g = rekord('glosowanie-18-127.json');
+    expect([g.yes, g.no, g.abstain, g.totalVoted]).toEqual([221, 5, 1, 227]);
+    const w = wynikGlosowania(g);
+    expect(w).toMatchObject({ rodzaj: 'zwykle', przeszlo: null, ponizejPolowy: true });
+    expect(w.etykieta).toMatch(/^Głosowało 227, mniej niż połowa ustawowej liczby posłów \(230, art\. 120 Konstytucji\)/);
+    expect(w.etykieta).toMatch(/zapisuje stenogram/);
+    expect(w.etykieta).not.toMatch(/przyjęto|odrzucono/i);
+  });
+
+  it('33/6: zwykłe głosowanie z co najmniej 230 głosującymi dalej ma wyliczony wynik', () => {
+    const w = wynikGlosowania(rekord('glosowanie-33-6.json'));
+    expect(w.ponizejPolowy).toBeUndefined();
+    expect(typeof w.przeszlo).toBe('boolean');
+  });
+});
+
+describe('fragment stenogramu po głosowaniu: zwykłe wyszukanie zdania z liczbami rekordu', () => {
+  // Tekst jak w stenogramie 18. posiedzenia (1.10.2024, wypowiedź Marszałka), skrócony.
+  const tekst =
+    'Kto z pań i panów posłów jest za przyjęciem wniosku w brzmieniu z druku nr 689, zechce podnieść rękę i nacisnąć przycisk. ' +
+    'Kto jest przeciw? Kto się wstrzymał? Głosowało 227 posłów. 221 - za, 5 - przeciw, 1 się wstrzymał. Wyniki głosowania ' +
+    'Ale mamy brak kworum. (Gwar na sali, oklaski) Dziękuję państwu bardzo za entuzjazm i stwierdzam, że Sejm nie podjął uchwały ' +
+    'w sprawie zmian w składach osobowych komisji sejmowych.';
+  it('znajduje akapit 18/127 po liczbach z rekordu i oddaje go dosłownie', async () => {
+    const { fragmentPoGlosowaniu } = await import('../src/narzedzia/glosowania.js');
+    const f = fragmentPoGlosowaniu(tekst, { yes: 221, no: 5, abstain: 1 });
+    expect(f).toMatch(/^Głosowało 227 posłów\. 221 - za, 5 - przeciw/);
+    expect(f).toMatch(/Ale mamy brak kworum\./);
+    expect(f).toMatch(/Sejm nie podjął uchwały/);
+  });
+  it('inne liczby: nie zgaduje, zwraca null', async () => {
+    const { fragmentPoGlosowaniu } = await import('../src/narzedzia/glosowania.js');
+    expect(fragmentPoGlosowaniu(tekst, { yes: 220, no: 5, abstain: 1 })).toBeNull();
+  });
+});
+
+describe('szukanie frazy w długim tekście', () => {
+  it('oddaje trafienia z kontekstem, bez wielkości liter, i liczy wszystkie', async () => {
+    const { szukajFrazy } = await import('../src/tekst.js');
+    const t = 'Początek dnia. Stwierdzam kworum. Dalej obrady. ' + 'x'.repeat(2000) + ' Ale mamy brak kworum. Koniec.';
+    const w = szukajFrazy(t, 'KWORUM', 20);
+    expect(w.trafien).toBe(2);
+    expect(w.fragmenty).toHaveLength(2);
+    expect(w.fragmenty[1].tekst).toMatch(/Ale mamy brak kworum/);
+    expect(t.slice(w.fragmenty[1].od)).toMatch(/brak kworum/);
+  });
+  it('dwa głosowania tego dnia z tymi samymi liczbami: fragment po głosowaniu nie zgaduje', async () => {
+    const { fragmentPoGlosowaniu } = await import('../src/narzedzia/glosowania.js');
+    const zdanie = 'Głosowało 440 posłów. 230 - za, 210 - przeciw, nikt się nie wstrzymał. ';
+    expect(fragmentPoGlosowaniu(zdanie + 'Sejm przyjął. ' + zdanie + 'Sejm przyjął.', { yes: 230, no: 210, abstain: 0 })).toBeNull();
+    expect(fragmentPoGlosowaniu(zdanie + 'Sejm przyjął.', { yes: 230, no: 210, abstain: 0 })).toMatch(/^Głosowało 440 posłów/);
+  });
+});
+
+describe('fragment po głosowaniu: warianty odczytu wyniku przez Marszałka (stenogramy X kadencji)', () => {
+  it('większość kwalifikowana (64/15, 4.09.2026) i „przeciw nie był nikt” (19/8, 10.10.2024)', async () => {
+    const { fragmentPoGlosowaniu } = await import('../src/narzedzia/glosowania.js');
+    const weto =
+      'Kto się wstrzymał? Głosowało 442 posłów. Większość 3/5 - 266. 241 - za, 198 - przeciw, 3 się wstrzymało. ' +
+      'Wobec nieuzyskania wymaganej większości głosów Sejm nie uchwalił ponownie ustawy z dnia 15 maja 2026 r. o rynku kryptoaktywów.';
+    expect(fragmentPoGlosowaniu(weto, { yes: 241, no: 198, abstain: 3 })).toMatch(/Sejm nie uchwalił ponownie ustawy/);
+    const powrot = 'Głosowało 233 posłów. Za - 231, przeciw nie był nikt, wstrzymało się 2. Wyniki głosowania Stwierdzam, że Sejm podjął uchwałę.';
+    expect(fragmentPoGlosowaniu(powrot, { yes: 231, no: 0, abstain: 2 })).toMatch(/Sejm podjął uchwałę/);
+  });
+});
+
+describe('fragment po głosowaniu kończy się przed następnym głosowaniem', () => {
+  it('19/8: bez odczytu kolejnego głosowania (druk 708)', async () => {
+    const { fragmentPoGlosowaniu } = await import('../src/narzedzia/glosowania.js');
+    const t =
+      'Głosowało 233 posłów. Za - 231, przeciw nie był nikt, wstrzymało się 2. Wyniki głosowania Stwierdzam, że Sejm podjął uchwałę w sprawie zmian w składach osobowych komisji sejmowych. (Oklaski) ' +
+      'Przystępujemy do rozpatrzenia punktu 7. porządku dziennego (druk nr 708). Kto z pań i panów posłów jest za, zechce podnieść rękę. Głosowało 349 posłów. Za - 263, przeciw - 71, wstrzymało się 15.';
+    const f = fragmentPoGlosowaniu(t, { yes: 231, no: 0, abstain: 2 });
+    expect(f).toMatch(/Sejm podjął uchwałę/);
+    expect(f).not.toMatch(/349|708|Kto z pań|Przystępujemy/);
+  });
+});
+
+describe('poprawki z 11.10.2026', () => {
+  it('cytat po głosowaniu bez etykiety „Wyniki głosowania” z HTML stenogramu', async () => {
+    const { fragmentPoGlosowaniu } = await import('../src/narzedzia/glosowania.js');
+    const f = fragmentPoGlosowaniu('Głosowało 233 posłów. Za - 231, przeciw nie był nikt, wstrzymało się 2. Wyniki głosowania Stwierdzam, że Sejm podjął uchwałę.', { yes: 231, no: 0, abstain: 2 });
+    expect(f).toBe('Głosowało 233 posłów. Za - 231, przeciw nie był nikt, wstrzymało się 2. Stwierdzam, że Sejm podjął uchwałę.');
+  });
+  it('fraza: mówi, ile pokazano, i daje nastepneOd do dalszych trafień', async () => {
+    const { szukajFrazy } = await import('../src/tekst.js');
+    const t = Array.from({ length: 25 }, (_, i) => `Akapit ${i} o kworum.` + ' x'.repeat(500)).join(' ');
+    const a = szukajFrazy(t, 'kworum', 50, 10);
+    expect(a.trafien).toBe(25);
+    expect(a.fragmenty).toHaveLength(10);
+    expect(a.pokazano).toBe(10);
+    expect(a.nastepneOd).not.toBeNull();
+    const b = szukajFrazy(t, 'kworum', 50, 10, a.nastepneOd!);
+    expect(b.fragmenty[0].tekst).toMatch(/Akapit 10 o kworum/);
+    const c = szukajFrazy(t, 'kworum', 50, 10, b.nastepneOd!);
+    expect(c.nastepneOd).toBeNull();
+    expect(c.fragmenty).toHaveLength(5);
+  });
+});

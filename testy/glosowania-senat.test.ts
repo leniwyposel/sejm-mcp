@@ -49,7 +49,7 @@ describe('poprawki Senatu: Sejm głosuje wniosek o odrzucenie (26/19, budżet 20
     const z = new ZrodloZFikstur({ 'term10/votings/26/19': 'glosowanie-26-19-poprawka-senatu.json', 'term10/MP': 'mp-lista.json' });
     const w = await glosowanie.wykonaj(wejscie(glosowanie.wejscie, { posiedzenie: 26, numer: 19, poselId: 400 }), z);
     expect(w).toMatchObject({
-      wynik: 'Poprawka Senatu przyjęta (wniosek o odrzucenie nie uzyskał bezwzględnej większości)',
+      wynikWyliczony: 'Poprawka Senatu przyjęta (wniosek o odrzucenie nie uzyskał bezwzględnej większości)',
       przedmiotGlosowania: 'wniosek o odrzucenie poprawki Senatu',
       stanowiskoSenatuPrzyjete: true,
       przeszlo: false,
@@ -68,8 +68,8 @@ describe('poprawki Senatu: Sejm głosuje wniosek o odrzucenie (26/19, budżet 20
     expect(b.nadUchwalamiSenatu).toEqual({ glosowan: 32, glosowanNadPoprawkami: 32, glosowanPoprawkaPrzyjeta: 28, glosowanPoprawkaOdrzucona: 4, nadOdrzuceniemUstawy: 0 });
     expect(b.przyjetych + b.odrzuconych).toBe(b.wszystkich - 32);
     expect(w.odpowiedz).toMatch(/nad uchwałami Senatu 32 .*poprawki przyjęte w 28 głosowaniach, odrzucone w 4 głosowaniach \(to liczba głosowań, nie poprawek/);
-    const g19 = (w.glosowania as Array<{ numer: number; wynik: string }>).find((g) => g.numer === 19)!;
-    expect(g19.wynik).toMatch(/^Poprawka Senatu przyjęta/);
+    const g19 = (w.glosowania as Array<{ numer: number; wynikWyliczony: string }>).find((g) => g.numer === 19)!;
+    expect(g19.wynikWyliczony).toMatch(/^Poprawka Senatu przyjęta/);
   });
 
   it('glosy_posla_w_dniu: głos przy poprawce Senatu z rozstrzygnięciem (Tusk, 9 I 2025)', async () => {

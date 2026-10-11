@@ -16,7 +16,7 @@ const PREFIKS = '/sejm/';
 /** Ścieżka zaczynająca się od `eli/` idzie do API aktów prawnych, każda inna do API Sejmu. */
 const PREFIKS_ELI = '/eli/';
 
-export const WERSJA = '0.3.0';
+export const WERSJA = '0.3.1';
 const USER_AGENT = `sejm-mcp/${WERSJA} (+https://github.com/leniwyposel/sejm-mcp)`;
 
 export type Parametry = Record<string, string | number | boolean | undefined | null>;
@@ -304,7 +304,9 @@ export class KlientSejmu implements ZrodloSejmu {
           await odp.body?.cancel();
           throw new BladSejmu(`API odpowiedziało przekierowaniem (${odp.status}); serwer nie podąża za przekierowaniami: ${skrocAdres(url)}`, odp.status);
         }
-        if (odp.status === 404) {
+        // 204 bez treści: tak Sejm odpowiada na nieznany kod komisji (committees/CYF). To „nie ma
+        // takiego zasobu”, jak 404, a nie zepsuta odpowiedź (t080, t082, t083).
+        if (odp.status === 404 || odp.status === 204) {
           await odp.body?.cancel();
           return null;
         }

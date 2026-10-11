@@ -2,6 +2,7 @@ import { CLIENT_CAPABILITIES_META_KEY, McpServer, inputRequired, inputResponse, 
 import { KATALOG, komunikatBledu } from './bledy.js';
 import { WERSJA, type ZrodloSejmu } from './klient.js';
 import { NARZEDZIA } from './narzedzia/index.js';
+import { GOTOWE_PYTANIA } from './pytania.js';
 import { kalendarz } from './reguly/daty.js';
 import { wSuficie } from './rozmiar.js';
 import { wyczyscWszystko } from './tekst.js';
@@ -176,6 +177,14 @@ export function utworzSerwer(zrodlo: ZrodloSejmu, narzedzia: Narzedzie<any>[] = 
         }
       },
     );
+  }
+  for (const p of GOTOWE_PYTANIA) {
+    const wiadomosc = (tekst: string) => ({ messages: [{ role: 'user' as const, content: { type: 'text' as const, text: tekst } }] });
+    if (p.argumenty) {
+      serwer.registerPrompt(p.nazwa, { title: p.tytul, description: p.opis, argsSchema: p.argumenty }, (a: Record<string, string>) => wiadomosc(p.tresc(a)));
+    } else {
+      serwer.registerPrompt(p.nazwa, { title: p.tytul, description: p.opis }, () => wiadomosc(p.tresc({})));
+    }
   }
   return serwer;
 }
