@@ -68,7 +68,7 @@
     "@anthropic-ai/mcpb": "2.1.2",
     "@tesseract.js-data/pol": "1.0.0",
     "@types/node": "^22",
-    "pdfjs-dist": "6.3.289",
+    "pdfjs-dist": "6.4.299",
     "tesseract.js-core": "7.0.0",
     "typescript": "^7.0.2",
     "vitest": "^5.0.2"
